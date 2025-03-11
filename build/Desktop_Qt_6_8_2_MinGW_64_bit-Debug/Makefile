@@ -268,6 +268,7 @@ Makefile: ../../GeometricShapes.pro C:/Programs/Qt/6.8.2/mingw_64/mkspecs/win32-
 		C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/qt_config.prf \
 		C:/Programs/Qt/6.8.2/mingw_64/mkspecs/win32-g++/qmake.conf \
 		C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/exclusive_builds.prf \
 		C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/toolchain.prf \
 		C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/default_pre.prf \
@@ -297,7 +298,6 @@ Makefile: ../../GeometricShapes.pro C:/Programs/Qt/6.8.2/mingw_64/mkspecs/win32-
 		C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Gui.prl \
 		C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Core.prl \
 		C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6EntryPoint.prl \
-		.qmake.stash \
 		C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\..\GeometricShapes.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/spec_pre.prf:
@@ -498,6 +498,7 @@ C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/qt_functions.prf:
 C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/qt_config.prf:
 C:/Programs/Qt/6.8.2/mingw_64/mkspecs/win32-g++/qmake.conf:
 C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/exclusive_builds.prf:
 C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/toolchain.prf:
 C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/default_pre.prf:
@@ -527,7 +528,6 @@ C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Widgets.prl:
 C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Gui.prl:
 C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Core.prl:
 C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6EntryPoint.prl:
-.qmake.stash:
 C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/build_pass.prf:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\..\GeometricShapes.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

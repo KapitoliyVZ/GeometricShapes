@@ -1,4 +1,4 @@
-#include "circle.h"
+#include "shape.h"
 #include <QPainter>
 
 Circle::Circle(int r, int x, int y, QColor c)

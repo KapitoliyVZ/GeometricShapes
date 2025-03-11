@@ -1,3 +1,5 @@
+// виджет задания параметров для отрисовки круга
+
 #include "dialogsetcircle.h"
 #include "ui_dialogsetcircle.h"
 

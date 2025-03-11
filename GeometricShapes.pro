@@ -16,13 +16,10 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
-    circle.h \
     dialogsetcircle.h \
     graphFrame.h \
     mainwindow.h \
-    rectangle.h \
-    shape.h \
-    triangle.h
+    shape.h
 
 FORMS += \
     dialogsetcircle.ui \
