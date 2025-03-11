@@ -60,7 +60,7 @@ Q_CONSTINIT static const uint qt_meta_data_ZN10GraphFrameE[] = {
 };
 
 Q_CONSTINIT const QMetaObject GraphFrame::staticMetaObject = { {
-    QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
+    QMetaObject::SuperData::link<QGraphicsView::staticMetaObject>(),
     qt_meta_stringdata_ZN10GraphFrameE.offsetsAndSizes,
     qt_meta_data_ZN10GraphFrameE,
     qt_static_metacall,
@@ -91,12 +91,12 @@ void *GraphFrame::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_ZN10GraphFrameE.stringdata0))
         return static_cast<void*>(this);
-    return QWidget::qt_metacast(_clname);
+    return QGraphicsView::qt_metacast(_clname);
 }
 
 int GraphFrame::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = QGraphicsView::qt_metacall(_c, _id, _a);
     return _id;
 }
 QT_WARNING_POP

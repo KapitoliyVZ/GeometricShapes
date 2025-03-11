@@ -2,13 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
-#include "graphFrame.h"
+#include <QGraphicsScene>
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
+namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -20,17 +17,15 @@ public:
     ~MainWindow();
 
 private slots:
-    // кнопки отрисовки фигур
-    void on_btnCircle_clicked();
-
     void on_btnRectangle_clicked();
-    void on_btnTriangle_clicked();
 
-    // кнопка очистки графика
-    void on_btnClear_clicked();
+    void on_btnCircle_clicked();
 
 private:
     Ui::MainWindow *ui;
-    GraphFrame *graph; // Добавляем графическое окно
+    QGraphicsScene *scene; // Сцена для отображения фигур
+
+    void setupScene(); // Метод для настройки сцены
 };
+
 #endif // MAINWINDOW_H

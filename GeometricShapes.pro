@@ -1,4 +1,5 @@
 QT       += core gui
+QT       += core gui charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,20 +11,25 @@ CONFIG += c++17
 
 SOURCES += \
     circle.cpp \
-    dialogsetcircle.cpp \
-    graphFrame.cpp \
+    circledialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    rectangle.cpp \
+    rectangledialog.cpp \
+    shape.cpp
 
 HEADERS += \
-    dialogsetcircle.h \
-    graphFrame.h \
+    circle.h \
+    circledialog.h \
     mainwindow.h \
+    rectangle.h \
+    rectangledialog.h \
     shape.h
 
 FORMS += \
-    dialogsetcircle.ui \
-    mainwindow.ui
+    circledialog.ui \
+    mainwindow.ui \
+    rectangledialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -294,7 +294,10 @@ Makefile: ../../GeometricShapes.pro C:/Programs/Qt/6.8.2/mingw_64/mkspecs/win32-
 		C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/yacc.prf \
 		C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/lex.prf \
 		../../GeometricShapes.pro \
+		C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Charts.prl \
+		C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6OpenGLWidgets.prl \
 		C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Widgets.prl \
+		C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6OpenGL.prl \
 		C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Gui.prl \
 		C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Core.prl \
 		C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6EntryPoint.prl \
@@ -524,7 +527,10 @@ C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/exceptions.prf:
 C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/yacc.prf:
 C:/Programs/Qt/6.8.2/mingw_64/mkspecs/features/lex.prf:
 ../../GeometricShapes.pro:
+C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Charts.prl:
+C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6OpenGLWidgets.prl:
 C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Widgets.prl:
+C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6OpenGL.prl:
 C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Gui.prl:
 C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6Core.prl:
 C:/Programs/Qt/6.8.2/mingw_64/lib/Qt6EntryPoint.prl:

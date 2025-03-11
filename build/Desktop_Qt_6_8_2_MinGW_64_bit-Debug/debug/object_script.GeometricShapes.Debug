@@ -1,0 +1,10 @@
+debug/circle.o
+debug/circledialog.o
+debug/main.o
+debug/mainwindow.o
+debug/rectangle.o
+debug/rectangledialog.o
+debug/shape.o
+debug/moc_circledialog.o
+debug/moc_mainwindow.o
+debug/moc_rectangledialog.o

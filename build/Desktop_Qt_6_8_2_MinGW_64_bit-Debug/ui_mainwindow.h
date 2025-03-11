@@ -11,7 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFrame>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -24,11 +24,11 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QFrame *frameGraphXY;
     QPushButton *btnCircle;
     QPushButton *btnRectangle;
     QPushButton *btnTriangle;
     QPushButton *btnClear;
+    QGraphicsView *graphicsView;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -39,12 +39,6 @@ public:
         MainWindow->resize(1055, 639);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        frameGraphXY = new QFrame(centralwidget);
-        frameGraphXY->setObjectName("frameGraphXY");
-        frameGraphXY->setGeometry(QRect(530, 40, 500, 500));
-        frameGraphXY->setBaseSize(QSize(0, 0));
-        frameGraphXY->setFrameShape(QFrame::Shape::StyledPanel);
-        frameGraphXY->setFrameShadow(QFrame::Shadow::Raised);
         btnCircle = new QPushButton(centralwidget);
         btnCircle->setObjectName("btnCircle");
         btnCircle->setGeometry(QRect(20, 30, 83, 29));
@@ -57,6 +51,10 @@ public:
         btnClear = new QPushButton(centralwidget);
         btnClear->setObjectName("btnClear");
         btnClear->setGeometry(QRect(330, 30, 83, 29));
+        graphicsView = new QGraphicsView(centralwidget);
+        graphicsView->setObjectName("graphicsView");
+        graphicsView->setGeometry(QRect(470, 10, 571, 571));
+        graphicsView->setInteractive(false);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

@@ -1,0 +1,10 @@
+release/circle.o
+release/circledialog.o
+release/main.o
+release/mainwindow.o
+release/rectangle.o
+release/rectangledialog.o
+release/shape.o
+release/moc_circledialog.o
+release/moc_mainwindow.o
+release/moc_rectangledialog.o

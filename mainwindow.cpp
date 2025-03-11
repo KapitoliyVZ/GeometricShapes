@@ -2,24 +2,20 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "graphFrame.h"
+#include <QGraphicsLineItem>
 
-#include "dialogsetcircle.h"
-
-#include "circle.h"
 #include "rectangle.h"
-#include "triangle.h"
+#include "rectangledialog.h"
+#include "circle.h"
+#include "circledialog.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    graph = new GraphFrame(this);
-    ui->frameGraphXY->setLayout(new QVBoxLayout());
-    ui->frameGraphXY->layout()->addWidget(graph);
-
+    setupScene();
 }
 
 MainWindow::~MainWindow()
@@ -27,36 +23,76 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-// Обработчики кнопок
-void MainWindow::on_btnCircle_clicked()
+// прорисовка сцены (координатной оси)
+void MainWindow::setupScene()
 {
-    DialogSetCircle dialog(this);
-    if (dialog.exec() == QDialog::Accepted) {
-        int radius = dialog.getRadius();
-        int x = dialog.getX();
-        int y = dialog.getY();
-        QColor color = dialog.getColor();
+    // Создаём сцену и привязываем к QGraphicsView
+    scene = new QGraphicsScene(this);
+    ui->graphicsView->setScene(scene);
 
-        graph->addShape(new Circle(radius, x, y, color));
+    // Устанавливаем границы области рисования
+    int width = 400, height = 400;
+    scene->setSceneRect(-width/2, -height/2, width, height);
+
+    // Рисуем координатные оси
+    QPen axisPen(Qt::black);
+    axisPen.setWidth(2);
+
+    scene->addLine(-width/2, 0, width/2, 0, axisPen); // Ось X
+    scene->addLine(0, -height/2, 0, height/2, axisPen); // Ось Y
+
+    // Рисуем деления и подписываем координаты
+    int step = 50; // Шаг координатной сетки
+
+    QFont font("Arial", 8);
+    for (int x = -width/2; x <= width/2; x += step) {
+        if (x == 0) continue; // Пропускаем центр
+        scene->addLine(x, -5, x, 5, axisPen); // Засечки на оси X
+
+        QGraphicsTextItem *text = scene->addText(QString::number(x), font);
+        text->setPos(x - 10, 5); // Смещаем текст для выравнивания
     }
-    // QWidget *wdg = new QWidget;
-    // wdg->show();
+
+    for (int y = -height/2; y <= height/2; y += step) {
+        if (y == 0) continue; // Пропускаем центр
+        scene->addLine(-5, y, 5, y, axisPen); // Засечки на оси Y
+
+        QGraphicsTextItem *text = scene->addText(QString::number(y), font);
+        text->setPos(5, y - 10); // Смещаем текст для выравнивания
+    }
 }
+
+
 
 void MainWindow::on_btnRectangle_clicked()
 {
-    graph->addShape(new Rectangle());
+    // RectangleShape *rect = new RectangleShape(50, 30);
+    // scene->addItem(rect);
+    // rect->setPosition(0, 0); // Устанавливаем в центр координат
+
+    RectangleDialog dialog(this);
+
+    if (dialog.exec() == QDialog::Accepted) {
+        QList<QPointF> coords = dialog.getCoordinates();
+
+        if (coords.size() == 4) {
+            RectangleShape *rect = new RectangleShape(coords);
+            scene->addItem(rect);
+        }
+    }
 }
 
-void MainWindow::on_btnTriangle_clicked()
-{
-    graph->addShape(new Triangle());
-}
 
-
-// Кнопка очистки графика
-void MainWindow::on_btnClear_clicked()
+void MainWindow::on_btnCircle_clicked()
 {
-    graph->clearShapes();
+    CircleDialog dialog(this);
+
+    if (dialog.exec() == QDialog::Accepted) {
+        QPointF center = dialog.getCenter();
+        double radius = dialog.getRadius();
+
+        CircleShape *circle = new CircleShape(center, radius);
+        scene->addItem(circle);
+    }
 }
 
