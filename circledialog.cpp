@@ -1,3 +1,4 @@
+// окно для настройки параметров круга при его создании
 #include "circledialog.h"
 #include "ui_circledialog.h"
 
@@ -25,11 +26,13 @@ void CircleDialog::on_cancelButton_clicked() // Реакция на кнопку
     reject(); // закрыть окно без сохранения параметров
 }
 
+// считать значение координат центра круга
 QPointF CircleDialog::getCenter() const
 {
     return center;
 }
 
+//cчитать значение радиуса круга
 double CircleDialog::getRadius() const
 {
     return radius;

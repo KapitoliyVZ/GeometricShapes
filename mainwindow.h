@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QGraphicsScene>
+#include <QTreeWidgetItem>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,6 +18,7 @@ public:
     ~MainWindow();
 
 private slots:
+    // кнопка добавления прямоугольника
     void on_btnRectangle_clicked();
 
     // кнопка добавления круга
@@ -31,8 +33,9 @@ protected:
 
 private:
     Ui::MainWindow *ui;
-    QGraphicsScene *scene; // Сцена для отображения фигур
-    QList<QGraphicsItem*> shapes; // Список фигур
+    QGraphicsScene *coordinate_scene; // Сцена для отображения фигур
+    QList<QGraphicsItem*> list_of_Shapes; // Список фигур
+    void addShapeToTree(const QString &name, const QPointF &pos, const QString &size, const QColor &color);
 
     void setupScene(); // Метод для настройки сцены
 };

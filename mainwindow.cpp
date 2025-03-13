@@ -4,6 +4,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QGraphicsLineItem>
+#include <QTreeWidgetItem>
+#include <QGraphicsItem>
 
 #include "graphsettings.h"
 #include "rectangle.h"
@@ -28,33 +30,35 @@ MainWindow::~MainWindow()
 // прорисовка сцены (координатной оси)
 void MainWindow::setupScene()
 {
-    scene = new QGraphicsScene(this);
-    ui->graphicsView->setScene(scene);
+    coordinate_scene = new QGraphicsScene(this);
+    coordinate_scene->setBackgroundBrush(Qt::lightGray); // Устанавливаем белый фон
+    ui->graphicsView->setScene(coordinate_scene);
 
-   // GraphSettings::setupScene(scene); // Вызываем настройку графика
+    // GraphSettings::setupScene(scene); // Вызываем настройку графика
 
-    GraphSettings::updateSceneSize(scene, ui->graphicsView);
+    GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
 }
 
-// при изменении размеров окна пользователем
+// прорисовка сцены (координатной оси) при изменении размеров окна пользователем
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
     QMainWindow::resizeEvent(event);
-    GraphSettings::updateSceneSize(scene, ui->graphicsView);
+    GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
 }
 
 // при прокрутке колеса мыши
 void MainWindow::wheelEvent(QWheelEvent *event)
 {
-    // const double scaleFactor = 1.05; // Коэффициент увеличения
+    const double scaleFactor = 1.05; // Коэффициент увеличения
 
-    // if (event->angleDelta().y() > 0) {
-    //     ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
-    // } else {
-    //     ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
-    // }
+    if (event->angleDelta().y() > 0) {
+        ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
+    } else {
+        ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
+    }
 }
 
+// кнопка добавления прямоугольника
 void MainWindow::on_btnRectangle_clicked()
 {
     RectangleDialog dialog(this);
@@ -64,13 +68,13 @@ void MainWindow::on_btnRectangle_clicked()
 
         if (coords.size() == 4) {
             RectangleShape *rect = new RectangleShape(coords);
-            scene->addItem(rect);
-            shapes.append(rect); // Сохраняем в список
+            coordinate_scene->addItem(rect);
+            list_of_Shapes.append(rect); // Сохраняем в список
         }
     }
 }
 
-
+// кнопка добавления круга
 void MainWindow::on_btnCircle_clicked()
 {
     CircleDialog dialog(this);
@@ -80,20 +84,20 @@ void MainWindow::on_btnCircle_clicked()
         double radius = dialog.getRadius();
 
         CircleShape *circle = new CircleShape(center, radius);
-        scene->addItem(circle);
-        shapes.append(circle); // Сохраняем в список
+        coordinate_scene->addItem(circle);
+        list_of_Shapes.append(circle); // Сохраняем в список
     }
 }
 
 // Кнопка очистки графика
 void MainWindow::on_btnClearScene_clicked()
 {
-    for (QGraphicsItem *item : shapes) {
-        scene->removeItem(item);
+    for (QGraphicsItem *item : list_of_Shapes) {
+        coordinate_scene->removeItem(item);
         delete item; // Освобождаем память
     }
 
-    scene->clear(); // Удаляем все элементы из сцены
-    GraphSettings::updateSceneSize(scene, ui->graphicsView);
+    coordinate_scene->clear(); // Удаляем все элементы из сцены
+    GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
 }
 

@@ -21,7 +21,7 @@ public:
     QList<QPointF> getCoordinates() const;
 
 private slots:
-    bool isValidRectangle(const QList<QPointF> &coords);
+    bool isValidRectangle(const QList<QPointF> &coords); // проверка валидности значений координат
     void on_cancelButton_clicked(); // отменить ввод параметров
     void on_applyButton_clicked(); // Применить параметры
 

@@ -6,6 +6,7 @@ void GraphSettings::setupScene(QGraphicsScene *scene, int width, int height)
     if (!scene) return;
 
     scene->clear(); // Очищаем сцену перед настройкой
+    //width = 800, height = 800; // Увеличиваем вдвое
     scene->setSceneRect(-width/2, -height/2, width, height);
 
     // Рисуем координатные оси
@@ -19,20 +20,22 @@ void GraphSettings::setupScene(QGraphicsScene *scene, int width, int height)
     int step = 50;
     QFont font("Arial", 6);
 
-    for (int x = -width/2; x <= width/2; x += step) {
+    for (int x = -width/2; x <= width/2; x += step)
+    {
         if (x == 0) continue;
-        scene->addLine(x, -5, x, 5, axisPen);
+        scene->addLine(x, -2, x, 2, axisPen); // размеры засечек на оси x
 
-        QGraphicsTextItem *text = scene->addText(QString::number(x), font);
+        QGraphicsTextItem *text = scene->addText(QString::number(x), font); // значения делений
         text->setPos(x - 10, 5);
     }
 
-    for (int y = -height/2; y <= height/2; y += step) {
+    for (int y = -height/2; y <= height/2; y += step)
+    {
         if (y == 0) continue;
-        scene->addLine(-5, y, 5, y, axisPen);
+        scene->addLine(-2, y, 2, y, axisPen); // размеры засечек на оси y
 
-    QGraphicsTextItem *text = scene->addText(QString::number(y), font);
-    text->setPos(5, y - 10);
+        QGraphicsTextItem *text = scene->addText(QString::number(y), font); // значения делений
+        text->setPos(5, y - 10);
     }
 }
 

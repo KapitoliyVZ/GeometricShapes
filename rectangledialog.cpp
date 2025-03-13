@@ -15,6 +15,7 @@ RectangleDialog::~RectangleDialog()
     delete ui;
 }
 
+// проверка на допустимость значений для прямоугольника
 bool RectangleDialog::isValidRectangle(const QList<QPointF> &coords)
 {
     if (coords.size() != 4) return false;
