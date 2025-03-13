@@ -1,5 +1,6 @@
 debug/circle.o
 debug/circledialog.o
+debug/graphsettings.o
 debug/main.o
 debug/mainwindow.o
 debug/rectangle.o

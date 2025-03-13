@@ -1,3 +1,5 @@
+// Заголовочный файл для инициализации класса "Круг"
+
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 

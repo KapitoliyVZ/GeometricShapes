@@ -13,7 +13,7 @@ QRectF CircleShape::boundingRect() const
 
 void CircleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    painter->setBrush(Qt::red); // цвет заливки
+    // painter->setBrush(Qt::red); // цвет заливки
     painter->setPen(Qt::black); // цвет контура
     painter->drawEllipse(boundingRect()); // прорисовка фигуры (эллипс)
 }

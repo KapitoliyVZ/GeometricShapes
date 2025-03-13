@@ -75,6 +75,9 @@ public:
 
         retranslateUi(CircleDialog);
 
+        applyButton->setDefault(true);
+
+
         QMetaObject::connectSlotsByName(CircleDialog);
     } // setupUi
 

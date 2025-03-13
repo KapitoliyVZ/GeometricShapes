@@ -1,3 +1,5 @@
+// Заголовочный файл для инициализации диалогового окна задания параметров для прямоугольника
+
 #ifndef RECTANGLEDIALOG_H
 #define RECTANGLEDIALOG_H
 

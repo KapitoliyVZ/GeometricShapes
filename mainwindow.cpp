@@ -1,9 +1,11 @@
 #include <QVBoxLayout>
+#include <QWheelEvent>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QGraphicsLineItem>
 
+#include "graphsettings.h"
 #include "rectangle.h"
 #include "rectangledialog.h"
 #include "circle.h"
@@ -26,50 +28,35 @@ MainWindow::~MainWindow()
 // прорисовка сцены (координатной оси)
 void MainWindow::setupScene()
 {
-    // Создаём сцену и привязываем к QGraphicsView
     scene = new QGraphicsScene(this);
     ui->graphicsView->setScene(scene);
 
-    // Устанавливаем границы области рисования
-    int width = 400, height = 400;
-    scene->setSceneRect(-width/2, -height/2, width, height);
+   // GraphSettings::setupScene(scene); // Вызываем настройку графика
 
-    // Рисуем координатные оси
-    QPen axisPen(Qt::black);
-    axisPen.setWidth(2);
-
-    scene->addLine(-width/2, 0, width/2, 0, axisPen); // Ось X
-    scene->addLine(0, -height/2, 0, height/2, axisPen); // Ось Y
-
-    // Рисуем деления и подписываем координаты
-    int step = 50; // Шаг координатной сетки
-
-    QFont font("Arial", 8);
-    for (int x = -width/2; x <= width/2; x += step) {
-        if (x == 0) continue; // Пропускаем центр
-        scene->addLine(x, -5, x, 5, axisPen); // Засечки на оси X
-
-        QGraphicsTextItem *text = scene->addText(QString::number(x), font);
-        text->setPos(x - 10, 5); // Смещаем текст для выравнивания
-    }
-
-    for (int y = -height/2; y <= height/2; y += step) {
-        if (y == 0) continue; // Пропускаем центр
-        scene->addLine(-5, y, 5, y, axisPen); // Засечки на оси Y
-
-        QGraphicsTextItem *text = scene->addText(QString::number(y), font);
-        text->setPos(5, y - 10); // Смещаем текст для выравнивания
-    }
+    GraphSettings::updateSceneSize(scene, ui->graphicsView);
 }
 
+// при изменении размеров окна пользователем
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    QMainWindow::resizeEvent(event);
+    GraphSettings::updateSceneSize(scene, ui->graphicsView);
+}
 
+// при прокрутке колеса мыши
+void MainWindow::wheelEvent(QWheelEvent *event)
+{
+    // const double scaleFactor = 1.05; // Коэффициент увеличения
+
+    // if (event->angleDelta().y() > 0) {
+    //     ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
+    // } else {
+    //     ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
+    // }
+}
 
 void MainWindow::on_btnRectangle_clicked()
 {
-    // RectangleShape *rect = new RectangleShape(50, 30);
-    // scene->addItem(rect);
-    // rect->setPosition(0, 0); // Устанавливаем в центр координат
-
     RectangleDialog dialog(this);
 
     if (dialog.exec() == QDialog::Accepted) {
@@ -78,6 +65,7 @@ void MainWindow::on_btnRectangle_clicked()
         if (coords.size() == 4) {
             RectangleShape *rect = new RectangleShape(coords);
             scene->addItem(rect);
+            shapes.append(rect); // Сохраняем в список
         }
     }
 }
@@ -93,6 +81,19 @@ void MainWindow::on_btnCircle_clicked()
 
         CircleShape *circle = new CircleShape(center, radius);
         scene->addItem(circle);
+        shapes.append(circle); // Сохраняем в список
     }
+}
+
+// Кнопка очистки графика
+void MainWindow::on_btnClearScene_clicked()
+{
+    for (QGraphicsItem *item : shapes) {
+        scene->removeItem(item);
+        delete item; // Освобождаем память
+    }
+
+    scene->clear(); // Удаляем все элементы из сцены
+    GraphSettings::updateSceneSize(scene, ui->graphicsView);
 }
 

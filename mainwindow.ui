@@ -10,6 +10,9 @@
     <height>639</height>
    </rect>
   </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -53,30 +56,39 @@
      <string>Triangle</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnClear">
+   <widget class="QPushButton" name="btnClearScene">
     <property name="geometry">
      <rect>
       <x>330</x>
       <y>30</y>
-      <width>83</width>
-      <height>29</height>
+      <width>131</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Clear</string>
+     <string>Clear all shapes</string>
     </property>
    </widget>
    <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>10</y>
-      <width>571</width>
-      <height>571</height>
+      <x>510</x>
+      <y>40</y>
+      <width>500</width>
+      <height>500</height>
      </rect>
     </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+    </property>
     <property name="interactive">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -86,7 +98,7 @@
      <x>0</x>
      <y>0</y>
      <width>1055</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

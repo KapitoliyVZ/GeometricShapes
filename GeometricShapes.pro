@@ -12,6 +12,7 @@ CONFIG += c++17
 SOURCES += \
     circle.cpp \
     circledialog.cpp \
+    graphsettings.cpp \
     main.cpp \
     mainwindow.cpp \
     rectangle.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 HEADERS += \
     circle.h \
     circledialog.h \
+    graphsettings.h \
     mainwindow.h \
     rectangle.h \
     rectangledialog.h \

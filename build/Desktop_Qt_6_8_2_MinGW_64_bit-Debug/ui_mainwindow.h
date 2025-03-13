@@ -27,7 +27,7 @@ public:
     QPushButton *btnCircle;
     QPushButton *btnRectangle;
     QPushButton *btnTriangle;
-    QPushButton *btnClear;
+    QPushButton *btnClearScene;
     QGraphicsView *graphicsView;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -37,6 +37,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(1055, 639);
+        MainWindow->setMouseTracking(false);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         btnCircle = new QPushButton(centralwidget);
@@ -48,17 +49,20 @@ public:
         btnTriangle = new QPushButton(centralwidget);
         btnTriangle->setObjectName("btnTriangle");
         btnTriangle->setGeometry(QRect(20, 110, 83, 29));
-        btnClear = new QPushButton(centralwidget);
-        btnClear->setObjectName("btnClear");
-        btnClear->setGeometry(QRect(330, 30, 83, 29));
+        btnClearScene = new QPushButton(centralwidget);
+        btnClearScene->setObjectName("btnClearScene");
+        btnClearScene->setGeometry(QRect(330, 30, 131, 21));
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName("graphicsView");
-        graphicsView->setGeometry(QRect(470, 10, 571, 571));
-        graphicsView->setInteractive(false);
+        graphicsView->setGeometry(QRect(510, 40, 500, 500));
+        graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
+        graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
+        graphicsView->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
+        graphicsView->setInteractive(true);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1055, 21));
+        menubar->setGeometry(QRect(0, 0, 1055, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -75,7 +79,7 @@ public:
         btnCircle->setText(QCoreApplication::translate("MainWindow", "Circle", nullptr));
         btnRectangle->setText(QCoreApplication::translate("MainWindow", "Rectangle", nullptr));
         btnTriangle->setText(QCoreApplication::translate("MainWindow", "Triangle", nullptr));
-        btnClear->setText(QCoreApplication::translate("MainWindow", "Clear", nullptr));
+        btnClearScene->setText(QCoreApplication::translate("MainWindow", "Clear all shapes", nullptr));
     } // retranslateUi
 
 };

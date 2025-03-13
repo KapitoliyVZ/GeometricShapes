@@ -1,5 +1,6 @@
 release/circle.o
 release/circledialog.o
+release/graphsettings.o
 release/main.o
 release/mainwindow.o
 release/rectangle.o
