@@ -1,9 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QVBoxLayout>
+#include <QWheelEvent>
+
 #include <QMainWindow>
-#include <QGraphicsScene>
-#include <QTreeWidgetItem>
+#include <QGraphicsScene>       // библиотека для графической сцены
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

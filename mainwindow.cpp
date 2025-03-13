@@ -1,17 +1,11 @@
-#include <QVBoxLayout>
-#include <QWheelEvent>
-
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QGraphicsLineItem>
-#include <QTreeWidgetItem>
-#include <QGraphicsItem>
 
-#include "graphsettings.h"
-#include "rectangle.h"
-#include "rectangledialog.h"
-#include "circle.h"
-#include "circledialog.h"
+#include "CoordinateSystem.h"
+#include "Rectangle.h"
+#include "RectangleDialog.h"
+#include "Circle.h"
+#include "CircleDialog.h"
 
 
 MainWindow::MainWindow(QWidget *parent)

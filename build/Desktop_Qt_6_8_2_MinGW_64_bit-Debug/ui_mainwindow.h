@@ -76,6 +76,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+#if QT_CONFIG(whatsthis)
+        btnCircle->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Set parametrs and create circle</p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
         btnCircle->setText(QCoreApplication::translate("MainWindow", "Circle", nullptr));
         btnRectangle->setText(QCoreApplication::translate("MainWindow", "Rectangle", nullptr));
         btnTriangle->setText(QCoreApplication::translate("MainWindow", "Triangle", nullptr));
