@@ -9,7 +9,7 @@
 class RectangleShape : public Shape
 {
 public:
-    RectangleShape(const QList<QPointF> &coords);
+    RectangleShape(const QList<QPointF> &coords, const QString& customName = "");
 
     QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;

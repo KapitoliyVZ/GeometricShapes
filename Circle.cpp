@@ -1,7 +1,7 @@
 #include "Circle.h"
 
-CircleShape::CircleShape(QPointF center, double radius)
-    : center(center), radius(radius)
+CircleShape::CircleShape(QPointF center, double radius, const QString& customName)
+    : Shape("Circle", customName), center(center), radius(radius)
 {
     setPos(center);
 }

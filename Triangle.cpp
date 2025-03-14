@@ -1,6 +1,7 @@
 #include "Triangle.h"
 
-TriangleShape::TriangleShape(const QList<QPointF> &coords)
+TriangleShape::TriangleShape(const QList<QPointF> &coords, const QString& customName)
+    : Shape("Triangle", customName)
 {
     if (coords.size() == 3) {
         polygon = QPolygonF(coords);

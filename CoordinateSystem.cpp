@@ -12,7 +12,6 @@ void GraphSettings::setupScene(QGraphicsScene *scene, int width, int height)
     // Рисуем координатные оси
     QPen axisPen(Qt::black);
     axisPen.setWidth(2);
-
     scene->addLine(-width/2, 0, width/2, 0, axisPen); // Ось X
     scene->addLine(0, -height/2, 0, height/2, axisPen); // Ось Y
 

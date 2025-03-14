@@ -1,6 +1,7 @@
 #include "Rectangle.h"
 
-RectangleShape::RectangleShape(const QList<QPointF> &coords)
+RectangleShape::RectangleShape(const QList<QPointF> &coords, const QString& customName)
+    : Shape("Rectangle", customName)
 {
     if (coords.size() == 4) {
         polygon = QPolygonF(coords);

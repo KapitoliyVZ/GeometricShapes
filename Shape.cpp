@@ -1,16 +1,42 @@
 #include "Shape.h"
 
-Shape::Shape()
+// Инициализация счётчика
+int Shape::shapeCounter = 0;
+
+// Конструктор
+Shape::Shape(const QString& type, const QString& customName)
+    : id(QUuid::createUuid())
 {
-    setFlags(QGraphicsItem::ItemIsMovable | QGraphicsItem::ItemIsSelectable);
+    // Если имя передано пользователем, используем его
+    if (!customName.isEmpty())
+    {
+        name = customName;
+    }
+    else
+    {
+        // Генерация имени автоматически
+        ++shapeCounter;
+        name = QString("%1_%2").arg(type).arg(shapeCounter);
+    }
 }
 
-void Shape::setPosition(int x, int y)
+// Геттер имени
+QString Shape::getName() const
 {
-    setPos(x, y);
+    return name;
 }
 
-void Shape::setRotationAngle(int angle)
+// Геттер ID
+QUuid Shape::getId() const
 {
-    setRotation(angle);
+    return id;
+}
+
+// Сеттер имени (для возможности изменения имени позже)
+void Shape::setName(const QString& newName)
+{
+    if (!newName.isEmpty())
+    {
+        name = newName;
+    }
 }

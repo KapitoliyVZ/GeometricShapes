@@ -7,7 +7,7 @@
 class TriangleShape : public Shape
 {
 public:
-    TriangleShape(const QList<QPointF> &coords);
+    TriangleShape(const QList<QPointF> &coords, const QString& customName = "");
     QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
