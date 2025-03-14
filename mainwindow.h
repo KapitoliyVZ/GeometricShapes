@@ -29,6 +29,8 @@ private slots:
     // кнопка очистки графика
     void on_btnClearScene_clicked();
 
+    void on_btnTriangle_clicked();
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;

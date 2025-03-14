@@ -6,6 +6,8 @@
 #include "RectangleDialog.h"
 #include "Circle.h"
 #include "CircleDialog.h"
+#include <Triangle.h>
+#include <TriangleDialog.h>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -93,5 +95,21 @@ void MainWindow::on_btnClearScene_clicked()
 
     coordinate_scene->clear(); // Удаляем все элементы из сцены
     GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
+}
+
+
+void MainWindow::on_btnTriangle_clicked()
+{
+    TriangleDialog dialog(this);
+
+    if (dialog.exec() == QDialog::Accepted) {
+        QList<QPointF> coords = dialog.getCoordinates();
+
+        if (coords.size() == 3) {
+            TriangleShape *rect = new TriangleShape(coords);
+            coordinate_scene->addItem(rect);
+            list_of_Shapes.append(rect); // Сохраняем в список
+        }
+    }
 }
 

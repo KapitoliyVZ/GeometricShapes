@@ -16,6 +16,8 @@ SOURCES += \
     Rectangle.cpp \
     RectangleDialog.cpp \
     Shape.cpp \
+    Triangle.cpp \
+    TriangleDialog.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -26,11 +28,14 @@ HEADERS += \
     Rectangle.h \
     RectangleDialog.h \
     Shape.h \
+    Triangle.h \
+    TriangleDialog.h \
     mainwindow.h
 
 FORMS += \
     CircleDialog.ui \
     RectangleDialog.ui \
+    TriangleDialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.
