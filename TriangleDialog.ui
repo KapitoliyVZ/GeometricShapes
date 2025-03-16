@@ -16,9 +16,9 @@
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>108</x>
+     <x>66</x>
      <y>60</y>
-     <width>169</width>
+     <width>281</width>
      <height>122</height>
     </rect>
    </property>
@@ -48,7 +48,7 @@
        <number>500</number>
       </property>
       <property name="value">
-       <number>100</number>
+       <number>0</number>
       </property>
      </widget>
     </item>
@@ -77,7 +77,7 @@
        <number>500</number>
       </property>
       <property name="value">
-       <number>100</number>
+       <number>0</number>
       </property>
      </widget>
     </item>
@@ -123,7 +123,7 @@
        <number>500</number>
       </property>
       <property name="value">
-       <number>-100</number>
+       <number>0</number>
       </property>
      </widget>
     </item>

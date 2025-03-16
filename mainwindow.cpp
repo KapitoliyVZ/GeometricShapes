@@ -63,9 +63,10 @@ void MainWindow::on_btnRectangle_clicked()
         QList<QPointF> coords = dialog.getCoordinates();
 
         if (coords.size() == 4) {
-            RectangleShape *rect = new RectangleShape(coords);
-            coordinate_scene->addItem(rect);
-            list_of_Shapes.append(rect); // Сохраняем в список
+            RectangleShape *rectangle = new RectangleShape(coords);
+            coordinate_scene->addItem(rectangle);
+            list_of_Shapes.append(rectangle); // Сохраняем в список
+            updateShapeList(); // Обновляем виджет с именами
         }
     }
 }
@@ -82,6 +83,22 @@ void MainWindow::on_btnCircle_clicked()
         CircleShape *circle = new CircleShape(center, radius);
         coordinate_scene->addItem(circle);
         list_of_Shapes.append(circle); // Сохраняем в список
+        updateShapeList(); // Обновляем виджет с именами
+    }
+}
+void MainWindow::on_btnTriangle_clicked()
+{
+    TriangleDialog dialog(this);
+
+    if (dialog.exec() == QDialog::Accepted) {
+        QList<QPointF> coords = dialog.getCoordinates();
+
+        if (coords.size() == 3) {
+            TriangleShape *triangle = new TriangleShape(coords);
+            coordinate_scene->addItem(triangle);
+            list_of_Shapes.append(triangle); // Сохраняем в список
+            updateShapeList(); // Обновляем виджет с именами
+        }
     }
 }
 
@@ -97,19 +114,22 @@ void MainWindow::on_btnClearScene_clicked()
     GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
 }
 
-
-void MainWindow::on_btnTriangle_clicked()
+void MainWindow::updateShapeList()
 {
-    TriangleDialog dialog(this);
+    // Очищаем виджет перед обновлением
+    ui->listWidgetShapes->clear();
 
-    if (dialog.exec() == QDialog::Accepted) {
-        QList<QPointF> coords = dialog.getCoordinates();
-
-        if (coords.size() == 3) {
-            TriangleShape *rect = new TriangleShape(coords);
-            coordinate_scene->addItem(rect);
-            list_of_Shapes.append(rect); // Сохраняем в список
+    // Проходим по всем фигурам в списке
+    for (auto* item : list_of_Shapes)
+    {
+        // Приводим QGraphicsItem к классу Shape
+        auto* shape = dynamic_cast<Shape*>(item);
+        if (shape)
+        {
+            // Добавляем имя в QListWidget
+            ui->listWidgetShapes->addItem(shape->getName());
         }
     }
 }
+
 

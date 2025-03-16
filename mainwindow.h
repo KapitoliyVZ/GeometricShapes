@@ -6,6 +6,8 @@
 
 #include <QMainWindow>
 #include <QGraphicsScene>       // библиотека для графической сцены
+#include <QGraphicsItem>
+#include <QListWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -42,6 +44,8 @@ private:
     void addShapeToTree(const QString &name, const QPointF &pos, const QString &size, const QColor &color);
 
     void setupScene(); // Метод для настройки сцены
+
+    void updateShapeList();
 };
 
 #endif // MAINWINDOW_H
