@@ -40,7 +40,7 @@ public:
         TriangleDialog->resize(400, 300);
         formLayoutWidget = new QWidget(TriangleDialog);
         formLayoutWidget->setObjectName("formLayoutWidget");
-        formLayoutWidget->setGeometry(QRect(108, 60, 169, 122));
+        formLayoutWidget->setGeometry(QRect(66, 60, 281, 122));
         gridLayout = new QGridLayout(formLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -55,7 +55,7 @@ public:
         y1->setObjectName("y1");
         y1->setMinimum(-500);
         y1->setMaximum(500);
-        y1->setValue(100);
+        y1->setValue(0);
 
         gridLayout->addWidget(y1, 0, 1, 1, 1);
 
@@ -70,7 +70,7 @@ public:
         x3->setObjectName("x3");
         x3->setMinimum(-500);
         x3->setMaximum(500);
-        x3->setValue(100);
+        x3->setValue(0);
 
         gridLayout->addWidget(x3, 2, 0, 1, 1);
 
@@ -96,7 +96,7 @@ public:
         x2->setObjectName("x2");
         x2->setMinimum(-500);
         x2->setMaximum(500);
-        x2->setValue(-100);
+        x2->setValue(0);
 
         gridLayout->addWidget(x2, 1, 0, 1, 1);
 

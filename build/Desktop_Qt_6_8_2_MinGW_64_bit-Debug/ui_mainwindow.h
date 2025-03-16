@@ -69,7 +69,7 @@ public:
         listWidgetShapes->setGeometry(QRect(170, 230, 256, 192));
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(200, 260, 160, 80));
+        verticalLayoutWidget->setGeometry(QRect(200, 260, 201, 81));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);

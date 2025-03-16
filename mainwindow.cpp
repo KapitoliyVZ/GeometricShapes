@@ -79,8 +79,9 @@ void MainWindow::on_btnCircle_clicked()
     if (dialog.exec() == QDialog::Accepted) {
         QPointF center = dialog.getCenter();
         double radius = dialog.getRadius();
+        QString name = dialog.getCircleName();
 
-        CircleShape *circle = new CircleShape(center, radius);
+        CircleShape *circle = new CircleShape(center, radius, name);
         coordinate_scene->addItem(circle);
         list_of_Shapes.append(circle); // Сохраняем в список
         updateShapeList(); // Обновляем виджет с именами
@@ -109,7 +110,7 @@ void MainWindow::on_btnClearScene_clicked()
         coordinate_scene->removeItem(item);
         delete item; // Освобождаем память
     }
-
+    updateShapeList(); // Обновляем виджет с именами
     coordinate_scene->clear(); // Удаляем все элементы из сцены
     GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
 }

@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'circledialog.ui'
+** Form generated from reading UI file 'CircleDialog.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.8.2
 **
@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QWidget>
@@ -29,6 +30,7 @@ public:
     QSpinBox *xCenter;
     QPushButton *cancelButton;
     QPushButton *applyButton;
+    QLineEdit *LineCircleName;
 
     void setupUi(QDialog *CircleDialog)
     {
@@ -71,6 +73,11 @@ public:
         applyButton->setObjectName("applyButton");
 
         gridLayout->addWidget(applyButton, 1, 2, 1, 1);
+
+        LineCircleName = new QLineEdit(gridLayoutWidget);
+        LineCircleName->setObjectName("LineCircleName");
+
+        gridLayout->addWidget(LineCircleName, 1, 1, 1, 1);
 
 
         retranslateUi(CircleDialog);
