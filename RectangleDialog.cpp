@@ -33,12 +33,13 @@ bool RectangleDialog::isValidRectangle(const QList<QPointF> &coords)
     return (d1 == d3 && d2 == d4 && diag1 == diag2);
 }
 
+// Реакция на кнопку Cancel
 void RectangleDialog::on_cancelButton_clicked()
 {
     reject(); // Закрываем диалог с результатом "Отмена"
 }
 
-
+// Реакция на кнопку Apply
 void RectangleDialog::on_applyButton_clicked()
 {
 
@@ -48,6 +49,7 @@ void RectangleDialog::on_applyButton_clicked()
     coordinates.append(QPointF(ui->x2->value(), ui->y2->value()));
     coordinates.append(QPointF(ui->x3->value(), ui->y3->value()));
     coordinates.append(QPointF(ui->x4->value(), ui->y4->value()));
+    nameUser = ui->LineCircleName->text();
 
     if (!isValidRectangle(coordinates)) {
         QMessageBox::warning(this, "Ошибка", "Точки не формируют прямоугольник!");
@@ -57,7 +59,13 @@ void RectangleDialog::on_applyButton_clicked()
     accept(); // Закрываем диалог с результатом "Принять
 }
 
+// Считать координаты
 QList<QPointF> RectangleDialog::getCoordinates() const
 {
     return coordinates;
+}
+
+QString RectangleDialog::getRectangleName() const
+{
+    return nameUser;
 }

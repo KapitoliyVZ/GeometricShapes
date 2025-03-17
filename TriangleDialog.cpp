@@ -13,12 +13,13 @@ TriangleDialog::~TriangleDialog()
     delete ui;
 }
 
+// Реакция на кнопку Cancel
 void TriangleDialog::on_cancelButton_clicked()
 {
     reject(); // Закрываем диалог с результатом "Отмена"
 }
 
-
+// Реакция на кнопку Apply
 void TriangleDialog::on_applyButton_clicked()
 {
     // Получаем координаты из полей ввода
@@ -27,12 +28,18 @@ void TriangleDialog::on_applyButton_clicked()
     coordinates.append(QPointF(ui->x2->value(), ui->y2->value()));
     coordinates.append(QPointF(ui->x3->value(), ui->y3->value()));
 
-    accept(); // Закрываем диалог с результатом "Принять
+    nameUser = ui->LineTriangleName->text(); // запись имени
+    accept(); // Закрываем диалог с результатом "Apply"
 }
 
+// Считать коодинаты треугольника
 QList<QPointF> TriangleDialog::getCoordinates() const
 {
     return coordinates;
 }
 
-
+// считать имя
+QString TriangleDialog::getTriangleName() const
+{
+    return nameUser;
+}

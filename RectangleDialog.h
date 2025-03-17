@@ -19,6 +19,7 @@ public:
 
     // Получаем координаты от пользователя
     QList<QPointF> getCoordinates() const;
+    QString getRectangleName() const;
 
 private slots:
     bool isValidRectangle(const QList<QPointF> &coords); // проверка валидности значений координат
@@ -27,7 +28,8 @@ private slots:
 
 private:
     Ui::RectangleDialog *ui;
-    QList<QPointF> coordinates;
+    QList<QPointF> coordinates; // заданные координаты
+    QString nameUser; // заданное имя
 };
 
 #endif // RECTANGLEDIALOG_H

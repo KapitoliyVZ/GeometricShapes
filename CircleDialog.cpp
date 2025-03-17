@@ -14,7 +14,8 @@ CircleDialog::~CircleDialog()
     delete ui;
 }
 
-void CircleDialog::on_applyButton_clicked() // Реакция на кнопку Apply
+// Реакция на кнопку Apply
+void CircleDialog::on_applyButton_clicked()
 {
     center = QPointF(ui->xCenter->value(), ui->yCenter->value());   // запись координат центра круга
     radius = ui->radius->value();                                   // запись радиуса круга
@@ -22,7 +23,8 @@ void CircleDialog::on_applyButton_clicked() // Реакция на кнопку 
     accept();                                                       // сохранение параметров и закрытие окна
 }
 
-void CircleDialog::on_cancelButton_clicked() // Реакция на кнопку Cancel
+// Реакция на кнопку Cancel
+void CircleDialog::on_cancelButton_clicked()
 {
     reject(); // закрыть окно без сохранения параметров
 }
@@ -33,12 +35,13 @@ QPointF CircleDialog::getCenter() const
     return center;
 }
 
-//cчитать значение радиуса круга
+// cчитать значение радиуса круга
 double CircleDialog::getRadius() const
 {
     return radius;
 }
 
+// считать имя
 QString CircleDialog::getCircleName() const
 {
     return nameUser;

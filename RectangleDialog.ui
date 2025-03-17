@@ -6,46 +6,52 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>322</width>
-    <height>213</height>
+    <width>656</width>
+    <height>414</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="gridLayoutWidget">
+  <widget class="QWidget" name="gridLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>301</width>
-     <height>191</height>
+     <x>120</x>
+     <y>120</y>
+     <width>337</width>
+     <height>122</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="1">
-     <widget class="QSpinBox" name="y2">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QSpinBox" name="x1">
       <property name="prefix">
-       <string>y2 = </string>
+       <string>x1 = </string>
       </property>
       <property name="minimum">
        <number>-500</number>
       </property>
       <property name="maximum">
        <number>500</number>
+      </property>
+      <property name="value">
+       <number>10</number>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QSpinBox" name="x2">
+    <item row="0" column="2">
+     <widget class="QSpinBox" name="x3">
       <property name="prefix">
-       <string>x2 =</string>
+       <string>x3 = </string>
       </property>
       <property name="minimum">
        <number>-500</number>
       </property>
       <property name="maximum">
        <number>500</number>
+      </property>
+      <property name="value">
+       <number>40</number>
       </property>
      </widget>
     </item>
@@ -60,35 +66,12 @@
       <property name="maximum">
        <number>500</number>
       </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QSpinBox" name="x3">
-      <property name="prefix">
-       <string>x3 = </string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
+      <property name="value">
+       <number>10</number>
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QSpinBox" name="y3">
-      <property name="prefix">
-       <string>y3 = </string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
+    <item row="1" column="2">
      <widget class="QSpinBox" name="x4">
       <property name="prefix">
        <string>x4 =</string>
@@ -99,9 +82,28 @@
       <property name="maximum">
        <number>500</number>
       </property>
+      <property name="value">
+       <number>10</number>
+      </property>
      </widget>
     </item>
-    <item row="3" column="1">
+    <item row="0" column="3">
+     <widget class="QSpinBox" name="y3">
+      <property name="prefix">
+       <string>y3 = </string>
+      </property>
+      <property name="minimum">
+       <number>-500</number>
+      </property>
+      <property name="maximum">
+       <number>500</number>
+      </property>
+      <property name="value">
+       <number>30</number>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
      <widget class="QSpinBox" name="y4">
       <property name="prefix">
        <string>y4 = </string>
@@ -112,12 +114,15 @@
       <property name="maximum">
        <number>500</number>
       </property>
+      <property name="value">
+       <number>30</number>
+      </property>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QSpinBox" name="x1">
+    <item row="1" column="1">
+     <widget class="QSpinBox" name="y2">
       <property name="prefix">
-       <string>x1 = </string>
+       <string>y2 = </string>
       </property>
       <property name="minimum">
        <number>-500</number>
@@ -125,21 +130,43 @@
       <property name="maximum">
        <number>500</number>
       </property>
+      <property name="value">
+       <number>10</number>
+      </property>
      </widget>
     </item>
-    <item row="4" column="1">
+    <item row="1" column="0">
+     <widget class="QSpinBox" name="x2">
+      <property name="prefix">
+       <string>x2 =</string>
+      </property>
+      <property name="minimum">
+       <number>-500</number>
+      </property>
+      <property name="maximum">
+       <number>500</number>
+      </property>
+      <property name="value">
+       <number>40</number>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
      <widget class="QPushButton" name="applyButton">
       <property name="text">
        <string>Apply</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
+    <item row="3" column="0">
      <widget class="QPushButton" name="cancelButton">
       <property name="text">
        <string>Cancel</string>
       </property>
      </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLineEdit" name="LineCircleName"/>
     </item>
    </layout>
   </widget>

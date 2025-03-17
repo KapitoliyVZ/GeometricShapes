@@ -18,6 +18,9 @@ Shape::Shape(const QString& type, const QString& customName)
         ++shapeCounter;
         name = QString("%1_%2").arg(type).arg(shapeCounter);
     }
+
+    // Включаем флаги для выделения
+    setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 }
 
 // Геттер имени

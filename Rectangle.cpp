@@ -18,7 +18,16 @@ void RectangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, 
 {
     if (polygon.isEmpty()) return;
 
+    // Если фигура выделена
+    if (isSelected())
+    {
+        painter->setPen(Qt::red); // цвет контура - красный
+    }
+    else
+    {
+        painter->setPen(Qt::black); // цвет контура - черный
+    }
+
     // painter->setBrush(Qt::blue); // цвет заливки
-    painter->setPen(Qt::white);     // цвет контура
     painter->drawPolygon(polygon);  // прорисовка фигуры
 }

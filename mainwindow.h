@@ -33,6 +33,10 @@ private slots:
 
     void on_btnTriangle_clicked();
 
+    // void onShapeSelected(QListWidgetItem* item); // Слот для выделения фигуры
+
+    void on_listWidgetShapes_itemClicked(QListWidgetItem *item);
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;
@@ -41,8 +45,7 @@ private:
     Ui::MainWindow *ui;
     QGraphicsScene *coordinate_scene; // Сцена для отображения фигур
     QList<QGraphicsItem*> list_of_Shapes; // Список фигур
-    void addShapeToTree(const QString &name, const QPointF &pos, const QString &size, const QColor &color);
-
+;
     void setupScene(); // Метод для настройки сцены
 
     void updateShapeList();

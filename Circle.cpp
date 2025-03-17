@@ -1,4 +1,5 @@
 #include "Circle.h"
+#include "qstyle.h"
 
 CircleShape::CircleShape(QPointF center, double radius, const QString& customName)
     : Shape("Circle", customName), center(center), radius(radius)
@@ -13,7 +14,19 @@ QRectF CircleShape::boundingRect() const
 
 void CircleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
+
+    // qDebug() << "Рисуется круг: " << getName() << ", выделена: " << isSelected();
+
+    // Если фигура выделена
+    if (isSelected())
+    {
+        painter->setPen(Qt::red); // цвет контура - красный
+    }
+    else
+    {
+        painter->setPen(Qt::black); // цвет контура - черный
+    }
+
     // painter->setBrush(Qt::red); // цвет заливки
-    painter->setPen(Qt::black); // цвет контура
     painter->drawEllipse(boundingRect()); // прорисовка фигуры (эллипс)
 }
