@@ -47,8 +47,8 @@ private:
     QList<QGraphicsItem*> list_of_Shapes; // Список фигур
 ;
     void setupScene(); // Метод для настройки сцены
-
     void updateShapeList();
+    bool isShapeNameUnique(const QString& name);
 };
 
 #endif // MAINWINDOW_H

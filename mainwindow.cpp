@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QMessageBox>
 
 #include "CoordinateSystem.h"
 #include "Rectangle.h"
@@ -70,7 +71,12 @@ void MainWindow::on_btnRectangle_clicked()
     if (dialog.exec() == QDialog::Accepted) {
         QList<QPointF> coords = dialog.getCoordinates();
         QString name = dialog.getRectangleName();
-
+        // Проверяем уникальность имени
+        if (!isShapeNameUnique(name))
+        {
+            QMessageBox::warning(this, "Ошибка", "Фигура с таким именем уже существует!");
+            return;
+        }
         if (coords.size() == 4) {
             RectangleShape *rectangle = new RectangleShape(coords, name);
             coordinate_scene->addItem(rectangle);
@@ -89,6 +95,13 @@ void MainWindow::on_btnCircle_clicked()
         double radius = dialog.getRadius();
         QString name = dialog.getCircleName();
 
+        // Проверяем уникальность имени
+        if (!isShapeNameUnique(name))
+        {
+            QMessageBox::warning(this, "Ошибка", "Фигура с таким именем уже существует!");
+            return;
+        }
+
         CircleShape *circle = new CircleShape(center, radius, name);
         coordinate_scene->addItem(circle);
         list_of_Shapes.append(circle); // Сохраняем в список
@@ -104,6 +117,13 @@ void MainWindow::on_btnTriangle_clicked()
         QList<QPointF> coords = dialog.getCoordinates();
         QString name = dialog.getTriangleName();
 
+        // Проверяем уникальность имени
+        if (!isShapeNameUnique(name))
+        {
+            QMessageBox::warning(this, "Ошибка", "Фигура с таким именем уже существует!");
+            return;
+        }
+
         if (coords.size() == 3) {
             TriangleShape *triangle = new TriangleShape(coords, name);
             coordinate_scene->addItem(triangle);
@@ -112,6 +132,21 @@ void MainWindow::on_btnTriangle_clicked()
         }
     }
 }
+
+// проверка наличия введенного имени
+bool MainWindow::isShapeNameUnique(const QString& name)
+{
+    for (auto* item : list_of_Shapes)
+    {
+        auto* shape = dynamic_cast<Shape*>(item);
+        if (shape && shape->getName() == name)
+        {
+            return false;  // Данное имя имеется
+        }
+    }
+    return true;  // Имя уникальное
+}
+
 
 // Кнопка очистки графика
 void MainWindow::on_btnClearScene_clicked()
@@ -123,6 +158,26 @@ void MainWindow::on_btnClearScene_clicked()
     // updateShapeList(); // Обновляем виджет с именами
     // coordinate_scene->clear(); // Удаляем все элементы из сцены
     // GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
+
+    qDebug() << "Удаляем все фигуры...";
+
+    // Удаляем все фигуры со сцены
+    for (auto* item : list_of_Shapes)
+    {
+        coordinate_scene->removeItem(item);  // Удаляем из `QGraphicsScene`
+        delete item;                         // Освобождаем память
+    }
+
+    // Очищаем список фигур
+    list_of_Shapes.clear();
+
+    // Очищаем `QListWidget`
+    ui->listWidgetShapes->clear();
+
+    // Обновляем сцену
+    coordinate_scene->update();
+
+    qDebug() << "Все фигуры удалены!";
 }
 
 // обновление списка фигур
