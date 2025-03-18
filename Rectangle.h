@@ -1,4 +1,4 @@
-// Заголовочный файл для инициализации класса "Круг"
+// Заголовочный файл для инициализации класса "Прямоугольник"
 
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
@@ -9,13 +9,16 @@
 class RectangleShape : public Shape
 {
 public:
+    // Конструктор-1 для параметров по 4 координтам
     RectangleShape(const QList<QPointF> &coords, const QString& customName = "");
+
+    // Конструктор-2 для параметров по начальной точке и 2 сторонам
+    RectangleShape(const QPointF &startPoint, double width, double height, const QString& customName = "");
 
     QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
 private:
-    //QList<QPointF> points;
     QPolygonF polygon;
 };
 

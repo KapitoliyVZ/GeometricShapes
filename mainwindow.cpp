@@ -71,18 +71,37 @@ void MainWindow::on_btnRectangle_clicked()
     if (dialog.exec() == QDialog::Accepted) {
         QList<QPointF> coords = dialog.getCoordinates();
         QString name = dialog.getRectangleName();
+
         // Проверяем уникальность имени
         if (!isShapeNameUnique(name))
         {
             QMessageBox::warning(this, "Ошибка", "Фигура с таким именем уже существует!");
             return;
         }
-        if (coords.size() == 4) {
-            RectangleShape *rectangle = new RectangleShape(coords, name);
-            coordinate_scene->addItem(rectangle);
-            list_of_Shapes.append(rectangle); // Сохраняем в список
-            updateShapeList(); // Обновляем виджет с именами
+        // Построение по 4 координатам
+        if (dialog.isCoordMode())
+        {
+            if (coords.size() == 4) {
+                RectangleShape *rectangle = new RectangleShape(coords, name);
+                coordinate_scene->addItem(rectangle);
+                list_of_Shapes.append(rectangle);   // Сохраняем в список
+                updateShapeList();                  // Обновляем виджет с именами
+            }
         }
+        // Построение по стартовой точке и размерам
+        else if (dialog.isSizeMode())
+        {
+            QPointF startPoint = dialog.getStartPoint();
+            double width = dialog.getWidth();
+            double height = dialog.getHeight();
+
+            RectangleShape *rectangle = new RectangleShape(startPoint, width, height, name);
+            coordinate_scene->addItem(rectangle);
+            list_of_Shapes.append(rectangle);   // Сохраняем в список
+            updateShapeList();                  // Обновляем виджет с именами
+        }
+
+
     }
 }
 // кнопка добавления круга

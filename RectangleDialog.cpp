@@ -8,6 +8,10 @@ RectangleDialog::RectangleDialog(QWidget *parent)
     , ui(new Ui::RectangleDialog)
 {
     ui->setupUi(this);
+
+    connect(ui->radioSetCoord, &QRadioButton::toggled, this, &RectangleDialog::onRadioTypeEnter);
+    connect(ui->radioSetSides, &QRadioButton::toggled, this, &RectangleDialog::onRadioTypeEnter);
+
 }
 
 RectangleDialog::~RectangleDialog()
@@ -65,7 +69,77 @@ QList<QPointF> RectangleDialog::getCoordinates() const
     return coordinates;
 }
 
+// Считать имя
 QString RectangleDialog::getRectangleName() const
 {
     return nameUser;
+}
+
+// функция для выбора параметров ввода
+void RectangleDialog::onRadioTypeEnter()
+{
+    if(ui->radioSetCoord->isChecked())
+    {
+        ui->x1->setEnabled(true);
+        ui->x2->setEnabled(true);
+        ui->x3->setEnabled(true);
+        ui->x4->setEnabled(true);
+        ui->y1->setEnabled(true);
+        ui->y2->setEnabled(true);
+        ui->y3->setEnabled(true);
+        ui->y4->setEnabled(true);
+
+        ui->startPointX->setEnabled(false);
+        ui->startPointY->setEnabled(false);
+        ui->width->setEnabled(false);
+        ui->height->setEnabled(false);
+    }
+    else if (ui->radioSetSides->isChecked())
+    {
+        ui->x1->setEnabled(false);
+        ui->x2->setEnabled(false);
+        ui->x3->setEnabled(false);
+        ui->x4->setEnabled(false);
+        ui->y1->setEnabled(false);
+        ui->y2->setEnabled(false);
+        ui->y3->setEnabled(false);
+        ui->y4->setEnabled(false);
+
+        ui->startPointX->setEnabled(true);
+        ui->startPointY->setEnabled(true);
+        ui->width->setEnabled(true);
+        ui->height->setEnabled(true);
+    }
+}
+
+// Проверяем, выбран ли режим "По двум точкам"
+bool RectangleDialog::isCoordMode() const
+{
+    return ui->radioSetCoord->isChecked();
+}
+
+// Проверяем, выбран ли режим "По стартовой точке и размерам"
+bool RectangleDialog::isSizeMode() const
+{
+    return ui->radioSetSides->isChecked();
+}
+
+// Получаем начальную точку
+QPointF RectangleDialog::getStartPoint() const
+{
+    double x = ui->startPointX->value();
+    double y = ui->startPointY->value();
+    return QPointF(x, y);
+}
+
+// Получаем ширину
+double RectangleDialog::getWidth() const
+{
+    return ui->width->value();
+}
+
+// Получаем высоту
+double RectangleDialog::getHeight() const
+{
+    return ui->height->value();
 }

@@ -56,14 +56,14 @@ public:
         btnClearScene->setGeometry(QRect(330, 30, 131, 21));
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName("graphicsView");
-        graphicsView->setGeometry(QRect(510, 40, 500, 500));
+        graphicsView->setGeometry(QRect(520, 40, 500, 500));
         graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
         graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
         graphicsView->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
         graphicsView->setInteractive(true);
         listWidgetShapes = new QListWidget(centralwidget);
         listWidgetShapes->setObjectName("listWidgetShapes");
-        listWidgetShapes->setGeometry(QRect(170, 230, 256, 192));
+        listWidgetShapes->setGeometry(QRect(20, 190, 151, 271));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

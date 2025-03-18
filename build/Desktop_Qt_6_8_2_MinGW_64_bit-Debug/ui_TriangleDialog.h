@@ -39,10 +39,10 @@ public:
     {
         if (TriangleDialog->objectName().isEmpty())
             TriangleDialog->setObjectName("TriangleDialog");
-        TriangleDialog->resize(400, 300);
+        TriangleDialog->resize(604, 350);
         formLayoutWidget = new QWidget(TriangleDialog);
         formLayoutWidget->setObjectName("formLayoutWidget");
-        formLayoutWidget->setGeometry(QRect(66, 60, 281, 122));
+        formLayoutWidget->setGeometry(QRect(66, 60, 301, 122));
         gridLayout = new QGridLayout(formLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
