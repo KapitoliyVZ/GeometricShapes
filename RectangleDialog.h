@@ -41,6 +41,8 @@ private:
     Ui::RectangleDialog *ui;
     QList<QPointF> coordinates; // заданные координаты
     QString nameUser; // заданное имя
+
+    QButtonGroup* shapeModeGroup;  // Группа для радиокнопок
 };
 
 #endif // RECTANGLEDIALOG_H

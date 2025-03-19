@@ -9,9 +9,19 @@ RectangleDialog::RectangleDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
+    // группа для `QRadioButton`
+    shapeModeGroup = new QButtonGroup(this);
+    shapeModeGroup->addButton(ui->radioSetCoord);
+    shapeModeGroup->addButton(ui->radioSetSides);
+
+    // Устанавливаем `radioSetCoord` включённым по умолчанию
+    ui->radioSetCoord->setChecked(true);
+
     connect(ui->radioSetCoord, &QRadioButton::toggled, this, &RectangleDialog::onRadioTypeEnter);
     connect(ui->radioSetSides, &QRadioButton::toggled, this, &RectangleDialog::onRadioTypeEnter);
 
+    // Вызываем `onRadioTypeEnter()` сразу при запуске, чтобы ввод другого режима был недоступен
+    onRadioTypeEnter();
 }
 
 RectangleDialog::~RectangleDialog()
@@ -46,7 +56,6 @@ void RectangleDialog::on_cancelButton_clicked()
 // Реакция на кнопку Apply
 void RectangleDialog::on_applyButton_clicked()
 {
-
     // Получаем координаты из полей ввода
     coordinates.clear();
     coordinates.append(QPointF(ui->x1->value(), ui->y1->value()));
