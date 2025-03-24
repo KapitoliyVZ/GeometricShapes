@@ -9,6 +9,12 @@
 #include <QGraphicsItem>
 #include <QListWidget>
 
+#include <Shape.h>
+#include <Circle.h>
+#include <Rectangle.h>
+#include <Triangle.h>
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -28,13 +34,13 @@ private slots:
     // кнопка добавления круга
     void on_btnCircle_clicked();
 
+    // кнопка добавления треугольника
+    void on_btnTriangle_clicked();
+
     // кнопка очистки графика
     void on_btnClearScene_clicked();
 
-    void on_btnTriangle_clicked();
-
-    // void onShapeSelected(QListWidgetItem* item); // Слот для выделения фигуры
-
+    // Нажатие на фигуру в списке
     void on_listWidgetShapes_itemClicked(QListWidgetItem *item);
 
 protected:
@@ -45,10 +51,20 @@ private:
     Ui::MainWindow *ui;
     QGraphicsScene *coordinate_scene; // Сцена для отображения фигур
     QList<QGraphicsItem*> list_of_Shapes; // Список фигур
-;
+
+    Shape* selectedShape = nullptr;  // Указатель на выбранную фигуру
+
     void setupScene(); // Метод для настройки сцены
-    void updateShapeList();
-    bool isShapeNameUnique(const QString& name);
+    void updateShapeList(); // обновление сцены
+    bool isShapeNameUnique(const QString& name);// проверка наличия имени фигуры в списке
+
+    void setWidgetPropertiesShape(Shape* selectedShape);
+    void onRadiusChanged(int newRadius);
+
+    void onApplyCircleChangesClicked();     // Применить новые координаты треугольника
+    void onApplyTriangleChangesClicked();   // Применить новые координаты треугольника
+
+
 };
 
 #endif // MAINWINDOW_H

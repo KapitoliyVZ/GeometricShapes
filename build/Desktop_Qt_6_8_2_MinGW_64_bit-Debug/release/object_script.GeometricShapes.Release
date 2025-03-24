@@ -1,6 +1,7 @@
 release/Circle.o
 release/CircleDialog.o
 release/CoordinateSystem.o
+release/PropertiesShape.o
 release/Rectangle.o
 release/RectangleDialog.o
 release/Shape.o

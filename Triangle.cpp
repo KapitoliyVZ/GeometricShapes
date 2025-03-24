@@ -31,3 +31,19 @@ void TriangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, Q
     // painter->setBrush(Qt::blue); // цвет заливки
     painter->drawPolygon(polygon);  // прорисовка фигуры
 }
+
+// получение текущих координат
+QVector<QPointF> TriangleShape::getPoints() const
+{
+    return polygon.toVector();
+}
+
+// задать новые координаты
+void TriangleShape::setNewPoints(const QVector<QPointF>& newPoints)
+{
+    if (newPoints.size() == 3)
+    {
+        polygon = QPolygonF(newPoints);  // Обновляем координаты
+        update();  // Перерисовываем треугольник
+    }
+}

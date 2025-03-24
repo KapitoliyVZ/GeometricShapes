@@ -1,6 +1,6 @@
 #include "Rectangle.h"
 
-// Конструктор-1 с четырьмя точками
+// Конструктор-1 с четырьмя координатами
 RectangleShape::RectangleShape(const QList<QPointF> &coords, const QString& customName)
     : Shape("Rectangle", customName)
 {
@@ -14,7 +14,7 @@ RectangleShape::RectangleShape(const QList<QPointF> &coords, const QString& cust
 RectangleShape::RectangleShape(const QPointF& startPoint, double width, double height, const QString& customName)
     : Shape("Rectangle", customName)
 {
-    polygon = QRectF(startPoint.x(), startPoint.y(), width, height);  // Прямоугольник по стартовой точке и размерам
+    polygon = QRectF(startPoint.x(), startPoint.y(), width, height);  // Прямоугольник по начальной точке и размерам
 }
 
 QRectF RectangleShape::boundingRect() const

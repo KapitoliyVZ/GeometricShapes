@@ -53,6 +53,7 @@ OBJECTS_DIR   = release
 SOURCES       = ..\..\Circle.cpp \
 		..\..\CircleDialog.cpp \
 		..\..\CoordinateSystem.cpp \
+		..\..\PropertiesShape.cpp \
 		..\..\Rectangle.cpp \
 		..\..\RectangleDialog.cpp \
 		..\..\Shape.cpp \
@@ -66,6 +67,7 @@ SOURCES       = ..\..\Circle.cpp \
 OBJECTS       = release/Circle.o \
 		release/CircleDialog.o \
 		release/CoordinateSystem.o \
+		release/PropertiesShape.o \
 		release/Rectangle.o \
 		release/RectangleDialog.o \
 		release/Shape.o \
@@ -89,6 +91,7 @@ DIST          =  ..\..\Circle.h \
 		..\..\mainwindow.h ..\..\Circle.cpp \
 		..\..\CircleDialog.cpp \
 		..\..\CoordinateSystem.cpp \
+		..\..\PropertiesShape.cpp \
 		..\..\Rectangle.cpp \
 		..\..\RectangleDialog.cpp \
 		..\..\Shape.cpp \
@@ -115,10 +118,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) GeometricShapes.zip $(SOURCES) $(DIST) ..\..\..\..\GeometricShapes.pro C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\spec_pre.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\device_config.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\sanitize.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\gcc-base.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\g++-base.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\windows-vulkan.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\g++-win32.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\windows-desktop.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\qconfig.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_ext_freetype.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_ext_libpng.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_ext_openxr_loader.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_charts.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_charts_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_chartsqml.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_chartsqml_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_concurrent.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_core.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_core_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_dbus.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_designer.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_designer_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_example_icons_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_examples_asset_downloader_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_gui.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_gui_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_help.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_help_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsplatform.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsplatform_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labssettings.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_linguist.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_network.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_network_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_opengl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_png_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_printsupport.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qdoccatch_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qdoccatchconversions_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qdoccatchgenerators_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qml.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qml_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlassetdownloader.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlassetdownloader_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlls_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlmeta.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlmeta_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlnetwork.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlnetwork_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmltest.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmltoolingsettings_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3d.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3d_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3deffects.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3deffects_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dglslparser_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticleeffects.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticleeffects_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticles.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticles_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dutils.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dutils_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dxr.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dxr_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fluentwinui3styleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fluentwinui3styleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imaginestyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imaginestyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2windowsstyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2windowsstyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickeffects_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktimeline.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktimeline_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickvectorimage.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickvectorimage_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickvectorimagegenerator_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_shadertools.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_shadertools_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_sql.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_sql_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_svg.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_svg_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_testlib.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_tools_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_uitools.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_widgets.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_xml.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_xml_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\qt_functions.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\qt_config.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\win32-g++\qmake.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\spec_post.prf .qmake.stash C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\exclusive_builds.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\toolchain.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\default_pre.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\win32\default_pre.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\resolve_config.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\exclusive_builds_post.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\default_post.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\build_pass.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\qml_debug.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\precompile_header.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\warn_on.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\permissions.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\qt.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\resources_functions.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\resources.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\moc.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\win32\opengl.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\uic.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\qmake_use.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\file_copies.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\win32\windows.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\testcase_targets.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\exceptions.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\yacc.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\lex.prf ..\..\GeometricShapes.pro C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6Charts.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6OpenGLWidgets.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6Widgets.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6OpenGL.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6Gui.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6Core.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6EntryPoint.prl    C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\data\dummy.cpp ..\..\Circle.h ..\..\CircleDialog.h ..\..\CoordinateSystem.h ..\..\Rectangle.h ..\..\RectangleDialog.h ..\..\Shape.h ..\..\Triangle.h ..\..\TriangleDialog.h ..\..\mainwindow.h  ..\..\Circle.cpp ..\..\CircleDialog.cpp ..\..\CoordinateSystem.cpp ..\..\Rectangle.cpp ..\..\RectangleDialog.cpp ..\..\Shape.cpp ..\..\Triangle.cpp ..\..\TriangleDialog.cpp ..\..\main.cpp ..\..\mainwindow.cpp ..\..\CircleDialog.ui ..\..\RectangleDialog.ui ..\..\TriangleDialog.ui ..\..\mainwindow.ui    
+	$(ZIP) GeometricShapes.zip $(SOURCES) $(DIST) ..\..\..\..\GeometricShapes.pro C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\spec_pre.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\device_config.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\sanitize.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\gcc-base.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\g++-base.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\windows-vulkan.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\g++-win32.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\common\windows-desktop.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\qconfig.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_ext_freetype.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_ext_libpng.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_ext_openxr_loader.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_charts.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_charts_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_chartsqml.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_chartsqml_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_concurrent.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_core.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_core_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_dbus.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_designer.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_designer_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_example_icons_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_examples_asset_downloader_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_gui.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_gui_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_help.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_help_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsplatform.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsplatform_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labssettings.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_linguist.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_network.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_network_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_opengl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_png_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_printsupport.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qdoccatch_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qdoccatchconversions_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qdoccatchgenerators_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qml.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qml_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlassetdownloader.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlassetdownloader_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlls_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlmeta.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlmeta_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlnetwork.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlnetwork_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmltest.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmltoolingsettings_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3d.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3d_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3deffects.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3deffects_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dglslparser_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticleeffects.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticleeffects_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticles.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticles_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dutils.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dutils_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dxr.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick3dxr_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quick_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fluentwinui3styleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fluentwinui3styleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imaginestyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imaginestyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2windowsstyleimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2windowsstyleimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickeffects_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktimeline.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktimeline_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickvectorimage.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickvectorimage_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickvectorimagegenerator_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_shadertools.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_shadertools_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_sql.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_sql_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_svg.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_svg_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_testlib.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_tools_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_uitools.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_widgets.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_xml.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_xml_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\qt_functions.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\qt_config.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\win32-g++\qmake.conf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\spec_post.prf .qmake.stash C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\exclusive_builds.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\toolchain.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\default_pre.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\win32\default_pre.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\resolve_config.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\exclusive_builds_post.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\default_post.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\build_pass.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\qml_debug.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\precompile_header.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\warn_on.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\permissions.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\qt.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\resources_functions.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\resources.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\moc.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\win32\opengl.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\uic.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\qmake_use.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\file_copies.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\win32\windows.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\testcase_targets.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\exceptions.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\yacc.prf C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\lex.prf ..\..\GeometricShapes.pro C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6Charts.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6OpenGLWidgets.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6Widgets.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6OpenGL.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6Gui.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6Core.prl C:\Programs\Qt\6.8.2\mingw_64\lib\Qt6EntryPoint.prl    C:\Programs\Qt\6.8.2\mingw_64\mkspecs\features\data\dummy.cpp ..\..\Circle.h ..\..\CircleDialog.h ..\..\CoordinateSystem.h ..\..\Rectangle.h ..\..\RectangleDialog.h ..\..\Shape.h ..\..\Triangle.h ..\..\TriangleDialog.h ..\..\mainwindow.h  ..\..\Circle.cpp ..\..\CircleDialog.cpp ..\..\CoordinateSystem.cpp ..\..\PropertiesShape.cpp ..\..\Rectangle.cpp ..\..\RectangleDialog.cpp ..\..\Shape.cpp ..\..\Triangle.cpp ..\..\TriangleDialog.cpp ..\..\main.cpp ..\..\mainwindow.cpp ..\..\CircleDialog.ui ..\..\RectangleDialog.ui ..\..\TriangleDialog.ui ..\..\mainwindow.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\Circle.o release\CircleDialog.o release\CoordinateSystem.o release\Rectangle.o release\RectangleDialog.o release\Shape.o release\Triangle.o release\TriangleDialog.o release\main.o release\mainwindow.o release\moc_CircleDialog.o release\moc_RectangleDialog.o release\moc_TriangleDialog.o release\moc_mainwindow.o
+	-$(DEL_FILE) release\Circle.o release\CircleDialog.o release\CoordinateSystem.o release\PropertiesShape.o release\Rectangle.o release\RectangleDialog.o release\Shape.o release\Triangle.o release\TriangleDialog.o release\main.o release\mainwindow.o release\moc_CircleDialog.o release\moc_RectangleDialog.o release\moc_TriangleDialog.o release\moc_mainwindow.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -337,6 +340,7 @@ release/moc_CircleDialog.cpp: ../../CircleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qlocale.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
 		release/moc_predefs.h \
 		C:/Programs/Qt/6.8.2/mingw_64/bin/moc.exe
 	C:\Programs\Qt\6.8.2\mingw_64\bin\moc.exe $(DEFINES) --include D:/YandexDisk/Qt/GeometricShapes/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Programs/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -ID:/YandexDisk/Qt/GeometricShapes -IC:/Programs/Qt/6.8.2/mingw_64/include -IC:/Programs/Qt/6.8.2/mingw_64/include/QtCharts -IC:/Programs/Qt/6.8.2/mingw_64/include/QtOpenGLWidgets -IC:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets -IC:/Programs/Qt/6.8.2/mingw_64/include/QtOpenGL -IC:/Programs/Qt/6.8.2/mingw_64/include/QtGui -IC:/Programs/Qt/6.8.2/mingw_64/include/QtCore -I. -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\CircleDialog.h -o release\moc_CircleDialog.cpp
@@ -532,6 +536,8 @@ release/moc_RectangleDialog.cpp: ../../RectangleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qlocale.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QButtonGroup \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qbuttongroup.h \
 		release/moc_predefs.h \
 		C:/Programs/Qt/6.8.2/mingw_64/bin/moc.exe
 	C:\Programs\Qt\6.8.2\mingw_64\bin\moc.exe $(DEFINES) --include D:/YandexDisk/Qt/GeometricShapes/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Programs/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -ID:/YandexDisk/Qt/GeometricShapes -IC:/Programs/Qt/6.8.2/mingw_64/include -IC:/Programs/Qt/6.8.2/mingw_64/include/QtCharts -IC:/Programs/Qt/6.8.2/mingw_64/include/QtOpenGLWidgets -IC:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets -IC:/Programs/Qt/6.8.2/mingw_64/include/QtOpenGL -IC:/Programs/Qt/6.8.2/mingw_64/include/QtGui -IC:/Programs/Qt/6.8.2/mingw_64/include/QtCore -I. -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\RectangleDialog.h -o release\moc_RectangleDialog.cpp
@@ -727,6 +733,7 @@ release/moc_TriangleDialog.cpp: ../../TriangleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qlocale.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
 		release/moc_predefs.h \
 		C:/Programs/Qt/6.8.2/mingw_64/bin/moc.exe
 	C:\Programs\Qt\6.8.2\mingw_64\bin\moc.exe $(DEFINES) --include D:/YandexDisk/Qt/GeometricShapes/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Programs/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -ID:/YandexDisk/Qt/GeometricShapes -IC:/Programs/Qt/6.8.2/mingw_64/include -IC:/Programs/Qt/6.8.2/mingw_64/include/QtCharts -IC:/Programs/Qt/6.8.2/mingw_64/include/QtOpenGLWidgets -IC:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets -IC:/Programs/Qt/6.8.2/mingw_64/include/QtOpenGL -IC:/Programs/Qt/6.8.2/mingw_64/include/QtGui -IC:/Programs/Qt/6.8.2/mingw_64/include/QtCore -I. -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\TriangleDialog.h -o release\moc_TriangleDialog.cpp
@@ -932,6 +939,35 @@ release/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsScene \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpen.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsItem \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpainterpath.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QListWidget \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlistwidget.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlistview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qvalidator.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qslider.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qrubberband.h \
+		../../Shape.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPainter \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpainter.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextoption.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h \
+		../../Circle.h \
 		release/moc_predefs.h \
 		C:/Programs/Qt/6.8.2/mingw_64/bin/moc.exe
 	C:\Programs\Qt\6.8.2\mingw_64\bin\moc.exe $(DEFINES) --include D:/YandexDisk/Qt/GeometricShapes/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Programs/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -ID:/YandexDisk/Qt/GeometricShapes -IC:/Programs/Qt/6.8.2/mingw_64/include -IC:/Programs/Qt/6.8.2/mingw_64/include/QtCharts -IC:/Programs/Qt/6.8.2/mingw_64/include/QtOpenGLWidgets -IC:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets -IC:/Programs/Qt/6.8.2/mingw_64/include/QtOpenGL -IC:/Programs/Qt/6.8.2/mingw_64/include/QtGui -IC:/Programs/Qt/6.8.2/mingw_64/include/QtCore -I. -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\mainwindow.h -o release\moc_mainwindow.cpp
@@ -1123,7 +1159,9 @@ release/Circle.o: ../../Circle.cpp ../../Circle.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qfont.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qendian.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qfontmetrics.h \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Circle.o ..\..\Circle.cpp
 
 release/CircleDialog.o: ../../CircleDialog.cpp ../../CircleDialog.h \
@@ -1317,6 +1355,7 @@ release/CircleDialog.o: ../../CircleDialog.cpp ../../CircleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qlocale.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
 		ui_CircleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QVariant \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QApplication \
@@ -1326,6 +1365,14 @@ release/CircleDialog.o: ../../CircleDialog.cpp ../../CircleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlayout.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlayoutitem.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qboxlayout.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QLineEdit \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlineedit.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpen.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextoption.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QPushButton \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -1543,6 +1590,257 @@ release/CoordinateSystem.o: ../../CoordinateSystem.cpp ../../CoordinateSystem.h 
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QFont
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\CoordinateSystem.o ..\..\CoordinateSystem.cpp
 
+release/PropertiesShape.o: ../../PropertiesShape.cpp ../../mainwindow.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qboxlayout.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtguiglobal.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qglobal.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtversionchecks.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtconfiginclude.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qconfig.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtcore-config.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtconfigmacros.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtdeprecationdefinitions.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtcoreexports.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qcompilerdetection.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qprocessordetection.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qsystemdetection.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtclasshelpermacros.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qassert.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtnoop.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtypes.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtversion.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtypeinfo.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qcontainerfwd.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qsysinfo.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qlogging.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qflags.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qcompare_impl.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qatomic.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qbasicatomic.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qatomic_cxx11.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qgenericatomic.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qyieldcpu.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qconstructormacros.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qdarwinhelpers.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qexceptionhandling.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qforeach.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qttypetraits.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qfunctionpointer.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qglobalstatic.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qmalloc.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qminmax.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qnumeric.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qoverload.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qswap.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtenvironmentvariables.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtresource.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qttranslation.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qversiontagging.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtgui-config.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtguiexports.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlayout.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qobject.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qobjectdefs.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qnamespace.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qcompare.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qcomparehelpers.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/q20type_traits.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtmetamacros.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qfunctionaltools_impl.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qstring.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qchar.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qstringview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qbytearray.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qrefcount.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qarraydata.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qpair.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qarraydatapointer.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qarraydataops.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qcontainertools_impl.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qxptype_traits.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/q20functional.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/q20memory.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qbytearrayview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qstringfwd.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qstringliteral.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qstringalgorithms.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qlatin1stringview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qanystringview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qutf8stringview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qstringtokenizer.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qstringbuilder.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qstringconverter.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qstringconverter_base.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qlist.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qhashfunctions.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qiterator.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qbytearraylist.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qstringlist.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qalgorithms.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qstringmatcher.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qcoreevent.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qscopedpointer.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qmetatype.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qdatastream.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qiodevicebase.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qfloat16.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qmath.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qiterable.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qmetacontainer.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qcontainerinfo.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtaggedpointer.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qscopeguard.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qobject_impl.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qbindingstorage.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qsizepolicy.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qrect.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qmargins.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/q23utility.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qsize.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qpoint.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgridlayout.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qwidget.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qwindowdefs.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qaction.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qkeysequence.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qicon.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpixmap.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpaintdevice.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qcolor.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qrgb.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qrgba64.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qshareddata.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qimage.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpixelformat.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtransform.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpolygon.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qregion.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qspan.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/q20iterator.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qline.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qvariant.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qdebug.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtextstream.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qmap.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qset.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qhash.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qvarlengtharray.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpalette.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qbrush.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qfont.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qendian.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qfontmetrics.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qfontinfo.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qcursor.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qbitmap.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qevent.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qiodevice.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qurl.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qeventpoint.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qvector2d.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qvectornd.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpointingdevice.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qinputdevice.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qscreen.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QList \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QObject \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QRect \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QSize \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QSizeF \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QTransform \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qnativeinterface.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qscreen_platform.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qguiapplication.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qcoreapplication.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qelapsedtimer.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qeventloop.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qfuture.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qfutureinterface.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qmutex.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qresultstore.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qfuture_impl.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qthreadpool.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qthread.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qrunnable.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qexception.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qpromise.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qinputmethod.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qlocale.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QWheelEvent \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QMainWindow \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qmainwindow.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsScene \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpen.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsItem \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpainterpath.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QListWidget \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlistwidget.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlistview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qvalidator.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qslider.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qrubberband.h \
+		../../Shape.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPainter \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpainter.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextoption.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h \
+		../../Circle.h \
+		ui_mainwindow.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QVariant \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QApplication \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsView \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qscrollarea.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGridLayout \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QMenuBar \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qmenubar.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qmenu.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QPushButton \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QSpinBox \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qspinbox.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QStatusBar \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstatusbar.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QWidget
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\PropertiesShape.o ..\..\PropertiesShape.cpp
+
 release/Rectangle.o: ../../Rectangle.cpp ../../Rectangle.h \
 		../../Shape.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsItem \
@@ -1696,6 +1994,8 @@ release/Rectangle.o: ../../Rectangle.cpp ../../Rectangle.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qendian.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qfontmetrics.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPolygonF
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Rectangle.o ..\..\Rectangle.cpp
 
@@ -1890,6 +2190,8 @@ release/RectangleDialog.o: ../../RectangleDialog.cpp ../../RectangleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qlocale.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QButtonGroup \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qbuttongroup.h \
 		ui_RectangleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QVariant \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QApplication \
@@ -1899,9 +2201,19 @@ release/RectangleDialog.o: ../../RectangleDialog.cpp ../../RectangleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlayout.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlayoutitem.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qboxlayout.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QLineEdit \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlineedit.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpen.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextoption.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QPushButton \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QRadioButton \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qradiobutton.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QSpinBox \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qspinbox.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
@@ -2064,7 +2376,9 @@ release/Shape.o: ../../Shape.cpp ../../Shape.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qfont.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qendian.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qfontmetrics.h \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Shape.o ..\..\Shape.cpp
 
 release/Triangle.o: ../../Triangle.cpp ../../Triangle.h \
@@ -2220,6 +2534,8 @@ release/Triangle.o: ../../Triangle.cpp ../../Triangle.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qendian.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qfontmetrics.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPolygonF
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Triangle.o ..\..\Triangle.cpp
 
@@ -2414,7 +2730,33 @@ release/TriangleDialog.o: ../../TriangleDialog.cpp ../../TriangleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qlocale.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qguiapplication_platform.h \
-		ui_TriangleDialog.h
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
+		ui_TriangleDialog.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QVariant \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QApplication \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGridLayout \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgridlayout.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlayout.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qboxlayout.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QLineEdit \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlineedit.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpen.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextoption.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QPushButton \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QSpinBox \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qspinbox.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qvalidator.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\TriangleDialog.o ..\..\TriangleDialog.cpp
 
 release/main.o: ../../main.cpp ../../mainwindow.h \
@@ -2618,6 +2960,35 @@ release/main.o: ../../main.cpp ../../mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsScene \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpen.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsItem \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpainterpath.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QListWidget \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlistwidget.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlistview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qvalidator.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qslider.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qrubberband.h \
+		../../Shape.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPainter \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpainter.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextoption.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h \
+		../../Circle.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QApplication \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QStyleFactory \
@@ -2828,43 +3199,72 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsScene \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpen.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsItem \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpainterpath.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QListWidget \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlistwidget.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlistview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qvalidator.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qslider.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qrubberband.h \
+		../../Shape.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPainter \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpainter.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextoption.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h \
+		../../Circle.h \
 		ui_mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QVariant \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QApplication \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsView \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsview.h \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextoption.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qscrollarea.h \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGridLayout \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QMenuBar \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qmenubar.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qmenu.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QPushButton \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QSpinBox \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qspinbox.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QStatusBar \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstatusbar.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QWidget \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QMessageBox \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../CoordinateSystem.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpainterpath.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPen \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QFont \
 		../../Rectangle.h \
-		../../Shape.h \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsItem \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPainter \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QString \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPolygonF \
 		../../RectangleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QDialog \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qdialog.h \
-		../../Circle.h \
-		../../CircleDialog.h
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QButtonGroup \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qbuttongroup.h \
+		../../CircleDialog.h \
+		../../Triangle.h \
+		../../TriangleDialog.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\..\mainwindow.cpp
 
 release/moc_CircleDialog.o: release/moc_CircleDialog.cpp 

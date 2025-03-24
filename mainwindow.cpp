@@ -19,9 +19,19 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setupScene();
 
-    // Включаем режим выбора фигур на сцене
+    // Включаем режим выбора фигур на сцене (на координатной сетке)
     coordinate_scene->setItemIndexMethod(QGraphicsScene::NoIndex);
     coordinate_scene->setSelectionArea(QPainterPath());
+
+    ui->tabWidgetProperties->setEnabled(false);// выключаем таблицу настроек до выбора нарисованной фигуры
+
+    // реакция изменения spinBox_radius
+    connect(ui->spinBox_circle_radius, QOverload<int>::of(&QSpinBox::valueChanged),
+            this, &MainWindow::onRadiusChanged);
+
+
+    connect(ui->pushButton_circle_Apply, &QPushButton::clicked, this, &MainWindow::onApplyCircleChangesClicked);
+    connect(ui->pushButton_triangle_Apply, &QPushButton::clicked, this, &MainWindow::onApplyTriangleChangesClicked);
 
     // Подключаем сигнал клика по элементу списка
     //connect(ui->listWidgetShapes, &QListWidget::itemClicked, this, &MainWindow::on_listWidgetShapes_itemClicked);
@@ -199,7 +209,7 @@ void MainWindow::on_btnClearScene_clicked()
     qDebug() << "Все фигуры удалены!";
 }
 
-// обновление списка фигур
+// обновление виджета со списком фигур
 void MainWindow::updateShapeList()
 {
     // Очищаем виджет перед обновлением
@@ -223,38 +233,39 @@ void MainWindow::on_listWidgetShapes_itemClicked(QListWidgetItem *item)
 {
     if (!item) return;  // Защита от null
 
-    // Получаем имя фигуры из QListWidget
-    QString shapeName = item->text();
+    ui->tabWidgetProperties->setEnabled(true); // включаем таблицу настроек фигуры
+    QString shapeName = item->text();   // Получаем имя фигуры из QListWidget
+    MainWindow::selectedShape = nullptr; // Выбранная фигура
+
     qDebug() << "Выбрана фигура: " << shapeName;
 
     // Проходим по списку всех фигур
     for (auto* item : list_of_Shapes)
     {
-        // Приводим QGraphicsItem к классу Shape
+        // Приводим (item) QGraphicsItem к классу Shape
         auto* shape = dynamic_cast<Shape*>(item);
+
         // Ищем фигуру в списке
         if (shape && shape->getName() == shapeName)
         {
             qDebug() << "Фигура найдена в списке! Выделяем...";
-            // Выделяем фигуру
-            shape->setSelected(true); // Ставим флаг выделения
+            selectedShape = shape;                   // назначаем найденную фигуру выбранной
+            setWidgetPropertiesShape(selectedShape); // настраиваем отображение виджета с парамметрами выбранной фигуры
+            selectedShape->setSelected(true);        // Ставим флаг выделения
         }
         else
         {
-            // Снимаем выделение с остальных фигур
-            shape->setSelected(false);
+            shape->setSelected(false); // Снимаем выделение с остальных фигур
         }
         shape->update(); // Перерисовываем фигуру
     }
 
     // Обновляем сцену
     if (coordinate_scene)
-    {
         coordinate_scene->update();
-    }
     else
-    {
         qDebug() << "⚠ Ошибка: coordinate_scene == nullptr!";
-    }
 }
+
+
 

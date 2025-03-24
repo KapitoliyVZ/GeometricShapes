@@ -13,6 +13,7 @@ SOURCES += \
     Circle.cpp \
     CircleDialog.cpp \
     CoordinateSystem.cpp \
+    PropertiesShape.cpp \
     Rectangle.cpp \
     RectangleDialog.cpp \
     Shape.cpp \

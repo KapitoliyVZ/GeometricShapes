@@ -17,11 +17,11 @@ RectangleDialog::RectangleDialog(QWidget *parent)
     // Устанавливаем `radioSetCoord` включённым по умолчанию
     ui->radioSetCoord->setChecked(true);
 
-    connect(ui->radioSetCoord, &QRadioButton::toggled, this, &RectangleDialog::onRadioTypeEnter);
-    connect(ui->radioSetSides, &QRadioButton::toggled, this, &RectangleDialog::onRadioTypeEnter);
+    connect(ui->radioSetCoord, &QRadioButton::toggled, this, &RectangleDialog::onRadioTypeSet);
+    connect(ui->radioSetSides, &QRadioButton::toggled, this, &RectangleDialog::onRadioTypeSet);
 
     // Вызываем `onRadioTypeEnter()` сразу при запуске, чтобы ввод другого режима был недоступен
-    onRadioTypeEnter();
+    onRadioTypeSet();
 }
 
 RectangleDialog::~RectangleDialog()
@@ -84,9 +84,10 @@ QString RectangleDialog::getRectangleName() const
     return nameUser;
 }
 
-// функция для выбора параметров ввода
-void RectangleDialog::onRadioTypeEnter()
+// функция для отображения параметров ввода
+void RectangleDialog::onRadioTypeSet()
 {
+    // отображение параметров для режима "По координатам"
     if(ui->radioSetCoord->isChecked())
     {
         ui->x1->setEnabled(true);
@@ -103,6 +104,7 @@ void RectangleDialog::onRadioTypeEnter()
         ui->width->setEnabled(false);
         ui->height->setEnabled(false);
     }
+    // отображение параметров для режима "По начальной точке и размерам"
     else if (ui->radioSetSides->isChecked())
     {
         ui->x1->setEnabled(false);
@@ -121,13 +123,13 @@ void RectangleDialog::onRadioTypeEnter()
     }
 }
 
-// Проверяем, выбран ли режим "По двум точкам"
+// Проверяем, выбран ли режим "По координатам"
 bool RectangleDialog::isCoordMode() const
 {
     return ui->radioSetCoord->isChecked();
 }
 
-// Проверяем, выбран ли режим "По стартовой точке и размерам"
+// Проверяем, выбран ли режим "По начальной точке и размерам"
 bool RectangleDialog::isSizeMode() const
 {
     return ui->radioSetSides->isChecked();

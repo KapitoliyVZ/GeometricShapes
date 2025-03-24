@@ -45,7 +45,7 @@ static constexpr auto qt_meta_stringdata_ZN15RectangleDialogE = QtMocHelpers::st
     "coords",
     "on_cancelButton_clicked",
     "on_applyButton_clicked",
-    "onRadioTypeEnter"
+    "onRadioTypeSet"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -95,7 +95,7 @@ Q_CONSTINIT const QMetaObject RectangleDialog::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_applyButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onRadioTypeEnter'
+        // method 'onRadioTypeSet'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -110,7 +110,7 @@ void RectangleDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 1: _t->on_cancelButton_clicked(); break;
         case 2: _t->on_applyButton_clicked(); break;
-        case 3: _t->onRadioTypeEnter(); break;
+        case 3: _t->onRadioTypeSet(); break;
         default: ;
         }
     }

@@ -49,3 +49,5 @@ void GraphSettings::updateSceneSize(QGraphicsScene *scene, QGraphicsView *view)
     scene->setSceneRect(-width / 2, -height / 2, width, height);
     setupScene(scene, width, height);
 }
+
+

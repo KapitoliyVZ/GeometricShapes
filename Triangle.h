@@ -11,6 +11,10 @@ public:
     QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
+    QVector<QPointF> getPoints() const;
+    void setNewPoints(const QVector<QPointF>& newPoints);
+
+
 private:
     QPolygonF polygon;
 

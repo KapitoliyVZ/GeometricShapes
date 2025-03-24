@@ -41,8 +41,8 @@ static constexpr auto qt_meta_stringdata_ZN10MainWindowE = QtMocHelpers::stringD
     "on_btnRectangle_clicked",
     "",
     "on_btnCircle_clicked",
-    "on_btnClearScene_clicked",
     "on_btnTriangle_clicked",
+    "on_btnClearScene_clicked",
     "on_listWidgetShapes_itemClicked",
     "QListWidgetItem*",
     "item"
@@ -94,9 +94,9 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnCircle_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_btnClearScene_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnTriangle_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_btnClearScene_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_listWidgetShapes_itemClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -112,8 +112,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_btnRectangle_clicked(); break;
         case 1: _t->on_btnCircle_clicked(); break;
-        case 2: _t->on_btnClearScene_clicked(); break;
-        case 3: _t->on_btnTriangle_clicked(); break;
+        case 2: _t->on_btnTriangle_clicked(); break;
+        case 3: _t->on_btnClearScene_clicked(); break;
         case 4: _t->on_listWidgetShapes_itemClicked((*reinterpret_cast< std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
         default: ;
         }

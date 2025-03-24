@@ -4,8 +4,7 @@
 int Shape::shapeCounter = 0;
 
 // Конструктор
-Shape::Shape(const QString& type, const QString& customName)
-    : id(QUuid::createUuid())
+Shape::Shape(const QString& type, const QString& customName): id(QUuid::createUuid())
 {
     // Если имя передано пользователем, используем его
     if (!customName.isEmpty())
