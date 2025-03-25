@@ -21,9 +21,18 @@ public:
     QList<QPointF> getCoordinates() const;
 
 private slots:
+<<<<<<< Updated upstream
     bool isValidRectangle(const QList<QPointF> &coords); // проверка валидности значений координат
     void on_cancelButton_clicked(); // отменить ввод параметров
     void on_applyButton_clicked(); // Применить параметры
+=======
+    bool isValidRectangle(const QList<QPointF> &coords);    // проверка валидности значений координат
+
+    void on_cancelButton_clicked();                         // Отменить ввод параметров
+    void on_applyButton_clicked();                          // Применить параметры
+
+    void onRadioTypeSet();                                  // функция для отображения вида параметров ввода
+>>>>>>> Stashed changes
 
 private:
     Ui::RectangleDialog *ui;

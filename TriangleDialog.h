@@ -19,6 +19,7 @@ public:
     QList<QPointF> getCoordinates() const;
 
 private slots:
+<<<<<<< Updated upstream
     void on_cancelButton_clicked();
 
     void on_applyButton_clicked();
@@ -26,6 +27,15 @@ private slots:
 private:
     Ui::TriangleDialog *ui;
     QList<QPointF> coordinates;
+=======
+    void on_cancelButton_clicked(); // отменить ввод параметров
+    void on_applyButton_clicked();  // применить параметры
+
+private:
+    Ui::TriangleDialog *ui;
+    QList<QPointF> coordinates; // заданные координаты
+    QString nameByUser;           // заданное имя
+>>>>>>> Stashed changes
 };
 
 #endif // TRIANGLEDIALOG_H

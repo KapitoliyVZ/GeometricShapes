@@ -27,7 +27,12 @@ void TriangleDialog::on_applyButton_clicked()
     coordinates.append(QPointF(ui->x2->value(), ui->y2->value()));
     coordinates.append(QPointF(ui->x3->value(), ui->y3->value()));
 
+<<<<<<< Updated upstream
     accept(); // Закрываем диалог с результатом "Принять
+=======
+    nameByUser = ui->LineTriangleName->text(); // запись имени
+    accept(); // Закрываем диалог с результатом "Apply"
+>>>>>>> Stashed changes
 }
 
 QList<QPointF> TriangleDialog::getCoordinates() const
@@ -35,4 +40,12 @@ QList<QPointF> TriangleDialog::getCoordinates() const
     return coordinates;
 }
 
+<<<<<<< Updated upstream
 
+=======
+// считать имя
+QString TriangleDialog::getTriangleName() const
+{
+    return nameByUser;
+}
+>>>>>>> Stashed changes

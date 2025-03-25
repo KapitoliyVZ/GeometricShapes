@@ -21,3 +21,36 @@ void TriangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, Q
     painter->setPen(Qt::white);     // цвет контура
     painter->drawPolygon(polygon);  // прорисовка фигуры
 }
+<<<<<<< Updated upstream
+=======
+
+// получение текущих координат
+QVector<QPointF> TriangleShape::getPoints() const
+{
+    return polygon.toVector();
+}
+
+// задать новые координаты
+void TriangleShape::setNewPoints(const QVector<QPointF>& newPoints)
+{
+    if (newPoints.size() == 3)
+    {
+        polygon = QPolygonF(newPoints);  // Обновляем координаты
+        update();  // Перерисовка треугольника
+    }
+}
+
+// задать угол вращения
+void TriangleShape::setRotationAngle(int angle)
+{
+    setRotation(angle);
+    update();  // Перерисовка треугольника
+}
+
+// получить текущий угол вращения
+int TriangleShape::getRotationAngle() const
+{
+    return rotation();  // Возвращаем текущий угол
+}
+
+>>>>>>> Stashed changes
