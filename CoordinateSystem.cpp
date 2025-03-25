@@ -9,10 +9,10 @@ void GraphSettings::setupScene(QGraphicsScene *scene, int width, int height)
     //width = 800, height = 800; // Увеличиваем вдвое
     scene->setSceneRect(-width/2, -height/2, width, height);
 
-    // // Инвертируем ось Y, чтобы вверх было положительное направление
-    // QTransform transform;
-    // transform.scale(1, -1); // X остаётся тем же, Y инвертируется
-    // scene->views().first()->setTransform(transform);
+    // Инвертируем ось Y, чтобы вверх было положительное направление
+    QTransform transform;
+    transform.scale(1, -1); // X остаётся тем же, Y инвертируется
+    scene->views().first()->setTransform(transform);
 
     // Рисуем координатные оси
     QPen axisPen(Qt::black);
@@ -31,6 +31,7 @@ void GraphSettings::setupScene(QGraphicsScene *scene, int width, int height)
 
         QGraphicsTextItem *text = scene->addText(QString::number(x), font); // значения делений
         text->setPos(x - 10, 5);
+        text->setTransform(QTransform().scale(1, -1)); // Исправляем ориентацию текста
     }
 
     for (int y = -height/2; y <= height/2; y += step)
@@ -40,6 +41,7 @@ void GraphSettings::setupScene(QGraphicsScene *scene, int width, int height)
 
         QGraphicsTextItem *text = scene->addText(QString::number(y), font); // значения делений
         text->setPos(5, y - 10);
+        text->setTransform(QTransform().scale(1, -1)); // Исправляем ориентацию текста
     }
 }
 

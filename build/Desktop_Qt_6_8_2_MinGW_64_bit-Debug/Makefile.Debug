@@ -968,6 +968,9 @@ debug/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h \
 		../../Circle.h \
+		../../Rectangle.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPolygonF \
+		../../Triangle.h \
 		debug/moc_predefs.h \
 		C:/Programs/Qt/6.8.2/mingw_64/bin/moc.exe
 	C:\Programs\Qt\6.8.2\mingw_64\bin\moc.exe $(DEFINES) --include D:/YandexDisk/Qt/GeometricShapes/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Programs/Qt/6.8.2/mingw_64/mkspecs/win32-g++ -ID:/YandexDisk/Qt/GeometricShapes -IC:/Programs/Qt/6.8.2/mingw_64/include -IC:/Programs/Qt/6.8.2/mingw_64/include/QtCharts -IC:/Programs/Qt/6.8.2/mingw_64/include/QtOpenGLWidgets -IC:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets -IC:/Programs/Qt/6.8.2/mingw_64/include/QtOpenGL -IC:/Programs/Qt/6.8.2/mingw_64/include/QtGui -IC:/Programs/Qt/6.8.2/mingw_64/include/QtCore -I. -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Programs/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Programs/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -1820,14 +1823,22 @@ debug/PropertiesShape.o: ../../PropertiesShape.cpp ../../mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h \
 		../../Circle.h \
+		../../Rectangle.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPolygonF \
+		../../Triangle.h \
 		ui_mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QVariant \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QApplication \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QFrame \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsView \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsview.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qscrollarea.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGridLayout \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QLabel \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlabel.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpicture.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QMenuBar \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qmenubar.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qmenu.h \
@@ -1838,6 +1849,7 @@ debug/PropertiesShape.o: ../../PropertiesShape.cpp ../../mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qspinbox.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QStatusBar \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstatusbar.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QTabWidget \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\PropertiesShape.o ..\..\PropertiesShape.cpp
 
@@ -2989,6 +3001,9 @@ debug/main.o: ../../main.cpp ../../mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h \
 		../../Circle.h \
+		../../Rectangle.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPolygonF \
+		../../Triangle.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QApplication \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QStyleFactory \
@@ -3228,14 +3243,22 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QUuid \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/quuid.h \
 		../../Circle.h \
+		../../Rectangle.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPolygonF \
+		../../Triangle.h \
 		ui_mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QVariant \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QApplication \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QFrame \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsView \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qgraphicsview.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qscrollarea.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGridLayout \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QLabel \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qlabel.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qpicture.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QMenuBar \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qmenubar.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qmenu.h \
@@ -3246,6 +3269,7 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qspinbox.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QStatusBar \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qstatusbar.h \
+		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QTabWidget \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QWidget \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qmessagebox.h \
@@ -3255,14 +3279,11 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPen \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QFont \
-		../../Rectangle.h \
-		C:/Programs/Qt/6.8.2/mingw_64/include/QtGui/QPolygonF \
 		../../RectangleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QDialog \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/QButtonGroup \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtWidgets/qbuttongroup.h \
 		../../CircleDialog.h \
-		../../Triangle.h \
 		../../TriangleDialog.h \
 		C:/Programs/Qt/6.8.2/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\..\mainwindow.cpp
