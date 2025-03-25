@@ -45,19 +45,18 @@ private slots:
     // Нажатие на фигуру на сцене
     void onSceneSelectShape();
 
-    // Применить новые координаты круга
-    void on_pushButton_circle_Apply_clicked();
-
-    // Применить новые координаты треугольника
-    void on_pushButton_triangle_Apply_clicked();
-
+    // включить кнопки Apply
     void enableCircleApplyButton();
     void enableTriangleApplyButton();
+    void enableRectangleApplyButton();
 
+    void on_pushButton_circle_Apply_clicked();      // Применить новые координаты круга
+    void on_pushButton_triangle_Apply_clicked();    // Применить новые координаты треугольника
+    void on_pushButton_rectangle_Apply_clicked();   // Применить новые координаты прямоугольника
 
     void on_pushButton_circle_Delete_clicked();
-
     void on_pushButton_triangle_Delete_clicked();
+    void on_pushButton_rectangle_Delete_clicked();
 
 protected:
     void resizeEvent(QResizeEvent *event) override;

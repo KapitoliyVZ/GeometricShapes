@@ -48,12 +48,14 @@ void TriangleShape::setNewPoints(const QVector<QPointF>& newPoints)
     }
 }
 
+// задать угол вращения
 void TriangleShape::setRotationAngle(int angle)
 {
     setRotation(angle);
     update();  // Перерисовка треугольника
 }
 
+// получить текущий угол вращения
 int TriangleShape::getRotationAngle() const
 {
     return rotation();  // Возвращаем текущий угол

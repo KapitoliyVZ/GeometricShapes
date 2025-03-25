@@ -268,7 +268,6 @@ void MainWindow::onSceneSelectShape()
     // Получаем первую выбранную фигуру
     Shape* shape = dynamic_cast<Shape*>(selectedItems.first());
 
-
     if (!shape) return;
 
     selectedShape = shape;
@@ -303,6 +302,7 @@ void MainWindow::deselectShape()
     }
 }
 
+//
 void MainWindow::onSelectionChanged()
 {
     // Если нет выбранных объектов

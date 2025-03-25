@@ -1,6 +1,8 @@
 #include <mainwindow.h>
 #include "ui_mainwindow.h"
 
+
+// настройка виджета параметров выбранной фигуры
 void MainWindow::setWidgetPropertiesShape(Shape* selectedShape)
 {
     // если выбранная фигура - круг
@@ -33,7 +35,7 @@ void MainWindow::setWidgetPropertiesShape(Shape* selectedShape)
         qDebug() << "Выбран треугольник.";
 
         ui->tabWidgetProperties->setCurrentWidget(ui->tab_triagnle); // открываем окно для треугольника
-        ui->tab_triagnle->setEnabled(true);                          // выключаем настройки треугольника
+        ui->tab_triagnle->setEnabled(true);                          // включаем настройки треугольника
         ui->tab_circle->setEnabled(false);                           // выключаем настройки круга
         ui->tab_rectangle->setEnabled(false);                        // выключаем настройки прямоугольника
 
@@ -66,17 +68,52 @@ void MainWindow::setWidgetPropertiesShape(Shape* selectedShape)
     // если выбранная фигура - прямоугольник
     else if(auto* rectangle = dynamic_cast<RectangleShape*>(selectedShape))
     {
-        ui->tab_circle->setEnabled(false);      // выключаем настройки круга
-        ui->tab_triagnle->setEnabled(false);    // выключаем настройки треугольника
+        qDebug() << "Выбран прямоугольник.";
+
+        ui->tabWidgetProperties->setCurrentWidget(ui->tab_rectangle); // открываем окно для прямоугольника
+        ui->tab_rectangle->setEnabled(true);                          // включаем настройки прямоугольника
+        ui->tab_circle->setEnabled(false);                            // выключаем настройки круга
+        ui->tab_triagnle->setEnabled(false);                          // выключаем настройки треугольника
+
+        QVector<QPointF> points = rectangle->getPoints();  // Получаем координаты из данного прямоугольника
+
+        // отображаем значение координат на кнопках
+        ui->spinBox_rectangle_x1->setValue(points[0].x());
+        ui->spinBox_rectangle_y1->setValue(points[0].y());
+        ui->spinBox_rectangle_x2->setValue(points[1].x());
+        ui->spinBox_rectangle_y2->setValue(points[1].y());
+        ui->spinBox_rectangle_x3->setValue(points[2].x());
+        ui->spinBox_rectangle_y3->setValue(points[2].y());
+        ui->spinBox_rectangle_x4->setValue(points[3].x());
+        ui->spinBox_rectangle_y4->setValue(points[3].y());
+        //отображаем значение текущего угла вращения
+        ui->spinBox_rectangle_rotation->setValue(rectangle->rotation());
+
+        // отключаем кнопку Apply до изменений параметров прямоугольника
+        ui->pushButton_rectangle_Apply->setEnabled(false);
+        // включаем кнопку Apply при изменении параметров прямоегольника
+        connect(ui->spinBox_rectangle_x1, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
+        connect(ui->spinBox_rectangle_y1, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
+        connect(ui->spinBox_rectangle_x2, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
+        connect(ui->spinBox_rectangle_y2, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
+        connect(ui->spinBox_rectangle_x3, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
+        connect(ui->spinBox_rectangle_y3, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
+        connect(ui->spinBox_rectangle_x4, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
+        connect(ui->spinBox_rectangle_y4, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
+        connect(ui->spinBox_rectangle_rotation, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
+        // включаем кнопку Delete для прямоугольника
+        ui->pushButton_rectangle_Delete->setEnabled(true);
+
     }
 }
+
+//////////////////////////////////////////////////////////////////
 
 // включить кнопку Apply для круга
 void MainWindow::enableCircleApplyButton()
 {
     ui->pushButton_circle_Apply->setEnabled(true);
 }
-
 // применение изменений параметров круга
 void MainWindow::on_pushButton_circle_Apply_clicked()
 {
@@ -150,6 +187,8 @@ void MainWindow::on_pushButton_circle_Delete_clicked()
     coordinate_scene->update();
 }
 
+//////////////////////////////////////////////////////////////////
+
 // включить кнопку Apply для треугольника
 void MainWindow::enableTriangleApplyButton()
 {
@@ -216,3 +255,70 @@ void MainWindow::on_pushButton_triangle_Delete_clicked()
     ui->listWidgetShapes->update();
     coordinate_scene->update();
 }
+
+//////////////////////////////////////////////////////////////////
+
+// включить кнопку Apply для прямоугольника
+void MainWindow::enableRectangleApplyButton()
+{
+    ui->pushButton_rectangle_Apply->setEnabled(true);
+}
+// применение изменений параметров прямоугольника
+void MainWindow::on_pushButton_rectangle_Apply_clicked()
+{
+    if (!selectedShape) return;
+
+    auto* rectangle = dynamic_cast<RectangleShape*>(selectedShape);
+    if (rectangle)
+    {
+        // Сохраняем новые координаты для прямоугольника
+        QVector<QPointF> newPoints =
+            {
+                QPointF(ui->spinBox_rectangle_x1->value(), ui->spinBox_rectangle_y1->value()),
+                QPointF(ui->spinBox_rectangle_x2->value(), ui->spinBox_rectangle_y2->value()),
+                QPointF(ui->spinBox_rectangle_x3->value(), ui->spinBox_rectangle_y3->value()),
+                QPointF(ui->spinBox_rectangle_x4->value(), ui->spinBox_rectangle_y4->value())
+            };
+        // Сохраняем новый угол вращения
+        int newAngle = ui->spinBox_rectangle_rotation->value();
+
+        rectangle->setNewPoints(newPoints);      // Применяем новые координаты для треугольника
+        rectangle->setRotationAngle(newAngle);   // Применяем новый угол вращения
+
+        coordinate_scene->update(); // Перерисовываем сцену
+    }
+}
+
+// Кнопка удаления прямоугольника
+void MainWindow::on_pushButton_rectangle_Delete_clicked()
+{
+    if (!selectedShape) return;  // Если фигура не выбрана, выходим
+
+    // Проверяем, является ли выбранная фигура кругом
+    auto* rectangle = dynamic_cast<RectangleShape*>(selectedShape);
+    if (!rectangle) return;  // Если фигура не круг, ничего не делаем
+
+    list_of_Shapes.removeOne(rectangle);       // Удаляем фигуру из списка фигур
+    coordinate_scene->removeItem(rectangle);   // Удаляем фигуру из сцены графика
+
+    delete rectangle;           // Освобождаем память
+    selectedShape = nullptr;    // Сбрасываем выбранную фигуру
+
+    // Удаляем соответствующий `QListWidgetItem` из `QListWidget`
+    for (int i = 0; i < ui->listWidgetShapes->count(); ++i)
+    {
+        QListWidgetItem* item = ui->listWidgetShapes->item(i);
+        if (item->text() == rectangle->getName())
+        {
+            delete ui->listWidgetShapes->takeItem(i);  // Удаляем из списка
+            break;
+        }
+    }
+
+    ui->listWidgetShapes->clearSelection();      // Очищаем выделение в `QListWidget`
+    ui->tabWidgetProperties->setEnabled(false); // Выключаем `tabWidgetProperties`
+
+    ui->listWidgetShapes->update();
+    coordinate_scene->update();
+}
+

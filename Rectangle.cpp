@@ -39,3 +39,32 @@ void RectangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, 
     // painter->setBrush(Qt::blue); // цвет заливки
     painter->drawPolygon(polygon);  // прорисовка фигуры
 }
+
+// получение текущих координат
+QVector<QPointF> RectangleShape::getPoints() const
+{
+    return polygon.toVector();
+}
+
+// задать новые координаты
+void RectangleShape::setNewPoints(const QVector<QPointF>& newPoints)
+{
+    if (newPoints.size() == 4)
+    {
+        polygon = QPolygonF(newPoints);  // Обновляем координаты
+        update();  // Перерисовка треугольник
+    }
+}
+
+// задать угол вращения
+void RectangleShape::setRotationAngle(int angle)
+{
+    setRotation(angle);
+    update();  // Перерисовка треугольника
+}
+
+// получить текущий угол вращения
+int RectangleShape::getRotationAngle() const
+{
+    return rotation();  // Возвращаем текущий угол
+}

@@ -18,6 +18,11 @@ public:
     QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
+    QVector<QPointF> getPoints() const;                     // получить текущие координаты
+    void setNewPoints(const QVector<QPointF>& newPoints);   // задать новые координаты прямоугольника
+    void setRotationAngle(int angle);                       // задать вращение прямоугольника
+    int getRotationAngle() const;                           // получить текущий угол вращения
+
 private:
     QPolygonF polygon;
 };
