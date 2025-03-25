@@ -110,11 +110,11 @@
       <x>200</x>
       <y>180</y>
       <width>281</width>
-      <height>271</height>
+      <height>291</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_triagnle">
      <attribute name="title">
@@ -198,6 +198,22 @@
       </property>
       <property name="text">
        <string>Cancel</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinBox_triangle_rotation">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>190</y>
+        <width>151</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="prefix">
+       <string>rotation = </string>
+      </property>
+      <property name="maximum">
+       <number>360</number>
       </property>
      </widget>
     </widget>

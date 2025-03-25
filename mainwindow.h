@@ -42,6 +42,18 @@ private slots:
 
     // Нажатие на фигуру в списке
     void on_listWidgetShapes_itemClicked(QListWidgetItem *item);
+    // Нажатие на фигуру на сцене
+    void onSceneSelectShape();
+
+    // Применить новые координаты круга
+    void on_pushButton_circle_Apply_clicked();
+
+    // Применить новые координаты треугольника
+    void on_pushButton_triangle_Apply_clicked();
+
+    void enableCircleApplyButton();
+    void enableTriangleApplyButton();
+
 
 protected:
     void resizeEvent(QResizeEvent *event) override;
@@ -55,15 +67,15 @@ private:
     Shape* selectedShape = nullptr;  // Указатель на выбранную фигуру
 
     void setupScene(); // Метод для настройки сцены
-    void updateShapeList(); // обновление сцены
-    bool isShapeNameUnique(const QString& name);// проверка наличия имени фигуры в списке
+    void updateShapeList(); // Обновление сцены
+    bool isShapeNameUnique(const QString& name);// Проверка наличия имени фигуры в списке
 
-    void setWidgetPropertiesShape(Shape* selectedShape);
-    void onRadiusChanged(int newRadius);
+    void setWidgetPropertiesShape(Shape* selectedShape); // отображение параметров выбранной фигуры
 
-    void onApplyCircleChangesClicked();     // Применить новые координаты треугольника
-    void onApplyTriangleChangesClicked();   // Применить новые координаты треугольника
+    void deselectShape(); // Отмена выбора фигуры
+    void onSelectionChanged();
 
+    void selectShape(Shape* shape);  // Выделяет фигуру и синхронизирует UI
 
 };
 

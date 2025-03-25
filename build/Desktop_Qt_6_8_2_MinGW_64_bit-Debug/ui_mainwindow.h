@@ -48,6 +48,7 @@ public:
     QSpinBox *spinBox_triangle_y3;
     QPushButton *pushButton_triangle_Apply;
     QPushButton *pushButton_triangle_Cancel;
+    QSpinBox *spinBox_triangle_rotation;
     QWidget *tab_rectangle;
     QWidget *gridLayoutWidget_2;
     QGridLayout *gridLayout_2;
@@ -103,7 +104,7 @@ public:
         listWidgetShapes->setGeometry(QRect(20, 190, 151, 271));
         tabWidgetProperties = new QTabWidget(centralwidget);
         tabWidgetProperties->setObjectName("tabWidgetProperties");
-        tabWidgetProperties->setGeometry(QRect(200, 180, 281, 271));
+        tabWidgetProperties->setGeometry(QRect(200, 180, 281, 291));
         tab_triagnle = new QWidget();
         tab_triagnle->setObjectName("tab_triagnle");
         gridLayoutWidget = new QWidget(tab_triagnle);
@@ -148,6 +149,10 @@ public:
         pushButton_triangle_Cancel = new QPushButton(tab_triagnle);
         pushButton_triangle_Cancel->setObjectName("pushButton_triangle_Cancel");
         pushButton_triangle_Cancel->setGeometry(QRect(30, 160, 91, 24));
+        spinBox_triangle_rotation = new QSpinBox(tab_triagnle);
+        spinBox_triangle_rotation->setObjectName("spinBox_triangle_rotation");
+        spinBox_triangle_rotation->setGeometry(QRect(40, 190, 151, 29));
+        spinBox_triangle_rotation->setMaximum(360);
         tabWidgetProperties->addTab(tab_triagnle, QString());
         tab_rectangle = new QWidget();
         tab_rectangle->setObjectName("tab_rectangle");
@@ -246,7 +251,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidgetProperties->setCurrentIndex(2);
+        tabWidgetProperties->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -270,6 +275,7 @@ public:
         spinBox_triangle_y3->setPrefix(QCoreApplication::translate("MainWindow", "y3 = ", nullptr));
         pushButton_triangle_Apply->setText(QCoreApplication::translate("MainWindow", "Apply", nullptr));
         pushButton_triangle_Cancel->setText(QCoreApplication::translate("MainWindow", "Cancel", nullptr));
+        spinBox_triangle_rotation->setPrefix(QCoreApplication::translate("MainWindow", "rotation = ", nullptr));
         tabWidgetProperties->setTabText(tabWidgetProperties->indexOf(tab_triagnle), QCoreApplication::translate("MainWindow", "triangle", nullptr));
         tabWidgetProperties->setTabText(tabWidgetProperties->indexOf(tab_rectangle), QCoreApplication::translate("MainWindow", "rectangle", nullptr));
         lineEdit_circle_name->setText(QString());

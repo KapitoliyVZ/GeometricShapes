@@ -44,6 +44,18 @@ void TriangleShape::setNewPoints(const QVector<QPointF>& newPoints)
     if (newPoints.size() == 3)
     {
         polygon = QPolygonF(newPoints);  // Обновляем координаты
-        update();  // Перерисовываем треугольник
+        update();  // Перерисовка треугольник
     }
 }
+
+void TriangleShape::setRotationAngle(int angle)
+{
+    setRotation(angle);
+    update();  // Перерисовка треугольника
+}
+
+int TriangleShape::getRotationAngle() const
+{
+    return rotation();  // Возвращаем текущий угол
+}
+

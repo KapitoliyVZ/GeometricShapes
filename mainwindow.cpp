@@ -12,9 +12,7 @@
 
 #include <QDebug>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     setupScene();
@@ -24,17 +22,13 @@ MainWindow::MainWindow(QWidget *parent)
     coordinate_scene->setSelectionArea(QPainterPath());
 
     ui->tabWidgetProperties->setEnabled(false);// выключаем таблицу настроек до выбора нарисованной фигуры
+    // ui->tabWidgetProperties->setEnabled(selectedShape != nullptr);
 
-    // реакция изменения spinBox_radius
-    connect(ui->spinBox_circle_radius, QOverload<int>::of(&QSpinBox::valueChanged),
-            this, &MainWindow::onRadiusChanged);
+    // Нажатие на фигуру на графике
+    connect(ui->graphicsView->scene(), &QGraphicsScene::selectionChanged, this, &MainWindow::onSceneSelectShape);
 
-
-    connect(ui->pushButton_circle_Apply, &QPushButton::clicked, this, &MainWindow::onApplyCircleChangesClicked);
-    connect(ui->pushButton_triangle_Apply, &QPushButton::clicked, this, &MainWindow::onApplyTriangleChangesClicked);
-
-    // Подключаем сигнал клика по элементу списка
-    //connect(ui->listWidgetShapes, &QListWidget::itemClicked, this, &MainWindow::on_listWidgetShapes_itemClicked);
+    // реакция на нажатие на пустую область для снятия выделения фигуры
+    connect(ui->graphicsView->scene(), &QGraphicsScene::selectionChanged, this, &MainWindow::onSelectionChanged);
 }
 
 MainWindow::~MainWindow()
@@ -180,14 +174,6 @@ bool MainWindow::isShapeNameUnique(const QString& name)
 // Кнопка очистки графика
 void MainWindow::on_btnClearScene_clicked()
 {
-    // for (QGraphicsItem *item : list_of_Shapes) {
-    //     coordinate_scene->removeItem(item);
-    //     delete item; // Освобождаем память
-    // }
-    // updateShapeList(); // Обновляем виджет с именами
-    // coordinate_scene->clear(); // Удаляем все элементы из сцены
-    // GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
-
     qDebug() << "Удаляем все фигуры...";
 
     // Удаляем все фигуры со сцены
@@ -206,10 +192,13 @@ void MainWindow::on_btnClearScene_clicked()
     // Обновляем сцену
     coordinate_scene->update();
 
+    selectedShape = nullptr; // Сбрасываем выбор фигуры
+    ui->tabWidgetProperties->setEnabled(selectedShape != nullptr); // Выключаем tabWidgetProperties
+
     qDebug() << "Все фигуры удалены!";
 }
 
-// обновление виджета со списком фигур
+// Обновление виджета списка (listWidgetShapes)
 void MainWindow::updateShapeList()
 {
     // Очищаем виджет перед обновлением
@@ -228,16 +217,15 @@ void MainWindow::updateShapeList()
     }
 }
 
-// выделение фигуры
+// Выбор фигуры в виджете списка (listWidgetShapes)
 void MainWindow::on_listWidgetShapes_itemClicked(QListWidgetItem *item)
 {
     if (!item) return;  // Защита от null
 
-    ui->tabWidgetProperties->setEnabled(true); // включаем таблицу настроек фигуры
     QString shapeName = item->text();   // Получаем имя фигуры из QListWidget
-    MainWindow::selectedShape = nullptr; // Выбранная фигура
+    selectedShape = nullptr;            // Выбранная фигура
 
-    qDebug() << "Выбрана фигура: " << shapeName;
+    qDebug() << "Выбрана фигура из списка: " << shapeName;
 
     // Проходим по списку всех фигур
     for (auto* item : list_of_Shapes)
@@ -248,9 +236,9 @@ void MainWindow::on_listWidgetShapes_itemClicked(QListWidgetItem *item)
         // Ищем фигуру в списке
         if (shape && shape->getName() == shapeName)
         {
-            qDebug() << "Фигура найдена в списке! Выделяем...";
-            selectedShape = shape;                   // назначаем найденную фигуру выбранной
-            setWidgetPropertiesShape(selectedShape); // настраиваем отображение виджета с парамметрами выбранной фигуры
+            qDebug() << "Фигура найдена в списке!";
+
+            selectedShape = shape;                   // Назначаем найденную фигуру выбранной
             selectedShape->setSelected(true);        // Ставим флаг выделения
         }
         else
@@ -260,12 +248,66 @@ void MainWindow::on_listWidgetShapes_itemClicked(QListWidgetItem *item)
         shape->update(); // Перерисовываем фигуру
     }
 
-    // Обновляем сцену
-    if (coordinate_scene)
-        coordinate_scene->update();
-    else
-        qDebug() << "⚠ Ошибка: coordinate_scene == nullptr!";
+    ui->tabWidgetProperties->setEnabled(true);  // Включаем tabWidgetProperties
+    coordinate_scene->update();                 // Обновляем сцену
+    setWidgetPropertiesShape(selectedShape);    // настраиваем отображение виджета с парамметрами выбранной фигуры
+
+}
+
+// Выбор фигуры на сцене графика (QGraphicsScene)
+void MainWindow::onSceneSelectShape()
+{
+    QList<QGraphicsItem*> selectedItems = ui->graphicsView->scene()->selectedItems();
+
+    if (selectedItems.isEmpty())
+    {
+        deselectShape(); // Снятие выделения всех фигур
+        return;
+    }
+
+    // Получаем первую выбранную фигуру
+    Shape* shape = dynamic_cast<Shape*>(selectedItems.first());
+
+
+    if (!shape) return;
+
+    selectedShape = shape;
+
+    // Выбираем её в `QListWidget`
+    for (int i = 0; i < ui->listWidgetShapes->count(); ++i)
+    {
+        QListWidgetItem* item = ui->listWidgetShapes->item(i);
+        if (item->text() == selectedShape->getName())
+        {
+            item->setSelected(true);
+            break;
+        }
+    }
+
+    ui->tabWidgetProperties->setEnabled(true);  // Включаем tabWidgetProperties
+    coordinate_scene->update();                 // Обновляем сцену
+    setWidgetPropertiesShape(selectedShape);    // настраиваем отображение виджета с парамметрами выбранной фигуры
+
 }
 
 
+// Сброс выделения фигур
+void MainWindow::deselectShape()
+{
+    if (selectedShape)
+    {
+        selectedShape->setSelected(false);  // Убираем выделение
+        selectedShape = nullptr;            // Обнуляем указатель
+        ui->tabWidgetProperties->setEnabled(selectedShape != nullptr);  // Выключаем tabWidgetProperties
+        ui->listWidgetShapes->clearSelection();                         // Снимаем выделение в списке
+    }
+}
 
+void MainWindow::onSelectionChanged()
+{
+    // Если нет выбранных объектов
+    if (ui->graphicsView->scene()->selectedItems().isEmpty())
+    {
+        deselectShape(); // Сбрасываем выделение
+    }
+}
