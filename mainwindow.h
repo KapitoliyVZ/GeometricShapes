@@ -55,6 +55,10 @@ private slots:
     void enableTriangleApplyButton();
 
 
+    void on_pushButton_circle_Delete_clicked();
+
+    void on_pushButton_triangle_Delete_clicked();
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;

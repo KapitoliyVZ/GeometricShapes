@@ -23,6 +23,8 @@ void MainWindow::setWidgetPropertiesShape(Shape* selectedShape)
         connect(ui->spinBox_circle_XCenter, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableCircleApplyButton);
         connect(ui->spinBox_circle_YCenter, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableCircleApplyButton);
         connect(ui->spinBox_circle_radius, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableCircleApplyButton);
+        // включаем кнопку Delete для круга
+        ui->pushButton_circle_Delete->setEnabled(true);
 
     }
     // если выбранная фигура - треугольник
@@ -57,7 +59,8 @@ void MainWindow::setWidgetPropertiesShape(Shape* selectedShape)
         connect(ui->spinBox_triangle_x3, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableTriangleApplyButton);
         connect(ui->spinBox_triangle_y3, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableTriangleApplyButton);
         connect(ui->spinBox_triangle_rotation, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableTriangleApplyButton);
-
+        // включаем кнопку Delete для круга
+        ui->pushButton_triangle_Delete->setEnabled(true);
 
     }
     // если выбранная фигура - прямоугольник
@@ -114,7 +117,38 @@ void MainWindow::on_pushButton_circle_Apply_clicked()
     }
 }
 
+// Кнопка удаления круга
+void MainWindow::on_pushButton_circle_Delete_clicked()
+{
+    if (!selectedShape) return;  // Если фигура не выбрана, выходим
 
+    // Проверяем, является ли выбранная фигура кругом
+    auto* circle = dynamic_cast<CircleShape*>(selectedShape);
+    if (!circle) return;  // Если фигура не круг, ничего не делаем
+
+    list_of_Shapes.removeOne(circle);       // Удаляем фигуру из списка фигур
+    coordinate_scene->removeItem(circle);   // Удаляем фигуру из сцены графика
+
+    delete circle;              // Освобождаем память
+    selectedShape = nullptr;    // Сбрасываем выбранную фигуру
+
+    // Удаляем соответствующий `QListWidgetItem` из `QListWidget`
+    for (int i = 0; i < ui->listWidgetShapes->count(); ++i)
+    {
+        QListWidgetItem* item = ui->listWidgetShapes->item(i);
+        if (item->text() == circle->getName())
+        {
+            delete ui->listWidgetShapes->takeItem(i);  // Удаляем из списка
+            break;
+        }
+    }
+
+    ui->listWidgetShapes->clearSelection();      // Очищаем выделение в `QListWidget`
+    ui->tabWidgetProperties->setEnabled(false); // Выключаем `tabWidgetProperties`
+
+    ui->listWidgetShapes->update();
+    coordinate_scene->update();
+}
 
 // включить кнопку Apply для треугольника
 void MainWindow::enableTriangleApplyButton()
@@ -150,3 +184,35 @@ void MainWindow::on_pushButton_triangle_Apply_clicked()
 
 }
 
+// Кнопка удаления треугольника
+void MainWindow::on_pushButton_triangle_Delete_clicked()
+{
+    if (!selectedShape) return;  // Если фигура не выбрана, выходим
+
+    // Проверяем, является ли выбранная фигура кругом
+    auto* triangle = dynamic_cast<TriangleShape*>(selectedShape);
+    if (!triangle) return;  // Если фигура не круг, ничего не делаем
+
+    list_of_Shapes.removeOne(triangle);       // Удаляем фигуру из списка фигур
+    coordinate_scene->removeItem(triangle);   // Удаляем фигуру из сцены графика
+
+    delete triangle;              // Освобождаем память
+    selectedShape = nullptr;    // Сбрасываем выбранную фигуру
+
+    // Удаляем соответствующий `QListWidgetItem` из `QListWidget`
+    for (int i = 0; i < ui->listWidgetShapes->count(); ++i)
+    {
+        QListWidgetItem* item = ui->listWidgetShapes->item(i);
+        if (item->text() == triangle->getName())
+        {
+            delete ui->listWidgetShapes->takeItem(i);  // Удаляем из списка
+            break;
+        }
+    }
+
+    ui->listWidgetShapes->clearSelection();      // Очищаем выделение в `QListWidget`
+    ui->tabWidgetProperties->setEnabled(false); // Выключаем `tabWidgetProperties`
+
+    ui->listWidgetShapes->update();
+    coordinate_scene->update();
+}

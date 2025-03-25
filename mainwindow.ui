@@ -100,17 +100,17 @@
       <x>20</x>
       <y>190</y>
       <width>151</width>
-      <height>271</height>
+      <height>311</height>
      </rect>
     </property>
    </widget>
    <widget class="QTabWidget" name="tabWidgetProperties">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>190</x>
       <y>180</y>
-      <width>281</width>
-      <height>291</height>
+      <width>311</width>
+      <height>331</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -123,98 +123,140 @@
      <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>29</x>
-        <y>30</y>
-        <width>191</width>
-        <height>122</height>
+        <x>9</x>
+        <y>10</y>
+        <width>291</width>
+        <height>271</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
+       <item row="1" column="0">
         <widget class="QSpinBox" name="spinBox_triangle_x1">
          <property name="prefix">
           <string>x1 = </string>
          </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QSpinBox" name="spinBox_triangle_x2">
-         <property name="prefix">
-          <string>x2 = </string>
+         <property name="minimum">
+          <number>-500</number>
+         </property>
+         <property name="maximum">
+          <number>500</number>
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QSpinBox" name="spinBox_triangle_y1">
+       <item row="4" column="0" colspan="2">
+        <widget class="QSpinBox" name="spinBox_triangle_rotation">
          <property name="prefix">
-          <string>y1 = </string>
+          <string>rotation = </string>
+         </property>
+         <property name="maximum">
+          <number>360</number>
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="QSpinBox" name="spinBox_triangle_y2">
-         <property name="prefix">
-          <string>y2 = </string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
+       <item row="3" column="0">
         <widget class="QSpinBox" name="spinBox_triangle_x3">
          <property name="prefix">
           <string>x3 = </string>
          </property>
+         <property name="minimum">
+          <number>-500</number>
+         </property>
+         <property name="maximum">
+          <number>500</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QSpinBox" name="spinBox_triangle_x2">
+         <property name="prefix">
+          <string>x2 = </string>
+         </property>
+         <property name="minimum">
+          <number>-500</number>
+         </property>
+         <property name="maximum">
+          <number>500</number>
+         </property>
         </widget>
        </item>
        <item row="2" column="1">
+        <widget class="QSpinBox" name="spinBox_triangle_y2">
+         <property name="prefix">
+          <string>y2 = </string>
+         </property>
+         <property name="minimum">
+          <number>-500</number>
+         </property>
+         <property name="maximum">
+          <number>500</number>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="pushButton_triangle_Cancel">
+         <property name="text">
+          <string>Cancel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QPushButton" name="pushButton_triangle_Apply">
+         <property name="text">
+          <string>Apply</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
         <widget class="QSpinBox" name="spinBox_triangle_y3">
          <property name="prefix">
           <string>y3 = </string>
          </property>
+         <property name="minimum">
+          <number>-500</number>
+         </property>
+         <property name="maximum">
+          <number>500</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="spinBox_triangle_y1">
+         <property name="prefix">
+          <string>y1 = </string>
+         </property>
+         <property name="minimum">
+          <number>-500</number>
+         </property>
+         <property name="maximum">
+          <number>500</number>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_triangle_Delete">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: darkred;
+}
+QPushButton:pressed {
+    background-color: black;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Delete triangle</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>false</bool>
+         </property>
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QPushButton" name="pushButton_triangle_Apply">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>160</y>
-        <width>91</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Apply</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_triangle_Cancel">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>160</y>
-        <width>91</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Cancel</string>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="spinBox_triangle_rotation">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>190</y>
-        <width>151</width>
-        <height>29</height>
-       </rect>
-      </property>
-      <property name="prefix">
-       <string>rotation = </string>
-      </property>
-      <property name="maximum">
-       <number>360</number>
-      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_rectangle">
@@ -227,7 +269,7 @@
         <x>40</x>
         <y>30</y>
         <width>160</width>
-        <height>123</height>
+        <height>139</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
@@ -262,38 +304,57 @@
      <attribute name="title">
       <string>circle</string>
      </attribute>
-     <widget class="QWidget" name="verticalLayoutWidget">
+     <widget class="QWidget" name="gridLayoutWidget_3">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>8</y>
-        <width>261</width>
-        <height>184</height>
+        <y>10</y>
+        <width>291</width>
+        <height>271</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLineEdit" name="lineEdit_circle_name">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSpinBox" name="spinBox_circle_XCenter">
-         <property name="prefix">
-          <string>Center(X) = </string>
-         </property>
-        </widget>
-       </item>
-       <item>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="1">
         <widget class="QSpinBox" name="spinBox_circle_YCenter">
          <property name="prefix">
-          <string>Center(Y) = </string>
+          <string>Center(y) = </string>
+         </property>
+         <property name="minimum">
+          <number>-500</number>
+         </property>
+         <property name="maximum">
+          <number>500</number>
          </property>
         </widget>
        </item>
-       <item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="pushButton_circle_Cancel">
+         <property name="text">
+          <string>Cancel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QSpinBox" name="spinBox_circle_XCenter">
+         <property name="prefix">
+          <string>Center(x) = </string>
+         </property>
+         <property name="minimum">
+          <number>-500</number>
+         </property>
+         <property name="maximum">
+          <number>500</number>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="pushButton_circle_Apply">
+         <property name="text">
+          <string>Apply</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
         <widget class="QSpinBox" name="spinBox_circle_radius">
          <property name="prefix">
           <string>radius = </string>
@@ -306,33 +367,28 @@
          </property>
         </widget>
        </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_circle_Delete">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: red;
+}
+QPushButton:pressed {
+    background-color: red;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Delete circle</string>
+         </property>
+        </widget>
+       </item>
       </layout>
-     </widget>
-     <widget class="QPushButton" name="pushButton_circle_Apply">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>190</y>
-        <width>131</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Apply</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_circle_Cancel">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>190</y>
-        <width>131</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Cancel</string>
-      </property>
      </widget>
     </widget>
    </widget>
@@ -343,7 +399,7 @@
      <x>0</x>
      <y>0</y>
      <width>1055</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

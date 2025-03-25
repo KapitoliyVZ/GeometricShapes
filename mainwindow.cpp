@@ -311,3 +311,7 @@ void MainWindow::onSelectionChanged()
         deselectShape(); // Сбрасываем выделение
     }
 }
+
+
+
+
