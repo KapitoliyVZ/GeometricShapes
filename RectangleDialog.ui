@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>656</width>
-    <height>414</height>
+    <width>486</width>
+    <height>334</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Create rectangle</string>
   </property>
   <widget class="QWidget" name="gridLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>90</y>
-     <width>331</width>
-     <height>245</height>
+     <x>10</x>
+     <y>10</y>
+     <width>461</width>
+     <height>311</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
@@ -39,36 +39,6 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QRadioButton" name="radioSetSides">
-      <property name="text">
-       <string>to set sides</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QSpinBox" name="y3">
-      <property name="prefix">
-       <string>y3 = </string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-      <property name="value">
-       <number>30</number>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="2">
-     <widget class="QPushButton" name="applyButton">
-      <property name="text">
-       <string>Apply</string>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="0">
      <widget class="QSpinBox" name="x1">
       <property name="prefix">
@@ -82,32 +52,6 @@
       </property>
       <property name="value">
        <number>10</number>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="0">
-     <widget class="QPushButton" name="cancelButton">
-      <property name="text">
-       <string>Cancel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="3">
-     <widget class="QLineEdit" name="LineCircleName"/>
-    </item>
-    <item row="7" column="1">
-     <widget class="QSpinBox" name="y4">
-      <property name="prefix">
-       <string>y4 = </string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-      <property name="value">
-       <number>30</number>
       </property>
      </widget>
     </item>
@@ -127,23 +71,17 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="2">
-     <widget class="QSpinBox" name="startPointY">
-      <property name="prefix">
-       <string>y0 = </string>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-      <property name="value">
-       <number>0</number>
+    <item row="1" column="0" colspan="2">
+     <widget class="QRadioButton" name="radioSetCoord">
+      <property name="text">
+       <string>to set coordinates</string>
       </property>
      </widget>
     </item>
-    <item row="7" column="0">
-     <widget class="QSpinBox" name="x4">
+    <item row="6" column="1">
+     <widget class="QSpinBox" name="y3">
       <property name="prefix">
-       <string>x4 =</string>
+       <string>y3 = </string>
       </property>
       <property name="minimum">
        <number>-500</number>
@@ -152,33 +90,7 @@
        <number>500</number>
       </property>
       <property name="value">
-       <number>10</number>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="2">
-     <widget class="QSpinBox" name="width">
-      <property name="prefix">
-       <string>width = </string>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QSpinBox" name="y2">
-      <property name="prefix">
-       <string>y2 = </string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-      <property name="value">
-       <number>10</number>
+       <number>30</number>
       </property>
      </widget>
     </item>
@@ -195,7 +107,30 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="2">
+    <item row="6" column="2">
+     <widget class="QSpinBox" name="width">
+      <property name="prefix">
+       <string>width = </string>
+      </property>
+      <property name="maximum">
+       <number>500</number>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QSpinBox" name="startPointY">
+      <property name="prefix">
+       <string>y0 = </string>
+      </property>
+      <property name="maximum">
+       <number>500</number>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
      <widget class="QSpinBox" name="height">
       <property name="prefix">
        <string>height = </string>
@@ -205,28 +140,29 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
-     <widget class="QSpinBox" name="x2">
-      <property name="prefix">
-       <string>x2 =</string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-      <property name="value">
-       <number>40</number>
+    <item row="9" column="2" colspan="2">
+     <widget class="QPushButton" name="applyButton">
+      <property name="text">
+       <string>Apply</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QRadioButton" name="radioSetCoord">
+    <item row="9" column="0" colspan="2">
+     <widget class="QPushButton" name="cancelButton">
       <property name="text">
-       <string>to set coordinates</string>
+       <string>Cancel</string>
       </property>
      </widget>
+    </item>
+    <item row="1" column="2" colspan="2">
+     <widget class="QRadioButton" name="radioSetSides">
+      <property name="text">
+       <string>to set sides</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="4">
+     <widget class="QLineEdit" name="LineCircleName"/>
     </item>
    </layout>
   </widget>

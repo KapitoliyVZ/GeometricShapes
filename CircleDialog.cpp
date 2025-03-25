@@ -19,7 +19,7 @@ void CircleDialog::on_applyButton_clicked()
 {
     center = QPointF(ui->xCenter->value(), ui->yCenter->value());   // запись координат центра круга
     radius = ui->radius->value();                                   // запись радиуса круга
-    nameUser = ui->LineCircleName->text();                          // запись имени
+    nameByUser = ui->LineCircleName->text();                        // запись имени
     accept();                                                       // сохранение параметров и закрытие окна
 }
 
@@ -44,5 +44,5 @@ double CircleDialog::getRadius() const
 // считать имя
 QString CircleDialog::getCircleName() const
 {
-    return nameUser;
+    return nameByUser;
 }

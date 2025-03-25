@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1055</width>
-    <height>639</height>
+    <width>1124</width>
+    <height>613</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -17,56 +17,28 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btnCircle">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>30</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="whatsThis">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set parametrs and create circle&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="text">
-     <string>Circle</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnRectangle">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>70</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Rectangle</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnTriangle">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>110</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Triangle</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnClearScene">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>30</y>
+      <x>800</x>
+      <y>540</y>
       <width>131</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: darkred;
+}
+QPushButton:pressed {
+    background-color: black;
+}
+</string>
     </property>
     <property name="text">
      <string>Clear all shapes</string>
@@ -75,8 +47,8 @@
    <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>40</y>
+      <x>610</x>
+      <y>30</y>
       <width>500</width>
       <height>500</height>
      </rect>
@@ -94,21 +66,70 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidgetShapes">
+   <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>190</y>
-      <width>151</width>
-      <height>311</height>
+      <x>190</x>
+      <y>50</y>
+      <width>281</width>
+      <height>81</height>
      </rect>
     </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>256</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="1" column="2">
+       <widget class="QPushButton" name="btnCircle">
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set parametrs and create circle&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Circle</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="btnTriangle">
+        <property name="text">
+         <string>Triangle</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="btnRectangle">
+        <property name="text">
+         <string>Rectangle</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Choose type of the shapes to add</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QTabWidget" name="tabWidgetProperties">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>180</y>
+      <x>230</x>
+      <y>185</y>
       <width>311</width>
       <height>331</height>
      </rect>
@@ -276,7 +297,7 @@ QPushButton:pressed {
        <item row="0" column="1">
         <widget class="QSpinBox" name="spinBox_rectangle_y1">
          <property name="prefix">
-          <string>x1 = </string>
+          <string>y1 = </string>
          </property>
          <property name="minimum">
           <number>-500</number>
@@ -289,7 +310,7 @@ QPushButton:pressed {
        <item row="1" column="1">
         <widget class="QSpinBox" name="spinBox_rectangle_y2">
          <property name="prefix">
-          <string>x1 = </string>
+          <string>y2 = </string>
          </property>
          <property name="minimum">
           <number>-500</number>
@@ -315,7 +336,7 @@ QPushButton:pressed {
        <item row="2" column="1">
         <widget class="QSpinBox" name="spinBox_rectangle_y3">
          <property name="prefix">
-          <string>x1 = </string>
+          <string>y3 = </string>
          </property>
          <property name="minimum">
           <number>-500</number>
@@ -352,7 +373,7 @@ QPushButton:pressed {
        <item row="3" column="0">
         <widget class="QSpinBox" name="spinBox_rectangle_x4">
          <property name="prefix">
-          <string>x1 = </string>
+          <string>x4 = </string>
          </property>
          <property name="minimum">
           <number>-500</number>
@@ -365,7 +386,7 @@ QPushButton:pressed {
        <item row="1" column="0">
         <widget class="QSpinBox" name="spinBox_rectangle_x2">
          <property name="prefix">
-          <string>x1 = </string>
+          <string>x2 = </string>
          </property>
          <property name="minimum">
           <number>-500</number>
@@ -385,7 +406,7 @@ QPushButton:pressed {
        <item row="3" column="1">
         <widget class="QSpinBox" name="spinBox_rectangle_y4">
          <property name="prefix">
-          <string>x1 = </string>
+          <string>y4 = </string>
          </property>
          <property name="minimum">
           <number>-500</number>
@@ -398,7 +419,7 @@ QPushButton:pressed {
        <item row="2" column="0">
         <widget class="QSpinBox" name="spinBox_rectangle_x3">
          <property name="prefix">
-          <string>x1 = </string>
+          <string>x3 = </string>
          </property>
          <property name="minimum">
           <number>-500</number>
@@ -520,13 +541,36 @@ QPushButton:pressed {
      </widget>
     </widget>
    </widget>
+   <widget class="QListWidget" name="listWidgetShapes">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>190</y>
+      <width>151</width>
+      <height>321</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>150</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>List of added shapes:</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1055</width>
+     <width>1124</width>
      <height>21</height>
     </rect>
    </property>

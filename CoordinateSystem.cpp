@@ -9,6 +9,11 @@ void GraphSettings::setupScene(QGraphicsScene *scene, int width, int height)
     //width = 800, height = 800; // Увеличиваем вдвое
     scene->setSceneRect(-width/2, -height/2, width, height);
 
+    // // Инвертируем ось Y, чтобы вверх было положительное направление
+    // QTransform transform;
+    // transform.scale(1, -1); // X остаётся тем же, Y инвертируется
+    // scene->views().first()->setTransform(transform);
+
     // Рисуем координатные оси
     QPen axisPen(Qt::black);
     axisPen.setWidth(2);

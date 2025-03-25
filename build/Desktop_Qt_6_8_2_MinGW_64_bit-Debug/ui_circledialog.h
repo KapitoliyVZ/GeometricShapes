@@ -25,59 +25,59 @@ class Ui_CircleDialog
 public:
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QSpinBox *yCenter;
-    QSpinBox *radius;
     QSpinBox *xCenter;
-    QPushButton *cancelButton;
+    QSpinBox *yCenter;
     QPushButton *applyButton;
+    QPushButton *cancelButton;
+    QSpinBox *radius;
     QLineEdit *LineCircleName;
 
     void setupUi(QDialog *CircleDialog)
     {
         if (CircleDialog->objectName().isEmpty())
             CircleDialog->setObjectName("CircleDialog");
-        CircleDialog->resize(400, 300);
+        CircleDialog->resize(265, 171);
         gridLayoutWidget = new QWidget(CircleDialog);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(74, 100, 281, 80));
+        gridLayoutWidget->setGeometry(QRect(10, 10, 247, 152));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
+        xCenter = new QSpinBox(gridLayoutWidget);
+        xCenter->setObjectName("xCenter");
+        xCenter->setMinimum(-500);
+        xCenter->setMaximum(500);
+
+        gridLayout->addWidget(xCenter, 1, 0, 1, 1);
+
         yCenter = new QSpinBox(gridLayoutWidget);
         yCenter->setObjectName("yCenter");
         yCenter->setMinimum(-500);
         yCenter->setMaximum(500);
 
-        gridLayout->addWidget(yCenter, 0, 1, 1, 1);
+        gridLayout->addWidget(yCenter, 1, 1, 1, 1);
+
+        applyButton = new QPushButton(gridLayoutWidget);
+        applyButton->setObjectName("applyButton");
+
+        gridLayout->addWidget(applyButton, 4, 1, 1, 1);
+
+        cancelButton = new QPushButton(gridLayoutWidget);
+        cancelButton->setObjectName("cancelButton");
+
+        gridLayout->addWidget(cancelButton, 4, 0, 1, 1);
 
         radius = new QSpinBox(gridLayoutWidget);
         radius->setObjectName("radius");
         radius->setMinimum(1);
         radius->setMaximum(200);
 
-        gridLayout->addWidget(radius, 0, 2, 1, 1);
-
-        xCenter = new QSpinBox(gridLayoutWidget);
-        xCenter->setObjectName("xCenter");
-        xCenter->setMinimum(-500);
-        xCenter->setMaximum(500);
-
-        gridLayout->addWidget(xCenter, 0, 0, 1, 1);
-
-        cancelButton = new QPushButton(gridLayoutWidget);
-        cancelButton->setObjectName("cancelButton");
-
-        gridLayout->addWidget(cancelButton, 1, 0, 1, 1);
-
-        applyButton = new QPushButton(gridLayoutWidget);
-        applyButton->setObjectName("applyButton");
-
-        gridLayout->addWidget(applyButton, 1, 2, 1, 1);
+        gridLayout->addWidget(radius, 2, 0, 1, 2);
 
         LineCircleName = new QLineEdit(gridLayoutWidget);
         LineCircleName->setObjectName("LineCircleName");
 
-        gridLayout->addWidget(LineCircleName, 1, 1, 1, 1);
+        gridLayout->addWidget(LineCircleName, 0, 0, 1, 2);
 
 
         retranslateUi(CircleDialog);
@@ -90,12 +90,12 @@ public:
 
     void retranslateUi(QDialog *CircleDialog)
     {
-        CircleDialog->setWindowTitle(QCoreApplication::translate("CircleDialog", "Dialog", nullptr));
-        yCenter->setPrefix(QCoreApplication::translate("CircleDialog", "y = ", nullptr));
-        radius->setPrefix(QCoreApplication::translate("CircleDialog", "r = ", nullptr));
+        CircleDialog->setWindowTitle(QCoreApplication::translate("CircleDialog", "Create circle", nullptr));
         xCenter->setPrefix(QCoreApplication::translate("CircleDialog", "x = ", nullptr));
-        cancelButton->setText(QCoreApplication::translate("CircleDialog", "Cancel", nullptr));
+        yCenter->setPrefix(QCoreApplication::translate("CircleDialog", "y = ", nullptr));
         applyButton->setText(QCoreApplication::translate("CircleDialog", "Apply", nullptr));
+        cancelButton->setText(QCoreApplication::translate("CircleDialog", "Cancel", nullptr));
+        radius->setPrefix(QCoreApplication::translate("CircleDialog", "r = ", nullptr));
     } // retranslateUi
 
 };

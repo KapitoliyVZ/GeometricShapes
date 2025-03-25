@@ -31,7 +31,7 @@ private:
 
     QPointF center;     // заданные координаты центра
     double radius;      // заданный радиус
-    QString nameUser; // заданное имя
+    QString nameByUser; // заданное имя
 };
 
 #endif // CIRCLEDIALOG_H

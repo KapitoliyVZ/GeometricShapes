@@ -14,8 +14,7 @@ QRectF CircleShape::boundingRect() const
 void CircleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
 
-    qDebug() << "Рисуется круг: " << getName() << ", выделена: " << isSelected()
-             << ", радиус:" << CircleShape::getRadius();
+    qDebug() << "Рисуется круг: " << getName() << ", выделена: " << isSelected() << ", радиус:" << CircleShape::getRadius();
 
     // Если фигура выделена
     if (isSelected())

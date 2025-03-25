@@ -54,6 +54,7 @@ private slots:
     void on_pushButton_triangle_Apply_clicked();    // Применить новые координаты треугольника
     void on_pushButton_rectangle_Apply_clicked();   // Применить новые координаты прямоугольника
 
+    // кнопки удаления фигур
     void on_pushButton_circle_Delete_clicked();
     void on_pushButton_triangle_Delete_clicked();
     void on_pushButton_rectangle_Delete_clicked();
@@ -79,6 +80,8 @@ private:
     void onSelectionChanged();
 
     void selectShape(Shape* shape);  // Выделяет фигуру и синхронизирует UI
+
+    void updateRectanglePoints();   // задание и обновление координат для прямоугольника
 
 };
 

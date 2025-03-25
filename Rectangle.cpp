@@ -68,3 +68,4 @@ int RectangleShape::getRotationAngle() const
 {
     return rotation();  // Возвращаем текущий угол
 }
+

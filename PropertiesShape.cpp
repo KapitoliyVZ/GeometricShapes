@@ -86,12 +86,19 @@ void MainWindow::setWidgetPropertiesShape(Shape* selectedShape)
         ui->spinBox_rectangle_y3->setValue(points[2].y());
         ui->spinBox_rectangle_x4->setValue(points[3].x());
         ui->spinBox_rectangle_y4->setValue(points[3].y());
-        //отображаем значение текущего угла вращения
+
+        // отображаем значение текущего угла вращения
         ui->spinBox_rectangle_rotation->setValue(rectangle->rotation());
+
+        // отключаем две невводимые координаты
+        ui->spinBox_rectangle_x2->setEnabled(false);
+        ui->spinBox_rectangle_y2->setEnabled(false);
+        ui->spinBox_rectangle_x4->setEnabled(false);
+        ui->spinBox_rectangle_y4->setEnabled(false);
 
         // отключаем кнопку Apply до изменений параметров прямоугольника
         ui->pushButton_rectangle_Apply->setEnabled(false);
-        // включаем кнопку Apply при изменении параметров прямоегольника
+        // включаем кнопку Apply при любом изменении параметров прямоугольника
         connect(ui->spinBox_rectangle_x1, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
         connect(ui->spinBox_rectangle_y1, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
         connect(ui->spinBox_rectangle_x2, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
@@ -103,6 +110,12 @@ void MainWindow::setWidgetPropertiesShape(Shape* selectedShape)
         connect(ui->spinBox_rectangle_rotation, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::enableRectangleApplyButton);
         // включаем кнопку Delete для прямоугольника
         ui->pushButton_rectangle_Delete->setEnabled(true);
+        // динамическое изменение значений для координат 2 и 4
+        connect(ui->spinBox_rectangle_x1, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::updateRectanglePoints);
+        connect(ui->spinBox_rectangle_y1, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::updateRectanglePoints);
+        connect(ui->spinBox_rectangle_x3, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::updateRectanglePoints);
+        connect(ui->spinBox_rectangle_y3, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::updateRectanglePoints);
+
 
     }
 }
@@ -258,11 +271,34 @@ void MainWindow::on_pushButton_triangle_Delete_clicked()
 
 //////////////////////////////////////////////////////////////////
 
+// задание и обновление координат для прямоугольника
+void MainWindow::updateRectanglePoints()
+{
+    double x1 = ui->spinBox_rectangle_x1->value();
+    double y1 = ui->spinBox_rectangle_y1->value();
+    double x3 = ui->spinBox_rectangle_x3->value();
+    double y3 = ui->spinBox_rectangle_y3->value();
+
+    // Вычисляем точки 2 и 4
+    double x2 = x3;
+    double y2 = y1;
+    double x4 = x1;
+    double y4 = y3;
+
+    // Обновляем `QSpinBox`
+    ui->spinBox_rectangle_x2->setValue(x2);
+    ui->spinBox_rectangle_y2->setValue(y2);
+    ui->spinBox_rectangle_x4->setValue(x4);
+    ui->spinBox_rectangle_y4->setValue(y4);
+}
+
+
 // включить кнопку Apply для прямоугольника
 void MainWindow::enableRectangleApplyButton()
 {
     ui->pushButton_rectangle_Apply->setEnabled(true);
 }
+
 // применение изменений параметров прямоугольника
 void MainWindow::on_pushButton_rectangle_Apply_clicked()
 {
@@ -274,10 +310,10 @@ void MainWindow::on_pushButton_rectangle_Apply_clicked()
         // Сохраняем новые координаты для прямоугольника
         QVector<QPointF> newPoints =
             {
-                QPointF(ui->spinBox_rectangle_x1->value(), ui->spinBox_rectangle_y1->value()),
-                QPointF(ui->spinBox_rectangle_x2->value(), ui->spinBox_rectangle_y2->value()),
-                QPointF(ui->spinBox_rectangle_x3->value(), ui->spinBox_rectangle_y3->value()),
-                QPointF(ui->spinBox_rectangle_x4->value(), ui->spinBox_rectangle_y4->value())
+            QPointF(ui->spinBox_rectangle_x1->value(), ui->spinBox_rectangle_y1->value()), // x1 y1
+            QPointF(ui->spinBox_rectangle_x2->value(), ui->spinBox_rectangle_y2->value()), // x2 y2
+            QPointF(ui->spinBox_rectangle_x3->value(), ui->spinBox_rectangle_y3->value()), // x3 y3
+            QPointF(ui->spinBox_rectangle_x4->value(), ui->spinBox_rectangle_y4->value())  // x4 y4
             };
         // Сохраняем новый угол вращения
         int newAngle = ui->spinBox_rectangle_rotation->value();
@@ -286,6 +322,7 @@ void MainWindow::on_pushButton_rectangle_Apply_clicked()
         rectangle->setRotationAngle(newAngle);   // Применяем новый угол вращения
 
         coordinate_scene->update(); // Перерисовываем сцену
+        ui->tabWidgetProperties->update();
     }
 }
 

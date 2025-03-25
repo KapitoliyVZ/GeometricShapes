@@ -34,17 +34,9 @@ bool RectangleDialog::isValidRectangle(const QList<QPointF> &coords)
 {
     if (coords.size() != 4) return false;
 
-    // Вычисляем длины сторон
-    double d1 = std::hypot(coords[0].x() - coords[1].x(), coords[0].y() - coords[1].y());
-    double d2 = std::hypot(coords[1].x() - coords[2].x(), coords[1].y() - coords[2].y());
-    double d3 = std::hypot(coords[2].x() - coords[3].x(), coords[2].y() - coords[3].y());
-    double d4 = std::hypot(coords[3].x() - coords[0].x(), coords[3].y() - coords[0].y());
-
-    double diag1 = std::hypot(coords[0].x() - coords[2].x(), coords[0].y() - coords[2].y());
-    double diag2 = std::hypot(coords[1].x() - coords[3].x(), coords[1].y() - coords[3].y());
-
-    // Проверяем равенство противоположных сторон и диагоналей
-    return (d1 == d3 && d2 == d4 && diag1 == diag2);
+    // Проверяем, что противоположные стороны параллельны
+    return (coords[0].x() == coords[3].x() && coords[1].x() == coords[2].x() &&
+            coords[0].y() == coords[1].y() && coords[2].y() == coords[3].y());
 }
 
 // Реакция на кнопку Cancel
@@ -56,12 +48,26 @@ void RectangleDialog::on_cancelButton_clicked()
 // Реакция на кнопку Apply
 void RectangleDialog::on_applyButton_clicked()
 {
-    // Получаем координаты из полей ввода
+    // Получаем введённые координаты двух противоположных точек
+    double x1 = ui->x1->value();
+    double y1 = ui->y1->value();
+    double x3 = ui->x3->value();
+    double y3 = ui->y3->value();
+
+    // Вычисляем остальные две точки
+    double x2 = x3;
+    double y2 = y1;
+    double x4 = x1;
+    double y4 = y3;
+
+    // Заполняем список координат
     coordinates.clear();
-    coordinates.append(QPointF(ui->x1->value(), ui->y1->value()));
-    coordinates.append(QPointF(ui->x2->value(), ui->y2->value()));
-    coordinates.append(QPointF(ui->x3->value(), ui->y3->value()));
-    coordinates.append(QPointF(ui->x4->value(), ui->y4->value()));
+    coordinates.append(QPointF(x1, y1));
+    coordinates.append(QPointF(x2, y2));
+    coordinates.append(QPointF(x3, y3));
+    coordinates.append(QPointF(x4, y4));
+
+    // Считываем имя
     nameUser = ui->LineCircleName->text();
 
     if (!isValidRectangle(coordinates)) {
@@ -69,7 +75,7 @@ void RectangleDialog::on_applyButton_clicked()
         return;
     }
 
-    accept(); // Закрываем диалог с результатом "Принять
+    accept(); // Закрываем диалог
 }
 
 // Считать координаты
@@ -91,13 +97,13 @@ void RectangleDialog::onRadioTypeSet()
     if(ui->radioSetCoord->isChecked())
     {
         ui->x1->setEnabled(true);
-        ui->x2->setEnabled(true);
+        //ui->x2->setEnabled(true);
         ui->x3->setEnabled(true);
-        ui->x4->setEnabled(true);
+        //ui->x4->setEnabled(true);
         ui->y1->setEnabled(true);
-        ui->y2->setEnabled(true);
+        //ui->y2->setEnabled(true);
         ui->y3->setEnabled(true);
-        ui->y4->setEnabled(true);
+        //ui->y4->setEnabled(true);
 
         ui->startPointX->setEnabled(false);
         ui->startPointY->setEnabled(false);
@@ -108,13 +114,13 @@ void RectangleDialog::onRadioTypeSet()
     else if (ui->radioSetSides->isChecked())
     {
         ui->x1->setEnabled(false);
-        ui->x2->setEnabled(false);
+        //ui->x2->setEnabled(false);
         ui->x3->setEnabled(false);
-        ui->x4->setEnabled(false);
+        //ui->x4->setEnabled(false);
         ui->y1->setEnabled(false);
-        ui->y2->setEnabled(false);
+        //ui->y2->setEnabled(false);
         ui->y3->setEnabled(false);
-        ui->y4->setEnabled(false);
+        //ui->y4->setEnabled(false);
 
         ui->startPointX->setEnabled(true);
         ui->startPointY->setEnabled(true);
