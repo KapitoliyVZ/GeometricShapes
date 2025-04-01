@@ -51,8 +51,8 @@ void MainWindow::setupScene()
 // прорисовка сцены (координатной оси) при изменении размеров окна пользователем
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
-    QMainWindow::resizeEvent(event);
-    GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
+    // QMainWindow::resizeEvent(event);
+    // GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
 }
 
 // при прокрутке колеса мыши

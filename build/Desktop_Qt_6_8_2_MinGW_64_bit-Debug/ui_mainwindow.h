@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFrame>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
@@ -22,6 +21,7 @@
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,16 +30,28 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *btnClearScene;
-    QGraphicsView *graphicsView;
-    QFrame *frame;
-    QWidget *gridLayoutWidget_4;
-    QGridLayout *gridLayout_4;
+    QGridLayout *gridLayout_6;
+    QGridLayout *gridLayout_5;
+    QVBoxLayout *verticalLayout;
+    QLabel *label_2;
+    QListWidget *listWidgetShapes;
+    QVBoxLayout *verticalLayout_2;
+    QVBoxLayout *verticalLayout_3;
+    QLabel *label;
     QPushButton *btnCircle;
     QPushButton *btnTriangle;
     QPushButton *btnRectangle;
-    QLabel *label;
+    QLabel *label_3;
     QTabWidget *tabWidgetProperties;
+    QWidget *tab_circle;
+    QWidget *gridLayoutWidget_3;
+    QGridLayout *gridLayout_3;
+    QSpinBox *spinBox_circle_YCenter;
+    QPushButton *pushButton_circle_Cancel;
+    QSpinBox *spinBox_circle_XCenter;
+    QPushButton *pushButton_circle_Apply;
+    QSpinBox *spinBox_circle_radius;
+    QPushButton *pushButton_circle_Delete;
     QWidget *tab_triagnle;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
@@ -68,17 +80,9 @@ public:
     QSpinBox *spinBox_rectangle_x3;
     QPushButton *pushButton_rectangle_Cancel;
     QSpinBox *spinBox_rectangle_rotation;
-    QWidget *tab_circle;
-    QWidget *gridLayoutWidget_3;
-    QGridLayout *gridLayout_3;
-    QSpinBox *spinBox_circle_YCenter;
-    QPushButton *pushButton_circle_Cancel;
-    QSpinBox *spinBox_circle_XCenter;
-    QPushButton *pushButton_circle_Apply;
-    QSpinBox *spinBox_circle_radius;
-    QPushButton *pushButton_circle_Delete;
-    QListWidget *listWidgetShapes;
-    QLabel *label_2;
+    QGridLayout *gridLayout_4;
+    QGraphicsView *graphicsView;
+    QPushButton *btnClearScene;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -86,61 +90,116 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1124, 613);
+        MainWindow->resize(1160, 694);
         MainWindow->setMouseTracking(false);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        btnClearScene = new QPushButton(centralwidget);
-        btnClearScene->setObjectName("btnClearScene");
-        btnClearScene->setGeometry(QRect(800, 540, 131, 21));
-        btnClearScene->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
-"background-color: rgb(170, 0, 0);"));
-        graphicsView = new QGraphicsView(centralwidget);
-        graphicsView->setObjectName("graphicsView");
-        graphicsView->setGeometry(QRect(610, 30, 500, 500));
-        graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
-        graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
-        graphicsView->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
-        graphicsView->setInteractive(true);
-        frame = new QFrame(centralwidget);
-        frame->setObjectName("frame");
-        frame->setGeometry(QRect(50, 30, 281, 81));
-        frame->setFrameShape(QFrame::Shape::StyledPanel);
-        frame->setFrameShadow(QFrame::Shadow::Raised);
-        gridLayoutWidget_4 = new QWidget(frame);
-        gridLayoutWidget_4->setObjectName("gridLayoutWidget_4");
-        gridLayoutWidget_4->setGeometry(QRect(10, 10, 256, 61));
-        gridLayout_4 = new QGridLayout(gridLayoutWidget_4);
-        gridLayout_4->setObjectName("gridLayout_4");
-        gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        btnCircle = new QPushButton(gridLayoutWidget_4);
-        btnCircle->setObjectName("btnCircle");
+        gridLayout_6 = new QGridLayout(centralwidget);
+        gridLayout_6->setObjectName("gridLayout_6");
+        gridLayout_5 = new QGridLayout();
+        gridLayout_5->setObjectName("gridLayout_5");
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName("verticalLayout");
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
 
-        gridLayout_4->addWidget(btnCircle, 1, 2, 1, 1);
+        verticalLayout->addWidget(label_2);
 
-        btnTriangle = new QPushButton(gridLayoutWidget_4);
-        btnTriangle->setObjectName("btnTriangle");
+        listWidgetShapes = new QListWidget(centralwidget);
+        listWidgetShapes->setObjectName("listWidgetShapes");
 
-        gridLayout_4->addWidget(btnTriangle, 1, 0, 1, 1);
+        verticalLayout->addWidget(listWidgetShapes);
 
-        btnRectangle = new QPushButton(gridLayoutWidget_4);
-        btnRectangle->setObjectName("btnRectangle");
 
-        gridLayout_4->addWidget(btnRectangle, 1, 1, 1, 1);
+        gridLayout_5->addLayout(verticalLayout, 0, 1, 1, 1);
 
-        label = new QLabel(gridLayoutWidget_4);
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName("verticalLayout_2");
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName("verticalLayout_3");
+        label = new QLabel(centralwidget);
         label->setObjectName("label");
 
-        gridLayout_4->addWidget(label, 0, 0, 1, 3);
+        verticalLayout_3->addWidget(label);
+
+        btnCircle = new QPushButton(centralwidget);
+        btnCircle->setObjectName("btnCircle");
+
+        verticalLayout_3->addWidget(btnCircle);
+
+        btnTriangle = new QPushButton(centralwidget);
+        btnTriangle->setObjectName("btnTriangle");
+
+        verticalLayout_3->addWidget(btnTriangle);
+
+        btnRectangle = new QPushButton(centralwidget);
+        btnRectangle->setObjectName("btnRectangle");
+
+        verticalLayout_3->addWidget(btnRectangle);
+
+
+        verticalLayout_2->addLayout(verticalLayout_3);
+
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName("label_3");
+
+        verticalLayout_2->addWidget(label_3);
 
         tabWidgetProperties = new QTabWidget(centralwidget);
         tabWidgetProperties->setObjectName("tabWidgetProperties");
-        tabWidgetProperties->setGeometry(QRect(230, 185, 311, 331));
+        tabWidgetProperties->setMinimumSize(QSize(314, 0));
+        tab_circle = new QWidget();
+        tab_circle->setObjectName("tab_circle");
+        gridLayoutWidget_3 = new QWidget(tab_circle);
+        gridLayoutWidget_3->setObjectName("gridLayoutWidget_3");
+        gridLayoutWidget_3->setGeometry(QRect(10, 10, 291, 291));
+        gridLayout_3 = new QGridLayout(gridLayoutWidget_3);
+        gridLayout_3->setObjectName("gridLayout_3");
+        gridLayout_3->setContentsMargins(0, 0, 0, 0);
+        spinBox_circle_YCenter = new QSpinBox(gridLayoutWidget_3);
+        spinBox_circle_YCenter->setObjectName("spinBox_circle_YCenter");
+        spinBox_circle_YCenter->setMinimum(-500);
+        spinBox_circle_YCenter->setMaximum(500);
+
+        gridLayout_3->addWidget(spinBox_circle_YCenter, 0, 1, 1, 1);
+
+        pushButton_circle_Cancel = new QPushButton(gridLayoutWidget_3);
+        pushButton_circle_Cancel->setObjectName("pushButton_circle_Cancel");
+
+        gridLayout_3->addWidget(pushButton_circle_Cancel, 4, 0, 1, 1);
+
+        spinBox_circle_XCenter = new QSpinBox(gridLayoutWidget_3);
+        spinBox_circle_XCenter->setObjectName("spinBox_circle_XCenter");
+        spinBox_circle_XCenter->setMinimum(-500);
+        spinBox_circle_XCenter->setMaximum(500);
+
+        gridLayout_3->addWidget(spinBox_circle_XCenter, 0, 0, 1, 1);
+
+        pushButton_circle_Apply = new QPushButton(gridLayoutWidget_3);
+        pushButton_circle_Apply->setObjectName("pushButton_circle_Apply");
+
+        gridLayout_3->addWidget(pushButton_circle_Apply, 4, 1, 1, 1);
+
+        spinBox_circle_radius = new QSpinBox(gridLayoutWidget_3);
+        spinBox_circle_radius->setObjectName("spinBox_circle_radius");
+        spinBox_circle_radius->setMinimum(1);
+        spinBox_circle_radius->setMaximum(500);
+
+        gridLayout_3->addWidget(spinBox_circle_radius, 1, 0, 1, 2);
+
+        pushButton_circle_Delete = new QPushButton(gridLayoutWidget_3);
+        pushButton_circle_Delete->setObjectName("pushButton_circle_Delete");
+        pushButton_circle_Delete->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"background-color: rgb(170, 0, 0);"));
+
+        gridLayout_3->addWidget(pushButton_circle_Delete, 5, 0, 1, 2);
+
+        tabWidgetProperties->addTab(tab_circle, QString());
         tab_triagnle = new QWidget();
         tab_triagnle->setObjectName("tab_triagnle");
         gridLayoutWidget = new QWidget(tab_triagnle);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(9, 10, 291, 281));
+        gridLayoutWidget->setGeometry(QRect(9, 10, 301, 301));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -215,7 +274,7 @@ public:
         tab_rectangle->setObjectName("tab_rectangle");
         gridLayoutWidget_2 = new QWidget(tab_rectangle);
         gridLayoutWidget_2->setObjectName("gridLayoutWidget_2");
-        gridLayoutWidget_2->setGeometry(QRect(10, 10, 291, 281));
+        gridLayoutWidget_2->setGeometry(QRect(10, 10, 291, 291));
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -301,63 +360,40 @@ public:
         gridLayout_2->addWidget(spinBox_rectangle_rotation, 4, 0, 1, 2);
 
         tabWidgetProperties->addTab(tab_rectangle, QString());
-        tab_circle = new QWidget();
-        tab_circle->setObjectName("tab_circle");
-        gridLayoutWidget_3 = new QWidget(tab_circle);
-        gridLayoutWidget_3->setObjectName("gridLayoutWidget_3");
-        gridLayoutWidget_3->setGeometry(QRect(10, 10, 291, 281));
-        gridLayout_3 = new QGridLayout(gridLayoutWidget_3);
-        gridLayout_3->setObjectName("gridLayout_3");
-        gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        spinBox_circle_YCenter = new QSpinBox(gridLayoutWidget_3);
-        spinBox_circle_YCenter->setObjectName("spinBox_circle_YCenter");
-        spinBox_circle_YCenter->setMinimum(-500);
-        spinBox_circle_YCenter->setMaximum(500);
 
-        gridLayout_3->addWidget(spinBox_circle_YCenter, 0, 1, 1, 1);
+        verticalLayout_2->addWidget(tabWidgetProperties);
 
-        pushButton_circle_Cancel = new QPushButton(gridLayoutWidget_3);
-        pushButton_circle_Cancel->setObjectName("pushButton_circle_Cancel");
 
-        gridLayout_3->addWidget(pushButton_circle_Cancel, 4, 0, 1, 1);
+        gridLayout_5->addLayout(verticalLayout_2, 0, 0, 1, 1);
 
-        spinBox_circle_XCenter = new QSpinBox(gridLayoutWidget_3);
-        spinBox_circle_XCenter->setObjectName("spinBox_circle_XCenter");
-        spinBox_circle_XCenter->setMinimum(-500);
-        spinBox_circle_XCenter->setMaximum(500);
 
-        gridLayout_3->addWidget(spinBox_circle_XCenter, 0, 0, 1, 1);
+        gridLayout_6->addLayout(gridLayout_5, 0, 0, 1, 1);
 
-        pushButton_circle_Apply = new QPushButton(gridLayoutWidget_3);
-        pushButton_circle_Apply->setObjectName("pushButton_circle_Apply");
+        gridLayout_4 = new QGridLayout();
+        gridLayout_4->setObjectName("gridLayout_4");
+        graphicsView = new QGraphicsView(centralwidget);
+        graphicsView->setObjectName("graphicsView");
+        graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
+        graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
+        graphicsView->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
+        graphicsView->setInteractive(true);
 
-        gridLayout_3->addWidget(pushButton_circle_Apply, 4, 1, 1, 1);
+        gridLayout_4->addWidget(graphicsView, 1, 0, 1, 1);
 
-        spinBox_circle_radius = new QSpinBox(gridLayoutWidget_3);
-        spinBox_circle_radius->setObjectName("spinBox_circle_radius");
-        spinBox_circle_radius->setMinimum(1);
-        spinBox_circle_radius->setMaximum(500);
-
-        gridLayout_3->addWidget(spinBox_circle_radius, 1, 0, 1, 2);
-
-        pushButton_circle_Delete = new QPushButton(gridLayoutWidget_3);
-        pushButton_circle_Delete->setObjectName("pushButton_circle_Delete");
-        pushButton_circle_Delete->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+        btnClearScene = new QPushButton(centralwidget);
+        btnClearScene->setObjectName("btnClearScene");
+        btnClearScene->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
 "background-color: rgb(170, 0, 0);"));
 
-        gridLayout_3->addWidget(pushButton_circle_Delete, 5, 0, 1, 2);
+        gridLayout_4->addWidget(btnClearScene, 2, 0, 1, 1);
 
-        tabWidgetProperties->addTab(tab_circle, QString());
-        listWidgetShapes = new QListWidget(centralwidget);
-        listWidgetShapes->setObjectName("listWidgetShapes");
-        listWidgetShapes->setGeometry(QRect(50, 190, 151, 321));
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(50, 150, 151, 41));
+
+        gridLayout_6->addLayout(gridLayout_4, 0, 1, 1, 1);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1124, 25));
+        menubar->setGeometry(QRect(0, 0, 1160, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -374,14 +410,22 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        btnClearScene->setText(QCoreApplication::translate("MainWindow", "Clear all shapes", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "\320\241\320\277\320\270\321\201\320\276\320\272 \321\204\320\270\320\263\321\203\321\200:", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\320\261\320\265\321\200\320\265\321\202\320\265 \321\202\320\270\320\277 \321\204\320\270\320\263\321\203\321\200\321\213 \320\264\320\273\321\217 \320\264\320\276\320\261\320\260\320\262\320\273\320\265\320\275\320\270\321\217:", nullptr));
 #if QT_CONFIG(whatsthis)
         btnCircle->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Set parametrs and create circle</p></body></html>", nullptr));
 #endif // QT_CONFIG(whatsthis)
-        btnCircle->setText(QCoreApplication::translate("MainWindow", "Circle", nullptr));
-        btnTriangle->setText(QCoreApplication::translate("MainWindow", "Triangle", nullptr));
-        btnRectangle->setText(QCoreApplication::translate("MainWindow", "Rectangle", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Choose type of the shapes to add", nullptr));
+        btnCircle->setText(QCoreApplication::translate("MainWindow", "\320\232\321\200\321\203\320\263", nullptr));
+        btnTriangle->setText(QCoreApplication::translate("MainWindow", "\320\242\321\200\320\265\321\203\320\263\320\276\320\273\321\214\320\275\320\270\320\272", nullptr));
+        btnRectangle->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\321\217\320\274\320\276\321\203\320\263\320\276\320\273\321\214\320\275\320\270\320\272", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "\320\237\320\260\321\200\320\260\320\274\320\265\321\202\321\200\321\213 \320\262\321\213\320\261\321\200\320\260\320\275\320\275\320\276\320\271 \321\204\320\270\320\263\321\203\321\200\321\213:", nullptr));
+        spinBox_circle_YCenter->setPrefix(QCoreApplication::translate("MainWindow", "Center(y) = ", nullptr));
+        pushButton_circle_Cancel->setText(QCoreApplication::translate("MainWindow", "Cancel", nullptr));
+        spinBox_circle_XCenter->setPrefix(QCoreApplication::translate("MainWindow", "Center(x) = ", nullptr));
+        pushButton_circle_Apply->setText(QCoreApplication::translate("MainWindow", "Apply", nullptr));
+        spinBox_circle_radius->setPrefix(QCoreApplication::translate("MainWindow", "radius = ", nullptr));
+        pushButton_circle_Delete->setText(QCoreApplication::translate("MainWindow", "Delete circle", nullptr));
+        tabWidgetProperties->setTabText(tabWidgetProperties->indexOf(tab_circle), QCoreApplication::translate("MainWindow", "\320\232\321\200\321\203\320\263", nullptr));
         spinBox_triangle_x1->setPrefix(QCoreApplication::translate("MainWindow", "x1 = ", nullptr));
         spinBox_triangle_rotation->setPrefix(QCoreApplication::translate("MainWindow", "rotation = ", nullptr));
         spinBox_triangle_x3->setPrefix(QCoreApplication::translate("MainWindow", "x3 = ", nullptr));
@@ -392,7 +436,7 @@ public:
         spinBox_triangle_y3->setPrefix(QCoreApplication::translate("MainWindow", "y3 = ", nullptr));
         spinBox_triangle_y1->setPrefix(QCoreApplication::translate("MainWindow", "y1 = ", nullptr));
         pushButton_triangle_Delete->setText(QCoreApplication::translate("MainWindow", "Delete triangle", nullptr));
-        tabWidgetProperties->setTabText(tabWidgetProperties->indexOf(tab_triagnle), QCoreApplication::translate("MainWindow", "triangle", nullptr));
+        tabWidgetProperties->setTabText(tabWidgetProperties->indexOf(tab_triagnle), QCoreApplication::translate("MainWindow", "\320\242\321\200\320\265\321\203\320\263\320\276\320\273\321\214\320\275\320\270\320\272", nullptr));
         spinBox_rectangle_y1->setPrefix(QCoreApplication::translate("MainWindow", "y1 = ", nullptr));
         spinBox_rectangle_y2->setPrefix(QCoreApplication::translate("MainWindow", "y2 = ", nullptr));
         spinBox_rectangle_x1->setPrefix(QCoreApplication::translate("MainWindow", "x1 = ", nullptr));
@@ -405,15 +449,8 @@ public:
         spinBox_rectangle_x3->setPrefix(QCoreApplication::translate("MainWindow", "x3 = ", nullptr));
         pushButton_rectangle_Cancel->setText(QCoreApplication::translate("MainWindow", "Cancel", nullptr));
         spinBox_rectangle_rotation->setPrefix(QCoreApplication::translate("MainWindow", "rotation = ", nullptr));
-        tabWidgetProperties->setTabText(tabWidgetProperties->indexOf(tab_rectangle), QCoreApplication::translate("MainWindow", "rectangle", nullptr));
-        spinBox_circle_YCenter->setPrefix(QCoreApplication::translate("MainWindow", "Center(y) = ", nullptr));
-        pushButton_circle_Cancel->setText(QCoreApplication::translate("MainWindow", "Cancel", nullptr));
-        spinBox_circle_XCenter->setPrefix(QCoreApplication::translate("MainWindow", "Center(x) = ", nullptr));
-        pushButton_circle_Apply->setText(QCoreApplication::translate("MainWindow", "Apply", nullptr));
-        spinBox_circle_radius->setPrefix(QCoreApplication::translate("MainWindow", "radius = ", nullptr));
-        pushButton_circle_Delete->setText(QCoreApplication::translate("MainWindow", "Delete circle", nullptr));
-        tabWidgetProperties->setTabText(tabWidgetProperties->indexOf(tab_circle), QCoreApplication::translate("MainWindow", "circle", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "List of added shapes:", nullptr));
+        tabWidgetProperties->setTabText(tabWidgetProperties->indexOf(tab_rectangle), QCoreApplication::translate("MainWindow", "\320\237\321\200\321\217\320\274\320\276\321\203\320\263\320\276\320\273\321\214\320\275\320\270\320\272", nullptr));
+        btnClearScene->setText(QCoreApplication::translate("MainWindow", "\320\236\321\207\320\270\321\201\321\202\320\270\321\202\321\214 \320\263\321\200\320\260\321\204\320\270\320\272", nullptr));
     } // retranslateUi
 
 };

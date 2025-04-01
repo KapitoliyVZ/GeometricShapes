@@ -120,15 +120,15 @@ public:
 
     void retranslateUi(QDialog *TriangleDialog)
     {
-        TriangleDialog->setWindowTitle(QCoreApplication::translate("TriangleDialog", "Create triangle", nullptr));
-        cancelButton->setText(QCoreApplication::translate("TriangleDialog", "Cancel", nullptr));
+        TriangleDialog->setWindowTitle(QCoreApplication::translate("TriangleDialog", "\320\234\320\265\320\275\321\216 \321\201\320\276\320\267\320\264\320\260\320\275\320\270\321\217 \321\202\321\200\320\265\321\203\320\263\320\276\320\273\321\214\320\275\320\270\320\272\320\260", nullptr));
+        cancelButton->setText(QCoreApplication::translate("TriangleDialog", "\320\236\321\202\320\274\320\265\320\275\320\270\321\202\321\214", nullptr));
         y1->setPrefix(QCoreApplication::translate("TriangleDialog", "y1 = ", nullptr));
         x1->setPrefix(QCoreApplication::translate("TriangleDialog", "x1 = ", nullptr));
         x2->setPrefix(QCoreApplication::translate("TriangleDialog", "x2 = ", nullptr));
         x3->setPrefix(QCoreApplication::translate("TriangleDialog", "x3 = ", nullptr));
         y2->setPrefix(QCoreApplication::translate("TriangleDialog", "y2 = ", nullptr));
         y3->setPrefix(QCoreApplication::translate("TriangleDialog", "y3 = ", nullptr));
-        applyButton->setText(QCoreApplication::translate("TriangleDialog", "Apply", nullptr));
+        applyButton->setText(QCoreApplication::translate("TriangleDialog", "\320\241\320\276\320\267\320\264\320\260\321\202\321\214 \321\202\321\200\320\265\321\203\320\263\320\276\320\273\321\214\320\275\320\270\320\272", nullptr));
     } // retranslateUi
 
 };

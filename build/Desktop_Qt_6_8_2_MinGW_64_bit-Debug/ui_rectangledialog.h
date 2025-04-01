@@ -142,19 +142,19 @@ public:
 
     void retranslateUi(QDialog *RectangleDialog)
     {
-        RectangleDialog->setWindowTitle(QCoreApplication::translate("RectangleDialog", "Create rectangle", nullptr));
+        RectangleDialog->setWindowTitle(QCoreApplication::translate("RectangleDialog", "\320\234\320\265\320\275\321\216 \321\201\320\276\320\267\320\264\320\260\320\275\320\270\321\217 \320\277\321\200\321\217\320\274\320\276\321\203\320\263\320\276\320\273\321\214\320\275\320\270\320\272\320\260", nullptr));
         y1->setPrefix(QCoreApplication::translate("RectangleDialog", "y1 =", nullptr));
         x1->setPrefix(QCoreApplication::translate("RectangleDialog", "x1 = ", nullptr));
         x3->setPrefix(QCoreApplication::translate("RectangleDialog", "x3 = ", nullptr));
-        radioSetCoord->setText(QCoreApplication::translate("RectangleDialog", "to set coordinates", nullptr));
+        radioSetCoord->setText(QCoreApplication::translate("RectangleDialog", "\320\227\320\260\320\264\320\260\321\202\321\214 \320\272\320\276\320\276\321\200\320\264\320\270\320\275\320\260\321\202\321\213", nullptr));
         y3->setPrefix(QCoreApplication::translate("RectangleDialog", "y3 = ", nullptr));
         startPointX->setPrefix(QCoreApplication::translate("RectangleDialog", "x0 = ", nullptr));
-        width->setPrefix(QCoreApplication::translate("RectangleDialog", "width = ", nullptr));
+        width->setPrefix(QCoreApplication::translate("RectangleDialog", "\320\250\320\270\321\200\320\270\320\275\320\260 = ", nullptr));
         startPointY->setPrefix(QCoreApplication::translate("RectangleDialog", "y0 = ", nullptr));
-        height->setPrefix(QCoreApplication::translate("RectangleDialog", "height = ", nullptr));
-        applyButton->setText(QCoreApplication::translate("RectangleDialog", "Apply", nullptr));
-        cancelButton->setText(QCoreApplication::translate("RectangleDialog", "Cancel", nullptr));
-        radioSetSides->setText(QCoreApplication::translate("RectangleDialog", "to set sides", nullptr));
+        height->setPrefix(QCoreApplication::translate("RectangleDialog", "\320\222\321\213\321\201\320\276\321\202\320\260 = ", nullptr));
+        applyButton->setText(QCoreApplication::translate("RectangleDialog", "\320\241\320\276\320\267\320\264\320\260\321\202\321\214 \320\277\321\200\321\217\320\274\320\276\321\203\320\263\320\276\320\273\321\214\320\275\320\270\320\272", nullptr));
+        cancelButton->setText(QCoreApplication::translate("RectangleDialog", "\320\236\321\202\320\274\320\265\320\275\320\270\321\202\321\214", nullptr));
+        radioSetSides->setText(QCoreApplication::translate("RectangleDialog", "\320\227\320\260\320\264\320\260\321\202\321\214 \321\200\320\260\320\267\320\274\320\265\321\200\321\213 \321\201\321\202\320\276\321\200\320\276\320\275\321\213", nullptr));
     } // retranslateUi
 
 };

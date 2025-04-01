@@ -16,18 +16,17 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_CircleDialog
 {
 public:
-    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
-    QSpinBox *xCenter;
-    QSpinBox *yCenter;
     QPushButton *applyButton;
+    QSpinBox *yCenter;
+    QSpinBox *xCenter;
     QPushButton *cancelButton;
     QSpinBox *radius;
     QLineEdit *LineCircleName;
@@ -36,48 +35,49 @@ public:
     {
         if (CircleDialog->objectName().isEmpty())
             CircleDialog->setObjectName("CircleDialog");
-        CircleDialog->resize(265, 171);
-        gridLayoutWidget = new QWidget(CircleDialog);
-        gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(10, 10, 247, 152));
-        gridLayout = new QGridLayout(gridLayoutWidget);
+        CircleDialog->resize(565, 404);
+        gridLayout_2 = new QGridLayout(CircleDialog);
+        gridLayout_2->setObjectName("gridLayout_2");
+        gridLayout = new QGridLayout();
         gridLayout->setObjectName("gridLayout");
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        xCenter = new QSpinBox(gridLayoutWidget);
-        xCenter->setObjectName("xCenter");
-        xCenter->setMinimum(-500);
-        xCenter->setMaximum(500);
+        applyButton = new QPushButton(CircleDialog);
+        applyButton->setObjectName("applyButton");
 
-        gridLayout->addWidget(xCenter, 1, 0, 1, 1);
+        gridLayout->addWidget(applyButton, 3, 1, 1, 1);
 
-        yCenter = new QSpinBox(gridLayoutWidget);
+        yCenter = new QSpinBox(CircleDialog);
         yCenter->setObjectName("yCenter");
         yCenter->setMinimum(-500);
         yCenter->setMaximum(500);
 
         gridLayout->addWidget(yCenter, 1, 1, 1, 1);
 
-        applyButton = new QPushButton(gridLayoutWidget);
-        applyButton->setObjectName("applyButton");
+        xCenter = new QSpinBox(CircleDialog);
+        xCenter->setObjectName("xCenter");
+        xCenter->setMinimum(-500);
+        xCenter->setMaximum(500);
 
-        gridLayout->addWidget(applyButton, 4, 1, 1, 1);
+        gridLayout->addWidget(xCenter, 1, 0, 1, 1);
 
-        cancelButton = new QPushButton(gridLayoutWidget);
+        cancelButton = new QPushButton(CircleDialog);
         cancelButton->setObjectName("cancelButton");
 
-        gridLayout->addWidget(cancelButton, 4, 0, 1, 1);
+        gridLayout->addWidget(cancelButton, 3, 0, 1, 1);
 
-        radius = new QSpinBox(gridLayoutWidget);
+        radius = new QSpinBox(CircleDialog);
         radius->setObjectName("radius");
         radius->setMinimum(1);
         radius->setMaximum(200);
 
         gridLayout->addWidget(radius, 2, 0, 1, 2);
 
-        LineCircleName = new QLineEdit(gridLayoutWidget);
+        LineCircleName = new QLineEdit(CircleDialog);
         LineCircleName->setObjectName("LineCircleName");
 
         gridLayout->addWidget(LineCircleName, 0, 0, 1, 2);
+
+
+        gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
 
 
         retranslateUi(CircleDialog);
@@ -90,11 +90,11 @@ public:
 
     void retranslateUi(QDialog *CircleDialog)
     {
-        CircleDialog->setWindowTitle(QCoreApplication::translate("CircleDialog", "Create circle", nullptr));
-        xCenter->setPrefix(QCoreApplication::translate("CircleDialog", "x = ", nullptr));
+        CircleDialog->setWindowTitle(QCoreApplication::translate("CircleDialog", "\320\234\320\265\320\275\321\216 \321\201\320\276\320\267\320\264\320\260\320\275\320\270\321\217 \320\272\321\200\321\203\320\263\320\260", nullptr));
+        applyButton->setText(QCoreApplication::translate("CircleDialog", "\320\241\320\276\320\267\320\264\320\260\321\202\321\214 \320\272\321\200\321\203\320\263", nullptr));
         yCenter->setPrefix(QCoreApplication::translate("CircleDialog", "y = ", nullptr));
-        applyButton->setText(QCoreApplication::translate("CircleDialog", "Apply", nullptr));
-        cancelButton->setText(QCoreApplication::translate("CircleDialog", "Cancel", nullptr));
+        xCenter->setPrefix(QCoreApplication::translate("CircleDialog", "x = ", nullptr));
+        cancelButton->setText(QCoreApplication::translate("CircleDialog", "\320\236\321\202\320\274\320\265\320\275\320\270\321\202\321\214", nullptr));
         radius->setPrefix(QCoreApplication::translate("CircleDialog", "r = ", nullptr));
     } // retranslateUi
 

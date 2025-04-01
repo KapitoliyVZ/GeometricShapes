@@ -6,84 +6,78 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>265</width>
-    <height>171</height>
+    <width>565</width>
+    <height>404</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Create circle</string>
+   <string>Меню создания круга</string>
   </property>
-  <widget class="QWidget" name="gridLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>247</width>
-     <height>152</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QSpinBox" name="xCenter">
-      <property name="prefix">
-       <string>x = </string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QSpinBox" name="yCenter">
-      <property name="prefix">
-       <string>y = </string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QPushButton" name="applyButton">
-      <property name="text">
-       <string>Apply</string>
-      </property>
-      <property name="default">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="cancelButton">
-      <property name="text">
-       <string>Cancel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="2">
-     <widget class="QSpinBox" name="radius">
-      <property name="prefix">
-       <string>r = </string>
-      </property>
-      <property name="minimum">
-       <number>1</number>
-      </property>
-      <property name="maximum">
-       <number>200</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLineEdit" name="LineCircleName"/>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="3" column="1">
+      <widget class="QPushButton" name="applyButton">
+       <property name="text">
+        <string>Создать круг</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QSpinBox" name="yCenter">
+       <property name="prefix">
+        <string>y = </string>
+       </property>
+       <property name="minimum">
+        <number>-500</number>
+       </property>
+       <property name="maximum">
+        <number>500</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QSpinBox" name="xCenter">
+       <property name="prefix">
+        <string>x = </string>
+       </property>
+       <property name="minimum">
+        <number>-500</number>
+       </property>
+       <property name="maximum">
+        <number>500</number>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="cancelButton">
+       <property name="text">
+        <string>Отменить</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QSpinBox" name="radius">
+       <property name="prefix">
+        <string>r = </string>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>200</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="QLineEdit" name="LineCircleName"/>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
