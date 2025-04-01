@@ -35,7 +35,7 @@ public:
     {
         if (CircleDialog->objectName().isEmpty())
             CircleDialog->setObjectName("CircleDialog");
-        CircleDialog->resize(565, 404);
+        CircleDialog->resize(308, 170);
         gridLayout_2 = new QGridLayout(CircleDialog);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout = new QGridLayout();
@@ -96,6 +96,7 @@ public:
         xCenter->setPrefix(QCoreApplication::translate("CircleDialog", "x = ", nullptr));
         cancelButton->setText(QCoreApplication::translate("CircleDialog", "\320\236\321\202\320\274\320\265\320\275\320\270\321\202\321\214", nullptr));
         radius->setPrefix(QCoreApplication::translate("CircleDialog", "r = ", nullptr));
+        LineCircleName->setText(QString());
     } // retranslateUi
 
 };

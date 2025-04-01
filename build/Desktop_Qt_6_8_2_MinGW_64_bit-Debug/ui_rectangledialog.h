@@ -17,14 +17,13 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpinBox>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_RectangleDialog
 {
 public:
-    QWidget *gridLayoutWidget_2;
+    QGridLayout *gridLayout;
     QGridLayout *gridLayout_2;
     QSpinBox *y1;
     QSpinBox *x1;
@@ -44,14 +43,12 @@ public:
     {
         if (RectangleDialog->objectName().isEmpty())
             RectangleDialog->setObjectName("RectangleDialog");
-        RectangleDialog->resize(486, 334);
-        gridLayoutWidget_2 = new QWidget(RectangleDialog);
-        gridLayoutWidget_2->setObjectName("gridLayoutWidget_2");
-        gridLayoutWidget_2->setGeometry(QRect(10, 10, 461, 311));
-        gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
+        RectangleDialog->resize(397, 164);
+        gridLayout = new QGridLayout(RectangleDialog);
+        gridLayout->setObjectName("gridLayout");
+        gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName("gridLayout_2");
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        y1 = new QSpinBox(gridLayoutWidget_2);
+        y1 = new QSpinBox(RectangleDialog);
         y1->setObjectName("y1");
         y1->setMinimum(-500);
         y1->setMaximum(500);
@@ -59,7 +56,7 @@ public:
 
         gridLayout_2->addWidget(y1, 3, 1, 1, 1);
 
-        x1 = new QSpinBox(gridLayoutWidget_2);
+        x1 = new QSpinBox(RectangleDialog);
         x1->setObjectName("x1");
         x1->setMinimum(-500);
         x1->setMaximum(500);
@@ -67,7 +64,7 @@ public:
 
         gridLayout_2->addWidget(x1, 3, 0, 1, 1);
 
-        x3 = new QSpinBox(gridLayoutWidget_2);
+        x3 = new QSpinBox(RectangleDialog);
         x3->setObjectName("x3");
         x3->setMinimum(-500);
         x3->setMaximum(500);
@@ -75,12 +72,12 @@ public:
 
         gridLayout_2->addWidget(x3, 6, 0, 1, 1);
 
-        radioSetCoord = new QRadioButton(gridLayoutWidget_2);
+        radioSetCoord = new QRadioButton(RectangleDialog);
         radioSetCoord->setObjectName("radioSetCoord");
 
         gridLayout_2->addWidget(radioSetCoord, 1, 0, 1, 2);
 
-        y3 = new QSpinBox(gridLayoutWidget_2);
+        y3 = new QSpinBox(RectangleDialog);
         y3->setObjectName("y3");
         y3->setMinimum(-500);
         y3->setMaximum(500);
@@ -88,51 +85,54 @@ public:
 
         gridLayout_2->addWidget(y3, 6, 1, 1, 1);
 
-        startPointX = new QSpinBox(gridLayoutWidget_2);
+        startPointX = new QSpinBox(RectangleDialog);
         startPointX->setObjectName("startPointX");
         startPointX->setMinimum(-500);
         startPointX->setMaximum(500);
 
         gridLayout_2->addWidget(startPointX, 3, 2, 1, 1);
 
-        width = new QSpinBox(gridLayoutWidget_2);
+        width = new QSpinBox(RectangleDialog);
         width->setObjectName("width");
         width->setMaximum(500);
 
         gridLayout_2->addWidget(width, 6, 2, 1, 1);
 
-        startPointY = new QSpinBox(gridLayoutWidget_2);
+        startPointY = new QSpinBox(RectangleDialog);
         startPointY->setObjectName("startPointY");
         startPointY->setMaximum(500);
         startPointY->setValue(0);
 
         gridLayout_2->addWidget(startPointY, 3, 3, 1, 1);
 
-        height = new QSpinBox(gridLayoutWidget_2);
+        height = new QSpinBox(RectangleDialog);
         height->setObjectName("height");
         height->setMaximum(500);
 
         gridLayout_2->addWidget(height, 6, 3, 1, 1);
 
-        applyButton = new QPushButton(gridLayoutWidget_2);
+        applyButton = new QPushButton(RectangleDialog);
         applyButton->setObjectName("applyButton");
 
         gridLayout_2->addWidget(applyButton, 9, 2, 1, 2);
 
-        cancelButton = new QPushButton(gridLayoutWidget_2);
+        cancelButton = new QPushButton(RectangleDialog);
         cancelButton->setObjectName("cancelButton");
 
         gridLayout_2->addWidget(cancelButton, 9, 0, 1, 2);
 
-        radioSetSides = new QRadioButton(gridLayoutWidget_2);
+        radioSetSides = new QRadioButton(RectangleDialog);
         radioSetSides->setObjectName("radioSetSides");
 
         gridLayout_2->addWidget(radioSetSides, 1, 2, 1, 2);
 
-        LineCircleName = new QLineEdit(gridLayoutWidget_2);
+        LineCircleName = new QLineEdit(RectangleDialog);
         LineCircleName->setObjectName("LineCircleName");
 
         gridLayout_2->addWidget(LineCircleName, 0, 0, 1, 4);
+
+
+        gridLayout->addLayout(gridLayout_2, 0, 0, 1, 1);
 
 
         retranslateUi(RectangleDialog);

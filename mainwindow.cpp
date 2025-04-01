@@ -21,6 +21,16 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     coordinate_scene->setItemIndexMethod(QGraphicsScene::NoIndex);
     coordinate_scene->setSelectionArea(QPainterPath());
 
+    // Создаём графическую сцену
+    coordinate_scene = new QGraphicsScene(this);
+    ui->graphicsView->setScene(coordinate_scene);
+
+    // Создаём объект GraphSettings и передаём сцену
+    graphSettings = new GraphSettings(coordinate_scene);
+
+    // Настраиваем начальный размер сцены
+    graphSettings->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
+
     ui->tabWidgetProperties->setEnabled(false);// выключаем таблицу настроек до выбора нарисованной фигуры
     // ui->tabWidgetProperties->setEnabled(selectedShape != nullptr);
 
@@ -43,16 +53,18 @@ void MainWindow::setupScene()
     coordinate_scene->setBackgroundBrush(Qt::lightGray); // Устанавливаем белый фон
     ui->graphicsView->setScene(coordinate_scene);
 
-    // GraphSettings::setupScene(scene); // Вызываем настройку графика
+    // Создаём объект координатной системы
+    graphSettings = new GraphSettings(coordinate_scene, 50);
 
-    GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
+    // Устанавливаем начальный размер
+    graphSettings->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
 }
 
 // прорисовка сцены (координатной оси) при изменении размеров окна пользователем
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
-    // QMainWindow::resizeEvent(event);
-    // GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
+    QMainWindow::resizeEvent(event);
+    graphSettings->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
 }
 
 // при прокрутке колеса мыши
@@ -60,9 +72,12 @@ void MainWindow::wheelEvent(QWheelEvent *event)
 {
     const double scaleFactor = 1.05; // Коэффициент увеличения
 
-    if (event->angleDelta().y() > 0) {
+    if (event->angleDelta().y() > 0)
+    {
         ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
-    } else {
+    }
+    else
+    {
         ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
     }
 }

@@ -13,7 +13,7 @@
 #include <Circle.h>
 #include <Rectangle.h>
 #include <Triangle.h>
-
+#include "CoordinateSystem.h"  // Подключаем наш новый класс
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -66,6 +66,8 @@ protected:
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *coordinate_scene; // Сцена для отображения фигур
+    GraphSettings *graphSettings;      // Объект для работы с координатной системой
+
     QList<QGraphicsItem*> list_of_Shapes; // Список фигур
 
     Shape* selectedShape = nullptr;  // Указатель на выбранную фигуру

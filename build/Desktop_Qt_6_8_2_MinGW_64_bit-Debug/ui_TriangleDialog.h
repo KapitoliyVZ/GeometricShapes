@@ -16,14 +16,13 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_TriangleDialog
 {
 public:
-    QWidget *formLayoutWidget;
+    QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
     QPushButton *cancelButton;
     QSpinBox *y1;
@@ -39,19 +38,17 @@ public:
     {
         if (TriangleDialog->objectName().isEmpty())
             TriangleDialog->setObjectName("TriangleDialog");
-        TriangleDialog->resize(320, 175);
-        formLayoutWidget = new QWidget(TriangleDialog);
-        formLayoutWidget->setObjectName("formLayoutWidget");
-        formLayoutWidget->setGeometry(QRect(10, 10, 301, 153));
-        gridLayout = new QGridLayout(formLayoutWidget);
+        TriangleDialog->resize(298, 179);
+        gridLayout_2 = new QGridLayout(TriangleDialog);
+        gridLayout_2->setObjectName("gridLayout_2");
+        gridLayout = new QGridLayout();
         gridLayout->setObjectName("gridLayout");
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        cancelButton = new QPushButton(formLayoutWidget);
+        cancelButton = new QPushButton(TriangleDialog);
         cancelButton->setObjectName("cancelButton");
 
         gridLayout->addWidget(cancelButton, 5, 0, 1, 1);
 
-        y1 = new QSpinBox(formLayoutWidget);
+        y1 = new QSpinBox(TriangleDialog);
         y1->setObjectName("y1");
         y1->setMinimum(-500);
         y1->setMaximum(500);
@@ -59,7 +56,7 @@ public:
 
         gridLayout->addWidget(y1, 1, 1, 1, 1);
 
-        x1 = new QSpinBox(formLayoutWidget);
+        x1 = new QSpinBox(TriangleDialog);
         x1->setObjectName("x1");
         x1->setMinimum(-500);
         x1->setMaximum(500);
@@ -67,7 +64,7 @@ public:
 
         gridLayout->addWidget(x1, 1, 0, 1, 1);
 
-        x2 = new QSpinBox(formLayoutWidget);
+        x2 = new QSpinBox(TriangleDialog);
         x2->setObjectName("x2");
         x2->setMinimum(-500);
         x2->setMaximum(500);
@@ -75,7 +72,7 @@ public:
 
         gridLayout->addWidget(x2, 2, 0, 1, 1);
 
-        x3 = new QSpinBox(formLayoutWidget);
+        x3 = new QSpinBox(TriangleDialog);
         x3->setObjectName("x3");
         x3->setMinimum(-500);
         x3->setMaximum(500);
@@ -83,7 +80,7 @@ public:
 
         gridLayout->addWidget(x3, 3, 0, 1, 1);
 
-        y2 = new QSpinBox(formLayoutWidget);
+        y2 = new QSpinBox(TriangleDialog);
         y2->setObjectName("y2");
         y2->setMinimum(-500);
         y2->setMaximum(500);
@@ -91,7 +88,7 @@ public:
 
         gridLayout->addWidget(y2, 2, 1, 1, 1);
 
-        y3 = new QSpinBox(formLayoutWidget);
+        y3 = new QSpinBox(TriangleDialog);
         y3->setObjectName("y3");
         y3->setMinimum(-500);
         y3->setMaximum(500);
@@ -99,15 +96,18 @@ public:
 
         gridLayout->addWidget(y3, 3, 1, 1, 1);
 
-        applyButton = new QPushButton(formLayoutWidget);
+        applyButton = new QPushButton(TriangleDialog);
         applyButton->setObjectName("applyButton");
 
         gridLayout->addWidget(applyButton, 5, 1, 1, 1);
 
-        LineTriangleName = new QLineEdit(formLayoutWidget);
+        LineTriangleName = new QLineEdit(TriangleDialog);
         LineTriangleName->setObjectName("LineTriangleName");
 
         gridLayout->addWidget(LineTriangleName, 0, 0, 1, 2);
+
+
+        gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
 
 
         retranslateUi(TriangleDialog);
