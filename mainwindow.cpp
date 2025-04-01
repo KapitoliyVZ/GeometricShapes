@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QMessageBox>
 
 #include "CoordinateSystem.h"
 #include "Rectangle.h"
@@ -9,13 +10,25 @@
 #include <Triangle.h>
 #include <TriangleDialog.h>
 
+#include <QDebug>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     setupScene();
+
+    // Включаем режим выбора фигур на сцене (на координатной сетке)
+    coordinate_scene->setItemIndexMethod(QGraphicsScene::NoIndex);
+    coordinate_scene->setSelectionArea(QPainterPath());
+
+    ui->tabWidgetProperties->setEnabled(false);// выключаем таблицу настроек до выбора нарисованной фигуры
+    // ui->tabWidgetProperties->setEnabled(selectedShape != nullptr);
+
+    // Нажатие на фигуру на графике
+    connect(ui->graphicsView->scene(), &QGraphicsScene::selectionChanged, this, &MainWindow::onSceneSelectShape);
+
+    // реакция на нажатие на пустую область для снятия выделения фигуры
+    connect(ui->graphicsView->scene(), &QGraphicsScene::selectionChanged, this, &MainWindow::onSelectionChanged);
 }
 
 MainWindow::~MainWindow()
@@ -29,7 +42,6 @@ void MainWindow::setupScene()
     coordinate_scene = new QGraphicsScene(this);
     coordinate_scene->setBackgroundBrush(Qt::lightGray); // Устанавливаем белый фон
     ui->graphicsView->setScene(coordinate_scene);
-    //ui->graphicsView->setTransform(QTransform().scale(1, -1)); // Инверсия Y
 
     // GraphSettings::setupScene(scene); // Вызываем настройку графика
 
@@ -62,22 +74,22 @@ void MainWindow::on_btnRectangle_clicked()
 
     if (dialog.exec() == QDialog::Accepted) {
         QList<QPointF> coords = dialog.getCoordinates();
+        QString name = dialog.getRectangleName();
 
-        if (coords.size() == 4) {
-            RectangleShape *rect = new RectangleShape(coords);
-            coordinate_scene->addItem(rect);
-            list_of_Shapes.append(rect); // Сохраняем в список
+        // Проверяем уникальность имени
+        if (!isShapeNameUnique(name))
+        {
+            QMessageBox::warning(this, "Ошибка", "Фигура с таким именем уже существует!");
+            return;
         }
-<<<<<<< Updated upstream
-=======
         // Построение по 4 координатам
         if (dialog.isCoordMode())
         {
             if (coords.size() == 4) {
                 RectangleShape *rectangle = new RectangleShape(coords, name);
-                coordinate_scene->addItem(rectangle);   // Добавляем на график
-                list_of_Shapes.append(rectangle);       // Сохраняем в список
-                updateShapeList();                      // Обновляем виджет с именами
+                coordinate_scene->addItem(rectangle);
+                list_of_Shapes.append(rectangle);   // Сохраняем в список
+                updateShapeList();                  // Обновляем виджет с именами
             }
         }
         // Построение по стартовой точке и размерам
@@ -94,10 +106,8 @@ void MainWindow::on_btnRectangle_clicked()
         }
 
 
->>>>>>> Stashed changes
     }
 }
-
 // кнопка добавления круга
 void MainWindow::on_btnCircle_clicked()
 {
@@ -106,43 +116,46 @@ void MainWindow::on_btnCircle_clicked()
     if (dialog.exec() == QDialog::Accepted) {
         QPointF center = dialog.getCenter();
         double radius = dialog.getRadius();
+        QString name = dialog.getCircleName();
 
-        CircleShape *circle = new CircleShape(center, radius);
+        // Проверяем уникальность имени
+        if (!isShapeNameUnique(name))
+        {
+            QMessageBox::warning(this, "Ошибка", "Фигура с таким именем уже существует!");
+            return;
+        }
+
+        CircleShape *circle = new CircleShape(center, radius, name);
         coordinate_scene->addItem(circle);
         list_of_Shapes.append(circle); // Сохраняем в список
+        updateShapeList(); // Обновляем виджет с именами
     }
 }
-
-// Кнопка очистки графика
-void MainWindow::on_btnClearScene_clicked()
-{
-    for (QGraphicsItem *item : list_of_Shapes) {
-        coordinate_scene->removeItem(item);
-        delete item; // Освобождаем память
-    }
-
-    coordinate_scene->clear(); // Удаляем все элементы из сцены
-    GraphSettings::updateSceneSize(coordinate_scene, ui->graphicsView);
-}
-
-
+// кнопка добавления треугольника
 void MainWindow::on_btnTriangle_clicked()
 {
     TriangleDialog dialog(this);
 
     if (dialog.exec() == QDialog::Accepted) {
         QList<QPointF> coords = dialog.getCoordinates();
+        QString name = dialog.getTriangleName();
+
+        // Проверяем уникальность имени
+        if (!isShapeNameUnique(name))
+        {
+            QMessageBox::warning(this, "Ошибка", "Фигура с таким именем уже существует!");
+            return;
+        }
 
         if (coords.size() == 3) {
-            TriangleShape *rect = new TriangleShape(coords);
-            coordinate_scene->addItem(rect);
-            list_of_Shapes.append(rect); // Сохраняем в список
+            TriangleShape *triangle = new TriangleShape(coords, name);
+            coordinate_scene->addItem(triangle);
+            list_of_Shapes.append(triangle); // Сохраняем в список
+            updateShapeList(); // Обновляем виджет с именами
         }
     }
 }
 
-<<<<<<< Updated upstream
-=======
 // проверка наличия введенного имени
 bool MainWindow::isShapeNameUnique(const QString& name)
 {
@@ -273,6 +286,7 @@ void MainWindow::onSceneSelectShape()
     ui->tabWidgetProperties->setEnabled(true);  // Включаем tabWidgetProperties
     coordinate_scene->update();                 // Обновляем сцену
     setWidgetPropertiesShape(selectedShape);    // настраиваем отображение виджета с парамметрами выбранной фигуры
+
 }
 
 
@@ -301,4 +315,3 @@ void MainWindow::onSelectionChanged()
 
 
 
->>>>>>> Stashed changes

@@ -1,6 +1,7 @@
 debug/Circle.o
 debug/CircleDialog.o
 debug/CoordinateSystem.o
+debug/PropertiesShape.o
 debug/Rectangle.o
 debug/RectangleDialog.o
 debug/Shape.o

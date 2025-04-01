@@ -2,6 +2,7 @@
 #define TRIANGLEDIALOG_H
 
 #include <QDialog>
+#include <QString>
 
 namespace Ui {
 class TriangleDialog;
@@ -17,25 +18,16 @@ public:
 
     // Получаем координаты от пользователя
     QList<QPointF> getCoordinates() const;
+    QString getTriangleName() const;
 
 private slots:
-<<<<<<< Updated upstream
     void on_cancelButton_clicked();
-
     void on_applyButton_clicked();
 
 private:
     Ui::TriangleDialog *ui;
-    QList<QPointF> coordinates;
-=======
-    void on_cancelButton_clicked(); // отменить ввод параметров
-    void on_applyButton_clicked();  // применить параметры
-
-private:
-    Ui::TriangleDialog *ui;
     QList<QPointF> coordinates; // заданные координаты
-    QString nameByUser;           // заданное имя
->>>>>>> Stashed changes
+    QString nameUser; // заданное имя
 };
 
 #endif // TRIANGLEDIALOG_H

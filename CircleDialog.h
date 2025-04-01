@@ -4,6 +4,7 @@
 #define CIRCLEDIALOG_H
 
 #include <QDialog>
+#include <QString>
 
 namespace Ui {
 class CircleDialog;
@@ -19,6 +20,7 @@ public:
 
     QPointF getCenter() const;
     double getRadius() const;
+    QString getCircleName() const;
 
 private slots:
     void on_applyButton_clicked();
@@ -26,8 +28,10 @@ private slots:
 
 private:
     Ui::CircleDialog *ui;
-    QPointF center;
-    double radius;
+
+    QPointF center;     // заданные координаты центра
+    double radius;      // заданный радиус
+    QString nameByUser; // заданное имя
 };
 
 #endif // CIRCLEDIALOG_H

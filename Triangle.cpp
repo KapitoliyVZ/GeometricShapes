@@ -1,6 +1,7 @@
 #include "Triangle.h"
 
-TriangleShape::TriangleShape(const QList<QPointF> &coords)
+TriangleShape::TriangleShape(const QList<QPointF> &coords, const QString& customName)
+    : Shape("Triangle", customName)
 {
     if (coords.size() == 3) {
         polygon = QPolygonF(coords);
@@ -17,12 +18,19 @@ void TriangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, Q
 {
     if (polygon.isEmpty()) return;
 
+    // Если фигура выделена
+    if (isSelected())
+    {
+        painter->setPen(Qt::red); // цвет контура - красный
+    }
+    else
+    {
+        painter->setPen(Qt::black); // цвет контура - черный
+    }
+
     // painter->setBrush(Qt::blue); // цвет заливки
-    painter->setPen(Qt::white);     // цвет контура
     painter->drawPolygon(polygon);  // прорисовка фигуры
 }
-<<<<<<< Updated upstream
-=======
 
 // получение текущих координат
 QVector<QPointF> TriangleShape::getPoints() const
@@ -36,7 +44,7 @@ void TriangleShape::setNewPoints(const QVector<QPointF>& newPoints)
     if (newPoints.size() == 3)
     {
         polygon = QPolygonF(newPoints);  // Обновляем координаты
-        update();  // Перерисовка треугольника
+        update();  // Перерисовка треугольник
     }
 }
 
@@ -53,4 +61,3 @@ int TriangleShape::getRotationAngle() const
     return rotation();  // Возвращаем текущий угол
 }
 
->>>>>>> Stashed changes

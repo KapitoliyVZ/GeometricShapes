@@ -4,6 +4,7 @@
 #define RECTANGLEDIALOG_H
 
 #include <QDialog>
+#include <QButtonGroup>
 
 namespace Ui {
 class RectangleDialog;
@@ -18,25 +19,31 @@ public:
     ~RectangleDialog();
 
     // Получаем координаты от пользователя
-    QList<QPointF> getCoordinates() const;
+    QList<QPointF> getCoordinates() const;  // Возвращает 4 координаты
+
+    QString getRectangleName() const;       // Возвращает имя
+
+    QPointF getStartPoint() const;     // Возвращает начальную точку
+    double getWidth() const;           // Возвращает ширину
+    double getHeight() const;          // Возвращает высоту
+
+    bool isCoordMode() const;  // Возвращает true, если выбран режим "По координатам"
+    bool isSizeMode() const;   // Возвращает true, если выбран режим "По начальной точке и размерам"
+
 
 private slots:
-<<<<<<< Updated upstream
-    bool isValidRectangle(const QList<QPointF> &coords); // проверка валидности значений координат
-    void on_cancelButton_clicked(); // отменить ввод параметров
-    void on_applyButton_clicked(); // Применить параметры
-=======
     bool isValidRectangle(const QList<QPointF> &coords);    // проверка валидности значений координат
-
     void on_cancelButton_clicked();                         // Отменить ввод параметров
     void on_applyButton_clicked();                          // Применить параметры
-
-    void onRadioTypeSet();                                  // функция для отображения вида параметров ввода
->>>>>>> Stashed changes
+    void onRadioTypeSet();                                  // функция для отображения параметров ввода
 
 private:
     Ui::RectangleDialog *ui;
-    QList<QPointF> coordinates;
+
+    QList<QPointF> coordinates; // заданные координаты
+    QString nameUser;           // заданное имя
+
+    QButtonGroup* shapeModeGroup;  // Группа для радиокнопок
 };
 
 #endif // RECTANGLEDIALOG_H

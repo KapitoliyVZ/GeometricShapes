@@ -6,19 +6,33 @@
 #include <QGraphicsItem>    // библиотека для графических объектов для сцены
 #include <QPainter>         // библиотека для инструментов отрисовки объектов
 #include <QString>
-
+#include <QUuid>
 
 class Shape : public QGraphicsItem
 {
 public:
-    Shape();
-    //virtual ~Shape();
+    // Конструктор с опциональным именем
+    explicit Shape(const QString& type, const QString& customName = "");
+    // Виртуальный деструктор
+    virtual ~Shape() = default;
+
+    // Геттеры
+    QString getName() const;
+    QUuid getId() const;
+
+    // Сеттер для имени
+    void setName(const QString& newName);
 
     virtual QRectF boundingRect() const override = 0; // Границы объекта
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override = 0; // Отрисовка
 
-    void setPosition(int x, int y); // Установка позиции
-    void setRotationAngle(int angle); // Установка угла поворота
+
+protected:
+    QString name;       // Имя фигуры
+    QUuid id;           // Уникальный ID
+    QColor color;       // Цвет фигуры
+
+    static int shapeCounter;  // Счётчик для генерации имени
 };
 
 #endif // SHAPE_H

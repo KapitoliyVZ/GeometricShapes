@@ -6,50 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>322</width>
-    <height>213</height>
+    <width>486</width>
+    <height>334</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Create rectangle</string>
   </property>
-  <widget class="QWidget" name="gridLayoutWidget">
+  <widget class="QWidget" name="gridLayoutWidget_2">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>301</width>
-     <height>191</height>
+     <width>461</width>
+     <height>311</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="1">
-     <widget class="QSpinBox" name="y2">
-      <property name="prefix">
-       <string>y2 = </string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QSpinBox" name="x2">
-      <property name="prefix">
-       <string>x2 =</string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="3" column="1">
      <widget class="QSpinBox" name="y1">
       <property name="prefix">
        <string>y1 =</string>
@@ -60,61 +34,12 @@
       <property name="maximum">
        <number>500</number>
       </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QSpinBox" name="x3">
-      <property name="prefix">
-       <string>x3 = </string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QSpinBox" name="y3">
-      <property name="prefix">
-       <string>y3 = </string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
+      <property name="value">
+       <number>10</number>
       </property>
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QSpinBox" name="x4">
-      <property name="prefix">
-       <string>x4 =</string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QSpinBox" name="y4">
-      <property name="prefix">
-       <string>y4 = </string>
-      </property>
-      <property name="minimum">
-       <number>-500</number>
-      </property>
-      <property name="maximum">
-       <number>500</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
      <widget class="QSpinBox" name="x1">
       <property name="prefix">
        <string>x1 = </string>
@@ -125,21 +50,119 @@
       <property name="maximum">
        <number>500</number>
       </property>
+      <property name="value">
+       <number>10</number>
+      </property>
      </widget>
     </item>
-    <item row="4" column="1">
+    <item row="6" column="0">
+     <widget class="QSpinBox" name="x3">
+      <property name="prefix">
+       <string>x3 = </string>
+      </property>
+      <property name="minimum">
+       <number>-500</number>
+      </property>
+      <property name="maximum">
+       <number>500</number>
+      </property>
+      <property name="value">
+       <number>40</number>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QRadioButton" name="radioSetCoord">
+      <property name="text">
+       <string>to set coordinates</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QSpinBox" name="y3">
+      <property name="prefix">
+       <string>y3 = </string>
+      </property>
+      <property name="minimum">
+       <number>-500</number>
+      </property>
+      <property name="maximum">
+       <number>500</number>
+      </property>
+      <property name="value">
+       <number>30</number>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QSpinBox" name="startPointX">
+      <property name="prefix">
+       <string>x0 = </string>
+      </property>
+      <property name="minimum">
+       <number>-500</number>
+      </property>
+      <property name="maximum">
+       <number>500</number>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QSpinBox" name="width">
+      <property name="prefix">
+       <string>width = </string>
+      </property>
+      <property name="maximum">
+       <number>500</number>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QSpinBox" name="startPointY">
+      <property name="prefix">
+       <string>y0 = </string>
+      </property>
+      <property name="maximum">
+       <number>500</number>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
+     <widget class="QSpinBox" name="height">
+      <property name="prefix">
+       <string>height = </string>
+      </property>
+      <property name="maximum">
+       <number>500</number>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2" colspan="2">
      <widget class="QPushButton" name="applyButton">
       <property name="text">
        <string>Apply</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
+    <item row="9" column="0" colspan="2">
      <widget class="QPushButton" name="cancelButton">
       <property name="text">
        <string>Cancel</string>
       </property>
      </widget>
+    </item>
+    <item row="1" column="2" colspan="2">
+     <widget class="QRadioButton" name="radioSetSides">
+      <property name="text">
+       <string>to set sides</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="4">
+     <widget class="QLineEdit" name="LineCircleName"/>
     </item>
    </layout>
   </widget>

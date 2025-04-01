@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1055</width>
-    <height>639</height>
+    <width>1124</width>
+    <height>613</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -17,56 +17,18 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btnCircle">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>30</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="whatsThis">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set parametrs and create circle&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="text">
-     <string>Circle</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnRectangle">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>70</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Rectangle</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnTriangle">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>110</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Triangle</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnClearScene">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>30</y>
+      <x>800</x>
+      <y>540</y>
       <width>131</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(170, 0, 0);</string>
     </property>
     <property name="text">
      <string>Clear all shapes</string>
@@ -75,8 +37,8 @@
    <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>40</y>
+      <x>610</x>
+      <y>30</y>
       <width>500</width>
       <height>500</height>
      </rect>
@@ -94,13 +56,11 @@
      <bool>true</bool>
     </property>
    </widget>
-<<<<<<< Updated upstream
-=======
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>50</x>
+      <y>30</y>
       <width>281</width>
       <height>81</height>
      </rect>
@@ -165,7 +125,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_triagnle">
      <attribute name="title">
@@ -286,18 +246,8 @@
        <item row="6" column="0" colspan="2">
         <widget class="QPushButton" name="pushButton_triangle_Delete">
          <property name="styleSheet">
-          <string notr="true">QPushButton {
-    background-color: red;
-    color: white;
-    font-weight: bold;
-}
-QPushButton:hover {
-    background-color: darkred;
-}
-QPushButton:pressed {
-    background-color: black;
-}
-</string>
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(170, 0, 0);</string>
          </property>
          <property name="text">
           <string>Delete triangle</string>
@@ -379,17 +329,8 @@ QPushButton:pressed {
        <item row="7" column="0" colspan="2">
         <widget class="QPushButton" name="pushButton_rectangle_Delete">
          <property name="styleSheet">
-          <string notr="true">QPushButton {
-    background-color: red;
-    color: white;
-    font-weight: bold;
-}
-QPushButton:hover {
-    background-color: darkred;
-}
-QPushButton:pressed {
-    background-color: black;
-}
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(170, 0, 0);
 </string>
          </property>
          <property name="text">
@@ -549,18 +490,8 @@ QPushButton:pressed {
        <item row="5" column="0" colspan="2">
         <widget class="QPushButton" name="pushButton_circle_Delete">
          <property name="styleSheet">
-          <string notr="true">QPushButton {
-    background-color: red;
-    color: white;
-    font-weight: bold;
-}
-QPushButton:hover {
-    background-color: red;
-}
-QPushButton:pressed {
-    background-color: red;
-}
-</string>
+          <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(170, 0, 0);</string>
          </property>
          <property name="text">
           <string>Delete circle</string>
@@ -584,9 +515,9 @@ QPushButton:pressed {
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>50</x>
       <y>150</y>
-      <width>201</width>
+      <width>151</width>
       <height>41</height>
      </rect>
     </property>
@@ -594,15 +525,14 @@ QPushButton:pressed {
      <string>List of added shapes:</string>
     </property>
    </widget>
->>>>>>> Stashed changes
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1055</width>
-     <height>21</height>
+     <width>1124</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>
