@@ -93,18 +93,8 @@ public:
         btnClearScene = new QPushButton(centralwidget);
         btnClearScene->setObjectName("btnClearScene");
         btnClearScene->setGeometry(QRect(800, 540, 131, 21));
-        btnClearScene->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    background-color: red;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: darkred;\n"
-"}\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"}\n"
-""));
+        btnClearScene->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"background-color: rgb(170, 0, 0);"));
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName("graphicsView");
         graphicsView->setGeometry(QRect(610, 30, 500, 500));
@@ -114,7 +104,7 @@ public:
         graphicsView->setInteractive(true);
         frame = new QFrame(centralwidget);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(190, 50, 281, 81));
+        frame->setGeometry(QRect(50, 30, 281, 81));
         frame->setFrameShape(QFrame::Shape::StyledPanel);
         frame->setFrameShadow(QFrame::Shadow::Raised);
         gridLayoutWidget_4 = new QWidget(frame);
@@ -214,18 +204,8 @@ public:
 
         pushButton_triangle_Delete = new QPushButton(gridLayoutWidget);
         pushButton_triangle_Delete->setObjectName("pushButton_triangle_Delete");
-        pushButton_triangle_Delete->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    background-color: red;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: darkred;\n"
-"}\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"}\n"
-""));
+        pushButton_triangle_Delete->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"background-color: rgb(170, 0, 0);"));
         pushButton_triangle_Delete->setAutoRepeat(false);
 
         gridLayout->addWidget(pushButton_triangle_Delete, 6, 0, 1, 2);
@@ -269,17 +249,8 @@ public:
 
         pushButton_rectangle_Delete = new QPushButton(gridLayoutWidget_2);
         pushButton_rectangle_Delete->setObjectName("pushButton_rectangle_Delete");
-        pushButton_rectangle_Delete->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    background-color: red;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: darkred;\n"
-"}\n"
-"QPushButton:pressed {\n"
-"    background-color: black;\n"
-"}\n"
+        pushButton_rectangle_Delete->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"background-color: rgb(170, 0, 0);\n"
 ""));
         pushButton_rectangle_Delete->setAutoRepeat(false);
 
@@ -371,18 +342,8 @@ public:
 
         pushButton_circle_Delete = new QPushButton(gridLayoutWidget_3);
         pushButton_circle_Delete->setObjectName("pushButton_circle_Delete");
-        pushButton_circle_Delete->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    background-color: red;\n"
-"    color: white;\n"
-"    font-weight: bold;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: red;\n"
-"}\n"
-"QPushButton:pressed {\n"
-"    background-color: red;\n"
-"}\n"
-""));
+        pushButton_circle_Delete->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"background-color: rgb(170, 0, 0);"));
 
         gridLayout_3->addWidget(pushButton_circle_Delete, 5, 0, 1, 2);
 
@@ -392,7 +353,7 @@ public:
         listWidgetShapes->setGeometry(QRect(50, 190, 151, 321));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(70, 150, 201, 41));
+        label_2->setGeometry(QRect(50, 150, 151, 41));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -404,7 +365,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidgetProperties->setCurrentIndex(1);
+        tabWidgetProperties->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
