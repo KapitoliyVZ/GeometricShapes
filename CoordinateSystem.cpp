@@ -6,8 +6,8 @@ GraphSettings::GraphSettings(QGraphicsScene *scene, int step): scene(scene), ste
     if (!scene) return;
 
     // Создаём оси
-    axisX = scene->addLine(0, 0, 0, 0, QPen(Qt::black, 2)); // Ось X
-    axisY = scene->addLine(0, 0, 0, 0, QPen(Qt::black, 2)); // Ось Y
+    axisX = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2)); // Ось X
+    axisY = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2)); // Ось Y
 
     // Создаём деления на осях
     for (int i = -10; i <= 10; i++) // Предполагаем 10 делений в каждую сторону

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1663</width>
-    <height>918</height>
+    <width>992</width>
+    <height>766</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -17,61 +17,75 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_6">
-    <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout_5">
-      <item row="0" column="0">
-       <layout class="QGridLayout" name="gridLayout_8">
-        <item row="3" column="0">
-         <widget class="QListWidget" name="listWidgetShapes"/>
-        </item>
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="0" column="0" rowspan="2">
+     <widget class="QSplitter" name="splitter_5">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <widget class="QWidget" name="">
+       <layout class="QGridLayout" name="gridLayout_7">
         <item row="4" column="0">
+         <widget class="QPushButton" name="btnTriangle">
+          <property name="text">
+           <string>Треугольник</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="btnCircle">
+          <property name="whatsThis">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set parametrs and create circle&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Круг</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QPushButton" name="btnRectangle">
+          <property name="text">
+           <string>Прямоугольник</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Выберете тип фигуры для добавления:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QSplitter" name="splitter_3">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <widget class="QSplitter" name="splitter_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Список созданных фигур:</string>
+         </property>
+        </widget>
+        <widget class="QListWidget" name="listWidgetShapes"/>
+       </widget>
+       <widget class="QSplitter" name="splitter">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <widget class="QSplitter" name="splitter_4">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
          <widget class="QLabel" name="label_3">
           <property name="text">
            <string>Параметры выбранной фигуры:</string>
           </property>
          </widget>
-        </item>
-        <item row="1" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <item>
-           <layout class="QGridLayout" name="gridLayout_7">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label">
-              <property name="text">
-               <string>Выберете тип фигуры для добавления:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QPushButton" name="btnCircle">
-              <property name="whatsThis">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set parametrs and create circle&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>Круг</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QPushButton" name="btnTriangle">
-              <property name="text">
-               <string>Треугольник</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QPushButton" name="btnRectangle">
-              <property name="text">
-               <string>Прямоугольник</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
-        <item row="5" column="0">
          <widget class="QTabWidget" name="tabWidgetProperties">
           <property name="minimumSize">
            <size>
@@ -80,7 +94,7 @@
            </size>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab_circle">
            <attribute name="title">
@@ -89,17 +103,16 @@
            <layout class="QGridLayout" name="gridLayout_11">
             <item row="0" column="0">
              <layout class="QGridLayout" name="gridLayout_3">
-              <item row="4" column="0">
-               <widget class="QPushButton" name="pushButton_circle_Cancel">
-                <property name="text">
-                 <string>Cancel</string>
+              <item row="1" column="0" colspan="2">
+               <widget class="QSpinBox" name="spinBox_circle_radius">
+                <property name="prefix">
+                 <string>radius = </string>
                 </property>
-               </widget>
-              </item>
-              <item row="4" column="1">
-               <widget class="QPushButton" name="pushButton_circle_Apply">
-                <property name="text">
-                 <string>Apply</string>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>500</number>
                 </property>
                </widget>
               </item>
@@ -123,7 +136,21 @@
 background-color: rgb(170, 0, 0);</string>
                 </property>
                 <property name="text">
-                 <string>Delete circle</string>
+                 <string>Удалить круг</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QPushButton" name="pushButton_circle_Cancel">
+                <property name="text">
+                 <string>Отменить</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QPushButton" name="pushButton_circle_Apply">
+                <property name="text">
+                 <string>Применить изменения</string>
                 </property>
                </widget>
               </item>
@@ -134,19 +161,6 @@ background-color: rgb(170, 0, 0);</string>
                 </property>
                 <property name="minimum">
                  <number>-500</number>
-                </property>
-                <property name="maximum">
-                 <number>500</number>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0" colspan="2">
-               <widget class="QSpinBox" name="spinBox_circle_radius">
-                <property name="prefix">
-                 <string>radius = </string>
-                </property>
-                <property name="minimum">
-                 <number>1</number>
                 </property>
                 <property name="maximum">
                  <number>500</number>
@@ -229,14 +243,14 @@ background-color: rgb(170, 0, 0);</string>
               <item row="5" column="0">
                <widget class="QPushButton" name="pushButton_triangle_Cancel">
                 <property name="text">
-                 <string>Cancel</string>
+                 <string>Отменить</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="1">
                <widget class="QPushButton" name="pushButton_triangle_Apply">
                 <property name="text">
-                 <string>Apply</string>
+                 <string>Применить изменения</string>
                 </property>
                </widget>
               </item>
@@ -273,7 +287,7 @@ background-color: rgb(170, 0, 0);</string>
 background-color: rgb(170, 0, 0);</string>
                 </property>
                 <property name="text">
-                 <string>Delete triangle</string>
+                 <string>Удалить треугольник</string>
                 </property>
                 <property name="autoRepeat">
                  <bool>false</bool>
@@ -408,14 +422,14 @@ background-color: rgb(170, 0, 0);</string>
               <item row="5" column="0">
                <widget class="QPushButton" name="pushButton_rectangle_Cancel">
                 <property name="text">
-                 <string>Cancel</string>
+                 <string>Отменить</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="1">
                <widget class="QPushButton" name="pushButton_rectangle_Apply">
                 <property name="text">
-                 <string>Apply</string>
+                 <string>Применить изменения</string>
                 </property>
                </widget>
               </item>
@@ -427,7 +441,7 @@ background-color: rgb(170, 0, 0);
 </string>
                 </property>
                 <property name="text">
-                 <string>Delete rectangle</string>
+                 <string>Удалить прямоугольник</string>
                 </property>
                 <property name="autoRepeat">
                  <bool>false</bool>
@@ -439,48 +453,37 @@ background-color: rgb(170, 0, 0);
            </layout>
           </widget>
          </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Список созданных фигур:</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
     </item>
     <item row="0" column="1">
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="1" column="0">
-       <widget class="QGraphicsView" name="graphicsView">
-        <property name="verticalScrollBarPolicy">
-         <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
-        </property>
-        <property name="horizontalScrollBarPolicy">
-         <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
-        </property>
-        <property name="sizeAdjustPolicy">
-         <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
-        </property>
-        <property name="interactive">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="btnClearScene">
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 255, 255);
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+      </property>
+      <property name="interactive">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="btnClearScene">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(170, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>Очистить график</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+      </property>
+      <property name="text">
+       <string>Очистить график</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -489,8 +492,8 @@ background-color: rgb(170, 0, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1663</width>
-     <height>21</height>
+     <width>992</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>

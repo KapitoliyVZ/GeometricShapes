@@ -15,11 +15,7 @@
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setupScene();
 
-    // Включаем режим выбора фигур на сцене (на координатной сетке)
-    coordinate_scene->setItemIndexMethod(QGraphicsScene::NoIndex);
-    coordinate_scene->setSelectionArea(QPainterPath());
 
     // Создаём графическую сцену
     coordinate_scene = new QGraphicsScene(this);
@@ -27,9 +23,14 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 
     // Создаём объект GraphSettings и передаём сцену
     graphSettings = new GraphSettings(coordinate_scene);
-
     // Настраиваем начальный размер сцены
     graphSettings->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
+
+    // Включаем режим выбора фигур на сцене (на координатной сетке)
+    coordinate_scene->setItemIndexMethod(QGraphicsScene::NoIndex);
+    coordinate_scene->setSelectionArea(QPainterPath());
+
+    setupScene();
 
     ui->tabWidgetProperties->setEnabled(false);// выключаем таблицу настроек до выбора нарисованной фигуры
     // ui->tabWidgetProperties->setEnabled(selectedShape != nullptr);
@@ -49,11 +50,11 @@ MainWindow::~MainWindow()
 // прорисовка сцены (координатной оси)
 void MainWindow::setupScene()
 {
-    coordinate_scene = new QGraphicsScene(this);
+    coordinate_scene = new QGraphicsScene(this);  // создаем сценку как объект QGraphicsScene
     coordinate_scene->setBackgroundBrush(Qt::lightGray); // Устанавливаем белый фон
     ui->graphicsView->setScene(coordinate_scene);
 
-    // Создаём объект координатной системы
+    // Создаём объект для настройки координатной системы
     graphSettings = new GraphSettings(coordinate_scene, 50);
 
     // Устанавливаем начальный размер
@@ -70,16 +71,16 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 // при прокрутке колеса мыши
 void MainWindow::wheelEvent(QWheelEvent *event)
 {
-    const double scaleFactor = 1.05; // Коэффициент увеличения
+    // const double scaleFactor = 1.05; // Коэффициент увеличения
 
-    if (event->angleDelta().y() > 0)
-    {
-        ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
-    }
-    else
-    {
-        ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
-    }
+    // if (event->angleDelta().y() > 0)
+    // {
+    //     ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
+    // }
+    // else
+    // {
+    //     ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
+    // }
 }
 
 // кнопка добавления прямоугольника
