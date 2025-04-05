@@ -92,7 +92,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1100, 790);
+        MainWindow->resize(992, 766);
         MainWindow->setMouseTracking(false);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
@@ -372,7 +372,7 @@ public:
         splitter_3->addWidget(splitter);
         splitter_5->addWidget(splitter_3);
 
-        gridLayout_4->addWidget(splitter_5, 0, 0, 1, 1);
+        gridLayout_4->addWidget(splitter_5, 0, 0, 2, 1);
 
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName("graphicsView");
@@ -393,7 +393,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1100, 25));
+        menubar->setGeometry(QRect(0, 0, 992, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");

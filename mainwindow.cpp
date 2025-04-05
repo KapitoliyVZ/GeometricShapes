@@ -19,18 +19,27 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 
     // Создаём графическую сцену
     coordinate_scene = new QGraphicsScene(this);
+
+    ui->graphicsView->setScene(coordinate_scene);
+    ui->graphicsView->setRenderHint(QPainter::Antialiasing);
+    ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
+
+    coordinateSystem = new CoordinateSystem(coordinate_scene, 50, 1.0);
+    coordinateSystem->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
     ui->graphicsView->setScene(coordinate_scene);
 
+    setupScene();
+
     // Создаём объект GraphSettings и передаём сцену
-    graphSettings = new GraphSettings(coordinate_scene);
+    // graphSettings = new GraphSettings(coordinate_scene);
     // Настраиваем начальный размер сцены
-    graphSettings->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
+    // graphSettings->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
 
     // Включаем режим выбора фигур на сцене (на координатной сетке)
     coordinate_scene->setItemIndexMethod(QGraphicsScene::NoIndex);
     coordinate_scene->setSelectionArea(QPainterPath());
 
-    setupScene();
+
 
     ui->tabWidgetProperties->setEnabled(false);// выключаем таблицу настроек до выбора нарисованной фигуры
     // ui->tabWidgetProperties->setEnabled(selectedShape != nullptr);
@@ -50,37 +59,40 @@ MainWindow::~MainWindow()
 // прорисовка сцены (координатной оси)
 void MainWindow::setupScene()
 {
-    coordinate_scene = new QGraphicsScene(this);  // создаем сценку как объект QGraphicsScene
-    coordinate_scene->setBackgroundBrush(Qt::lightGray); // Устанавливаем белый фон
-    ui->graphicsView->setScene(coordinate_scene);
+    // coordinate_scene = new QGraphicsScene(this);  // создаем сценку как объект QGraphicsScene
+    // coordinate_scene->setBackgroundBrush(Qt::lightGray); // Устанавливаем белый фон
+    // coordinate_scene->setBackgroundBrush(Qt::white);
+    // ui->graphicsView->setScene(coordinate_scene);
 
     // Создаём объект для настройки координатной системы
-    graphSettings = new GraphSettings(coordinate_scene, 50);
+    // graphSettings = new GraphSettings(coordinate_scene, 50);
 
     // Устанавливаем начальный размер
-    graphSettings->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
+    coordinateSystem->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
+    qDebug()<< "width: "<<ui->graphicsView->width()<< "/n height: " << ui->graphicsView->height();
 }
 
 // прорисовка сцены (координатной оси) при изменении размеров окна пользователем
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
     QMainWindow::resizeEvent(event);
-    graphSettings->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
+    coordinateSystem->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
+    qDebug()<< "width: "<<ui->graphicsView->width()<< "/n height: " << ui->graphicsView->height();
 }
 
 // при прокрутке колеса мыши
 void MainWindow::wheelEvent(QWheelEvent *event)
 {
-    // const double scaleFactor = 1.05; // Коэффициент увеличения
+    const double scaleFactor = 1.05; // Коэффициент увеличения
 
-    // if (event->angleDelta().y() > 0)
-    // {
-    //     ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
-    // }
-    // else
-    // {
-    //     ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
-    // }
+    if (event->angleDelta().y() > 0)
+    {
+        ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
+    }
+    else
+    {
+        ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
+    }
 }
 
 // кнопка добавления прямоугольника

@@ -1,61 +1,77 @@
 #include "CoordinateSystem.h"
+#include <QPen>
+#include <QFont>
 
-// Конструктор: создаём оси и деления только 1 раз
-GraphSettings::GraphSettings(QGraphicsScene *scene, int step): scene(scene), stepSize(step)
+CoordinateSystem::CoordinateSystem(QGraphicsScene *scene, int stepSize, double unitPerPixel)
+    : scene(scene), stepSize(stepSize), unitPerPixel(unitPerPixel)
 {
     if (!scene) return;
 
-    // Создаём оси
-    axisX = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2)); // Ось X
-    axisY = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2)); // Ось Y
-
-    // Создаём деления на осях
-    for (int i = -10; i <= 10; i++) // Предполагаем 10 делений в каждую сторону
-    {
-        QGraphicsLineItem *tickX = scene->addLine(0, 0, 0, 0, QPen(Qt::black));
-        QGraphicsLineItem *tickY = scene->addLine(0, 0, 0, 0, QPen(Qt::black));
-        axisTicksX.append(tickX);
-        axisTicksY.append(tickY);
-
-        QGraphicsTextItem *labelX = scene->addText(QString::number(i * step), QFont("Arial", 6));
-        QGraphicsTextItem *labelY = scene->addText(QString::number(i * step), QFont("Arial", 6));
-        axisLabelsX.append(labelX);
-        axisLabelsY.append(labelY);
-    }
+    axisX = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2));
+    axisY = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2));
 }
 
-// Функция обновления размера и отрисовки
-void GraphSettings::updateSceneSize(int width, int height)
+void CoordinateSystem::setUnitPerPixel(double value)
+{
+    unitPerPixel = value;
+}
+
+void CoordinateSystem::updateSceneSize(int width, int height)
 {
     if (!scene) return;
 
     scene->setSceneRect(-width / 2, -height / 2, width, height);
 
-    // Обновляем оси
     axisX->setLine(-width / 2, 0, width / 2, 0);
     axisY->setLine(0, -height / 2, 0, height / 2);
 
-    // Обновляем деления и подписи
+    int pixelStep = static_cast<int>(stepSize / unitPerPixel);
+    if (pixelStep <= 0) return;
+
+    int countX = (width / 2) / pixelStep;
+    int countY = (height / 2) / pixelStep;
+
+    ensureTickLabelCount(axisTicksX, axisLabelsX, 2 * countX + 1);
     int index = 0;
-    for (int x = -width / 2; x <= width / 2; x += stepSize)
+    for (int i = -countX; i <= countX; ++i, ++index)
     {
-        if (index >= axisTicksX.size()) break;
-        axisTicksX[index]->setLine(x, -2, x, 2);
-        axisLabelsX[index]->setPos(x - 10, 5);
-        axisLabelsX[index]->setPlainText(QString::number(x));
-        index++;
+        int x = i * pixelStep;
+        int logicalValue = i * stepSize;
+
+        axisTicksX[index]->setLine(x, -4, x, 4);
+        axisTicksX[index]->show();
+
+        axisLabelsX[index]->setPlainText(QString::number(logicalValue));
+        axisLabelsX[index]->setPos(x - 10, 6);
+        axisLabelsX[index]->show();
     }
 
+    ensureTickLabelCount(axisTicksY, axisLabelsY, 2 * countY + 1);
     index = 0;
-    for (int y = -height / 2; y <= height / 2; y += stepSize)
+    for (int i = -countY; i <= countY; ++i, ++index)
     {
-        if (index >= axisTicksY.size()) break;
-        axisTicksY[index]->setLine(-2, y, 2, y);
-        axisLabelsY[index]->setPos(5, y - 10);
-        axisLabelsY[index]->setPlainText(QString::number(y));
-        index++;
+        int y = i * pixelStep;
+        int logicalValue = -i * stepSize;
+
+        axisTicksY[index]->setLine(-4, y, 4, y);
+        axisTicksY[index]->show();
+
+        axisLabelsY[index]->setPlainText(QString::number(logicalValue));
+        axisLabelsY[index]->setPos(6, y - 8);
+        axisLabelsY[index]->show();
     }
+
 }
 
+void CoordinateSystem::ensureTickLabelCount(QVector<QGraphicsLineItem*>& ticks,
+                                            QVector<QGraphicsTextItem*>& labels, int count)
+{
+    while (ticks.size() < count)
+        ticks.append(scene->addLine(0, 0, 0, 0, QPen(Qt::black)));
 
+    while (labels.size() < count)
+        labels.append(scene->addText("", QFont("Arial", 6)));
 
+    for (int i = count; i < ticks.size(); ++i) ticks[i]->hide();
+    for (int i = count; i < labels.size(); ++i) labels[i]->hide();
+}

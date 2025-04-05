@@ -5,30 +5,33 @@
 #include <QGraphicsScene>
 #include <QGraphicsTextItem>
 #include <QGraphicsLineItem>
-#include <QPen>
-#include <QFont>
 #include <QVector>
 
-class GraphSettings
+class CoordinateSystem
 {
 public:
-    explicit GraphSettings(QGraphicsScene *scene, int stepSize = 50); // Конструктор
+    explicit CoordinateSystem(QGraphicsScene *scene, int stepSize = 50, double unitPerPixel = 1.0);
 
-    void updateSceneSize(int width, int height); // Функция обновления размеров сцены
+    void updateSceneSize(int width, int height);
+    void setUnitPerPixel(double value);
 
 private:
-    QGraphicsScene *scene;  // Указатель на сцену
-    int stepSize;           // Размер шага делений
+    QGraphicsScene *scene;
+    int stepSize;
+    double unitPerPixel;
 
-    QGraphicsLineItem *axisX; // Линия оси X
-    QGraphicsLineItem *axisY; // Линия оси Y
+    QGraphicsLineItem *axisX;
+    QGraphicsLineItem *axisY;
 
-    QVector<QGraphicsLineItem*> axisTicksX; // Засечки на оси X
-    QVector<QGraphicsLineItem*> axisTicksY; // Засечки на оси Y
+    QVector<QGraphicsLineItem*> axisTicksX;
+    QVector<QGraphicsLineItem*> axisTicksY;
+    QVector<QGraphicsTextItem*> axisLabelsX;
+    QVector<QGraphicsTextItem*> axisLabelsY;
 
-    QVector<QGraphicsTextItem*> axisLabelsX; // Подписи на оси X
-    QVector<QGraphicsTextItem*> axisLabelsY; // Подписи на оси Y
+    void ensureTickLabelCount(QVector<QGraphicsLineItem*>& ticks,
+                              QVector<QGraphicsTextItem*>& labels, int count);
 };
+
 
 #endif // COORDINATESYSTEM_H
 
