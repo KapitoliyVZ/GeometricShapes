@@ -65,9 +65,8 @@ protected:
 
 private:
     Ui::MainWindow *ui;
-    QGraphicsScene *coordinate_scene; // Сцена для отображения фигур
-    QGraphicsScene *scene;
-    CoordinateSystem* coordinateSystem;      // Объект для работы с координатной системой
+    QGraphicsScene *coordinate_scene; // Сцена для отображения фигур как объект отрисовки
+    CoordinateSystem* coordinateSystem;      // Объект для настройки координатной системой
 
     QList<QGraphicsItem*> list_of_Shapes; // Список фигур
 

@@ -24,22 +24,17 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
     ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
 
+    // Создаём объект GraphSettings и передаём сцену
     coordinateSystem = new CoordinateSystem(coordinate_scene, 50, 1.0);
+    // Настраиваем начальный размер сцены
     coordinateSystem->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
     ui->graphicsView->setScene(coordinate_scene);
 
     setupScene();
 
-    // Создаём объект GraphSettings и передаём сцену
-    // graphSettings = new GraphSettings(coordinate_scene);
-    // Настраиваем начальный размер сцены
-    // graphSettings->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
-
     // Включаем режим выбора фигур на сцене (на координатной сетке)
     coordinate_scene->setItemIndexMethod(QGraphicsScene::NoIndex);
     coordinate_scene->setSelectionArea(QPainterPath());
-
-
 
     ui->tabWidgetProperties->setEnabled(false);// выключаем таблицу настроек до выбора нарисованной фигуры
     // ui->tabWidgetProperties->setEnabled(selectedShape != nullptr);
@@ -59,14 +54,6 @@ MainWindow::~MainWindow()
 // прорисовка сцены (координатной оси)
 void MainWindow::setupScene()
 {
-    // coordinate_scene = new QGraphicsScene(this);  // создаем сценку как объект QGraphicsScene
-    // coordinate_scene->setBackgroundBrush(Qt::lightGray); // Устанавливаем белый фон
-    // coordinate_scene->setBackgroundBrush(Qt::white);
-    // ui->graphicsView->setScene(coordinate_scene);
-
-    // Создаём объект для настройки координатной системы
-    // graphSettings = new GraphSettings(coordinate_scene, 50);
-
     // Устанавливаем начальный размер
     coordinateSystem->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
     qDebug()<< "width: "<<ui->graphicsView->width()<< "/n height: " << ui->graphicsView->height();
