@@ -1,11 +1,12 @@
 #include "Triangle.h"
 
-TriangleShape::TriangleShape(const QList<QPointF> &coords, const QString& customName)
+TriangleShape::TriangleShape(const QList<QPointF> &coords, const QString &customName)
     : Shape("Triangle", customName)
 {
-    if (coords.size() == 3) {
+    if (coords.size() == 3)
+    {
         polygon = QPolygonF(coords);
-        setPos(0, 0);  // Устанавливаем начальную позицию
+        setPos(0, 0); // Устанавливаем начальную позицию
     }
 }
 
@@ -16,7 +17,8 @@ QRectF TriangleShape::boundingRect() const
 
 void TriangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    if (polygon.isEmpty()) return;
+    if (polygon.isEmpty())
+        return;
 
     // Если фигура выделена
     if (isSelected())
@@ -29,7 +31,7 @@ void TriangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, Q
     }
 
     // painter->setBrush(Qt::blue); // цвет заливки
-    painter->drawPolygon(polygon);  // прорисовка фигуры
+    painter->drawPolygon(polygon); // прорисовка фигуры
 }
 
 // получение текущих координат
@@ -39,12 +41,12 @@ QVector<QPointF> TriangleShape::getPoints() const
 }
 
 // задать новые координаты
-void TriangleShape::setNewPoints(const QVector<QPointF>& newPoints)
+void TriangleShape::setNewPoints(const QVector<QPointF> &newPoints)
 {
     if (newPoints.size() == 3)
     {
-        polygon = QPolygonF(newPoints);  // Обновляем координаты
-        update();  // Перерисовка треугольник
+        polygon = QPolygonF(newPoints); // Обновляем координаты
+        update();                       // Перерисовка треугольник
     }
 }
 
@@ -52,12 +54,11 @@ void TriangleShape::setNewPoints(const QVector<QPointF>& newPoints)
 void TriangleShape::setRotationAngle(int angle)
 {
     setRotation(angle);
-    update();  // Перерисовка треугольника
+    update(); // Перерисовка треугольника
 }
 
 // получить текущий угол вращения
 int TriangleShape::getRotationAngle() const
 {
-    return rotation();  // Возвращаем текущий угол
+    return rotation(); // Возвращаем текущий угол
 }
-

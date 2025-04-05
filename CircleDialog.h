@@ -6,8 +6,9 @@
 #include <QDialog>
 #include <QString>
 
-namespace Ui {
-class CircleDialog;
+namespace Ui
+{
+    class CircleDialog;
 }
 
 class CircleDialog : public QDialog

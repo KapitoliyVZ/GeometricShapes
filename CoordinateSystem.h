@@ -30,28 +30,26 @@ public:
     void setUnitPerPixel(double value);
 
 private:
-    QGraphicsScene * const scene; // Указатель на сцену (не изменяется после инициализации)
-    int stepSize;                 // Логический шаг между делениями
-    double unitPerPixel;          // Масштаб (логических единиц на пиксель)
+    QGraphicsScene *const scene; // Указатель на сцену (не изменяется после инициализации)
+    int stepSize;                // Логический шаг между делениями
+    double unitPerPixel;         // Масштаб (логических единиц на пиксель)
 
     QGraphicsLineItem *axisX = nullptr; ///< Главная ось X
     QGraphicsLineItem *axisY = nullptr; ///< Главная ось Y
 
-    QVector<QGraphicsLineItem*> axisTicksX; ///< Деления по оси X
-    QVector<QGraphicsLineItem*> axisTicksY; ///< Деления по оси Y
+    QVector<QGraphicsLineItem *> axisTicksX; ///< Деления по оси X
+    QVector<QGraphicsLineItem *> axisTicksY; ///< Деления по оси Y
 
-    QVector<QGraphicsTextItem*> axisLabelsX; ///< Подписи по оси X
-    QVector<QGraphicsTextItem*> axisLabelsY; ///< Подписи по оси Y
+    QVector<QGraphicsTextItem *> axisLabelsX; ///< Подписи по оси X
+    QVector<QGraphicsTextItem *> axisLabelsY; ///< Подписи по оси Y
 
     /*
      * Гарантирует, что количество засечек и подписей соответствует требуемому количеству.
      * Лишние скрываются, недостающие — добавляются.
      */
-    void ensureTickLabelCount(QVector<QGraphicsLineItem*>& ticks,
-                              QVector<QGraphicsTextItem*>& labels,
+    void ensureTickLabelCount(QVector<QGraphicsLineItem *> &ticks,
+                              QVector<QGraphicsTextItem *> &labels,
                               int count);
 };
 
-
 #endif // COORDINATESYSTEM_H
-

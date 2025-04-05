@@ -2,9 +2,8 @@
 #include "CircleDialog.h"
 #include "ui_CircleDialog.h"
 
-CircleDialog::CircleDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::CircleDialog)
+CircleDialog::CircleDialog(QWidget *parent) : QDialog(parent),
+                                              ui(new Ui::CircleDialog)
 {
     ui->setupUi(this);
 }
@@ -17,10 +16,10 @@ CircleDialog::~CircleDialog()
 // Реакция на кнопку Apply
 void CircleDialog::on_applyButton_clicked()
 {
-    center = QPointF(ui->xCenter->value(), ui->yCenter->value());   // запись координат центра круга
-    radius = ui->radius->value();                                   // запись радиуса круга
-    nameByUser = ui->LineCircleName->text();                        // запись имени
-    accept();                                                       // сохранение параметров и закрытие окна
+    center = QPointF(ui->xCenter->value(), ui->yCenter->value()); // запись координат центра круга
+    radius = ui->radius->value();                                 // запись радиуса круга
+    nameByUser = ui->LineCircleName->text();                      // запись имени
+    accept();                                                     // сохранение параметров и закрытие окна
 }
 
 // Реакция на кнопку Cancel

@@ -4,8 +4,7 @@
 #include <cmath>
 
 RectangleDialog::RectangleDialog(QWidget *parent)
-    : QDialog(parent)
-    , ui(new Ui::RectangleDialog)
+    : QDialog(parent), ui(new Ui::RectangleDialog)
 {
     ui->setupUi(this);
 
@@ -32,7 +31,8 @@ RectangleDialog::~RectangleDialog()
 // проверка на допустимость значений для прямоугольника
 bool RectangleDialog::isValidRectangle(const QList<QPointF> &coords)
 {
-    if (coords.size() != 4) return false;
+    if (coords.size() != 4)
+        return false;
 
     // Проверяем, что противоположные стороны параллельны
     return (coords[0].x() == coords[3].x() && coords[1].x() == coords[2].x() &&
@@ -70,7 +70,8 @@ void RectangleDialog::on_applyButton_clicked()
     // Считываем имя
     nameUser = ui->LineCircleName->text();
 
-    if (!isValidRectangle(coordinates)) {
+    if (!isValidRectangle(coordinates))
+    {
         QMessageBox::warning(this, "Ошибка", "Точки не формируют прямоугольник!");
         return;
     }
@@ -94,16 +95,16 @@ QString RectangleDialog::getRectangleName() const
 void RectangleDialog::onRadioTypeSet()
 {
     // отображение параметров для режима "По координатам"
-    if(ui->radioSetCoord->isChecked())
+    if (ui->radioSetCoord->isChecked())
     {
         ui->x1->setEnabled(true);
-        //ui->x2->setEnabled(true);
+        // ui->x2->setEnabled(true);
         ui->x3->setEnabled(true);
-        //ui->x4->setEnabled(true);
+        // ui->x4->setEnabled(true);
         ui->y1->setEnabled(true);
-        //ui->y2->setEnabled(true);
+        // ui->y2->setEnabled(true);
         ui->y3->setEnabled(true);
-        //ui->y4->setEnabled(true);
+        // ui->y4->setEnabled(true);
 
         ui->startPointX->setEnabled(false);
         ui->startPointY->setEnabled(false);
@@ -114,13 +115,13 @@ void RectangleDialog::onRadioTypeSet()
     else if (ui->radioSetSides->isChecked())
     {
         ui->x1->setEnabled(false);
-        //ui->x2->setEnabled(false);
+        // ui->x2->setEnabled(false);
         ui->x3->setEnabled(false);
-        //ui->x4->setEnabled(false);
+        // ui->x4->setEnabled(false);
         ui->y1->setEnabled(false);
-        //ui->y2->setEnabled(false);
+        // ui->y2->setEnabled(false);
         ui->y3->setEnabled(false);
-        //ui->y4->setEnabled(false);
+        // ui->y4->setEnabled(false);
 
         ui->startPointX->setEnabled(true);
         ui->startPointY->setEnabled(true);

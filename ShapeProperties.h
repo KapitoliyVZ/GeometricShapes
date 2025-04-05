@@ -14,18 +14,18 @@ class ShapeProperties : public QWidget
 
 public:
     explicit ShapeProperties(QWidget *parent = nullptr);
-    void setShape(Shape* shape); // Обновляем виджет при выборе фигуры
+    void setShape(Shape *shape); // Обновляем виджет при выборе фигуры
 
 signals:
-    void shapeUpdated();  // Сигнал: фигура изменилась
-    void shapeDeleted();  // Сигнал: фигура удалена
+    void shapeUpdated(); // Сигнал: фигура изменилась
+    void shapeDeleted(); // Сигнал: фигура удалена
 
 private slots:
     void onRadiusChanged(int newRadius); // Изменение радиуса круга
 
 private:
-    Shape* currentShape = nullptr;  // Выбранная фигура
-    CircleShape* currentCircle = nullptr; // Если выбрана окружность
+    Shape *currentShape = nullptr;        // Выбранная фигура
+    CircleShape *currentCircle = nullptr; // Если выбрана окружность
     // QSpinBox* spinBox_radius;
     // QPushButton* deleteButton;
     // QPushButton* colorButton;

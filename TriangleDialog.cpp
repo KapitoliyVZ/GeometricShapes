@@ -2,8 +2,7 @@
 #include "ui_TriangleDialog.h"
 
 TriangleDialog::TriangleDialog(QWidget *parent)
-    : QDialog(parent)
-    , ui(new Ui::TriangleDialog)
+    : QDialog(parent), ui(new Ui::TriangleDialog)
 {
     ui->setupUi(this);
 }
@@ -29,7 +28,7 @@ void TriangleDialog::on_applyButton_clicked()
     coordinates.append(QPointF(ui->x3->value(), ui->y3->value()));
 
     nameUser = ui->LineTriangleName->text(); // запись имени
-    accept(); // Закрываем диалог с результатом "Apply"
+    accept();                                // Закрываем диалог с результатом "Apply"
 }
 
 // Считать коодинаты треугольника

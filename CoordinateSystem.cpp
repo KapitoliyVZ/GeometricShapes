@@ -4,11 +4,12 @@
 
 // Конструктор
 CoordinateSystem::CoordinateSystem(QGraphicsScene *scene, int stepSize, double unitPerPixel)
-    : scene(scene),             // указатель на графическую сцену, на которой будет рисоваться координатная система
-    stepSize(stepSize),         // логический шаг между делениями (в условных единицах)
-    unitPerPixel(unitPerPixel)  //масштаб: сколько логических единиц приходится на один пиксель
+    : scene(scene),              // указатель на графическую сцену, на которой будет рисоваться координатная система
+      stepSize(stepSize),        // логический шаг между делениями (в условных единицах)
+      unitPerPixel(unitPerPixel) // масштаб: сколько логических единиц приходится на один пиксель
 {
-    if (!scene) return;
+    if (!scene)
+        return;
 
     // Создание осей координат (X и Y)
     axisX = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2));
@@ -24,7 +25,8 @@ void CoordinateSystem::setUnitPerPixel(double value)
 // Обновление размеров сцены и координатной сетки при изменении размера окна или масштаба
 void CoordinateSystem::updateSceneSize(int width, int height)
 {
-    if (!scene) return;
+    if (!scene)
+        return;
 
     // Центрируем сцену относительно (0,0)
     scene->setSceneRect(-width / 2, -height / 2, width, height);
@@ -35,7 +37,8 @@ void CoordinateSystem::updateSceneSize(int width, int height)
 
     // Расчёт расстояния в пикселях между делениями
     int pixelStep = static_cast<int>(stepSize / unitPerPixel);
-    if (pixelStep <= 0) return;
+    if (pixelStep <= 0)
+        return;
 
     int countX = (width / 2) / pixelStep;
     int countY = (height / 2) / pixelStep;
@@ -73,17 +76,16 @@ void CoordinateSystem::updateSceneSize(int width, int height)
         axisLabelsY[index]->setPos(6, y - 8);
         axisLabelsY[index]->show();
     }
-
 }
 
 /*
  * Обеспечивает, что векторы засечек и подписей содержат достаточно элементов,
  * при необходимости добавляет недостающие и скрывает лишние.
  */
-void CoordinateSystem::ensureTickLabelCount(QVector<QGraphicsLineItem*>& ticks,
-                                            QVector<QGraphicsTextItem*>& labels, int count)
+void CoordinateSystem::ensureTickLabelCount(QVector<QGraphicsLineItem *> &ticks,
+                                            QVector<QGraphicsTextItem *> &labels, int count)
 {
-     // Добавляем недостающие засечки
+    // Добавляем недостающие засечки
     while (ticks.size() < count)
         ticks.append(scene->addLine(0, 0, 0, 0, QPen(Qt::black)));
 
@@ -92,6 +94,8 @@ void CoordinateSystem::ensureTickLabelCount(QVector<QGraphicsLineItem*>& ticks,
         labels.append(scene->addText("", QFont("Arial", 6)));
 
     // Скрываем лишние элементы, если они есть
-    for (int i = count; i < ticks.size(); ++i) ticks[i]->hide();
-    for (int i = count; i < labels.size(); ++i) labels[i]->hide();
+    for (int i = count; i < ticks.size(); ++i)
+        ticks[i]->hide();
+    for (int i = count; i < labels.size(); ++i)
+        labels[i]->hide();
 }

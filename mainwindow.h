@@ -5,7 +5,7 @@
 #include <QWheelEvent>
 
 #include <QMainWindow>
-#include <QGraphicsScene>       // библиотека для графической сцены
+#include <QGraphicsScene> // библиотека для графической сцены
 #include <QGraphicsItem>
 #include <QListWidget>
 
@@ -13,10 +13,13 @@
 #include <Circle.h>
 #include <Rectangle.h>
 #include <Triangle.h>
-#include "CoordinateSystem.h"  // Подключаем наш новый класс
+#include "CoordinateSystem.h" // Подключаем наш новый класс
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui
+{
+    class MainWindow;
+}
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -50,9 +53,9 @@ private slots:
     void enableTriangleApplyButton();
     void enableRectangleApplyButton();
 
-    void on_pushButton_circle_Apply_clicked();      // Применить новые координаты круга
-    void on_pushButton_triangle_Apply_clicked();    // Применить новые координаты треугольника
-    void on_pushButton_rectangle_Apply_clicked();   // Применить новые координаты прямоугольника
+    void on_pushButton_circle_Apply_clicked();    // Применить новые координаты круга
+    void on_pushButton_triangle_Apply_clicked();  // Применить новые координаты треугольника
+    void on_pushButton_rectangle_Apply_clicked(); // Применить новые координаты прямоугольника
 
     // кнопки удаления фигур
     void on_pushButton_circle_Delete_clicked();
@@ -71,26 +74,25 @@ protected:
 
 private:
     Ui::MainWindow *ui;
-    QGraphicsScene *coordinate_scene; // Сцена для отображения фигур как объект отрисовки
-    CoordinateSystem* coordinateSystem;      // Объект для настройки координатной системой
+    QGraphicsScene *coordinate_scene;   // Сцена для отображения фигур как объект отрисовки
+    CoordinateSystem *coordinateSystem; // Объект для настройки координатной системой
 
-    QList<QGraphicsItem*> list_of_Shapes; // Список фигур
+    QList<QGraphicsItem *> list_of_Shapes; // Список фигур
 
-    Shape* selectedShape = nullptr;  // Указатель на выбранную фигуру
+    Shape *selectedShape = nullptr; // Указатель на выбранную фигуру
 
-    void setupScene(); // Метод для настройки сцены
-    void updateShapeList(); // Обновление сцены
-    bool isShapeNameUnique(const QString& name);// Проверка наличия имени фигуры в списке
+    void setupScene();                           // Метод для настройки сцены
+    void updateShapeList();                      // Обновление сцены
+    bool isShapeNameUnique(const QString &name); // Проверка наличия имени фигуры в списке
 
-    void setWidgetPropertiesShape(Shape* selectedShape); // отображение параметров выбранной фигуры
+    void setWidgetPropertiesShape(Shape *selectedShape); // отображение параметров выбранной фигуры
 
     void deselectShape(); // Отмена выбора фигуры
     void onSelectionChanged();
 
-    void selectShape(Shape* shape);  // Выделяет фигуру и синхронизирует UI
+    void selectShape(Shape *shape); // Выделяет фигуру и синхронизирует UI
 
-    void updateRectanglePoints();   // задание и обновление координат для прямоугольника
-
+    void updateRectanglePoints(); // задание и обновление координат для прямоугольника
 };
 
 #endif // MAINWINDOW_H

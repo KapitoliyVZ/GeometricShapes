@@ -4,8 +4,9 @@
 #include <QDialog>
 #include <QString>
 
-namespace Ui {
-class TriangleDialog;
+namespace Ui
+{
+    class TriangleDialog;
 }
 
 class TriangleDialog : public QDialog
@@ -27,7 +28,7 @@ private slots:
 private:
     Ui::TriangleDialog *ui;
     QList<QPointF> coordinates; // заданные координаты
-    QString nameUser; // заданное имя
+    QString nameUser;           // заданное имя
 };
 
 #endif // TRIANGLEDIALOG_H

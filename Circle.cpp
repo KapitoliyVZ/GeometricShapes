@@ -1,6 +1,6 @@
 #include "Circle.h"
 
-CircleShape::CircleShape(QPointF center, double radius, const QString& customName)
+CircleShape::CircleShape(QPointF center, double radius, const QString &customName)
     : Shape("Circle", customName), center(center), radius(radius)
 {
     setPos(center);
@@ -33,8 +33,9 @@ void CircleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWi
 // задать новый радиус круга
 void CircleShape::setNewRadius(double newRadius)
 {
-    qDebug() << "новый радиус: "<<newRadius;
-    if (newRadius <= 0) return; // Проверка на корректный радиус
+    qDebug() << "новый радиус: " << newRadius;
+    if (newRadius <= 0)
+        return; // Проверка на корректный радиус
 
     radius = newRadius; // Обновляем радиус
     update();           // Перерисовываем круг
@@ -61,4 +62,3 @@ QPointF CircleShape::getCenter()
 {
     return center;
 }
-

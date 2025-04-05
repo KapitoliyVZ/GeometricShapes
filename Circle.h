@@ -10,7 +10,7 @@ class CircleShape : public Shape
 {
 public:
     // Конструктор с указанием центра и радиуса
-    explicit CircleShape(QPointF center, double radius, const QString& customName = "");
+    explicit CircleShape(QPointF center, double radius, const QString &customName = "");
 
     void setNewRadius(double newRadius);
     void setNewCenter(QPointF newCenter);
@@ -25,6 +25,5 @@ private:
     QPointF center;
     double radius;
 };
-
 
 #endif // CIRCLE_H
