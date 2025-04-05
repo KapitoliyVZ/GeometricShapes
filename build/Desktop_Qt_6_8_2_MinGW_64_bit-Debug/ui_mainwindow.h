@@ -32,7 +32,7 @@ public:
     QWidget *centralwidget;
     QGridLayout *gridLayout_4;
     QSplitter *splitter_5;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout_7;
     QPushButton *btnTriangle;
     QPushButton *btnCircle;
@@ -101,32 +101,32 @@ public:
         splitter_5 = new QSplitter(centralwidget);
         splitter_5->setObjectName("splitter_5");
         splitter_5->setOrientation(Qt::Orientation::Vertical);
-        widget = new QWidget(splitter_5);
-        widget->setObjectName("widget");
-        gridLayout_7 = new QGridLayout(widget);
+        layoutWidget = new QWidget(splitter_5);
+        layoutWidget->setObjectName("layoutWidget");
+        gridLayout_7 = new QGridLayout(layoutWidget);
         gridLayout_7->setObjectName("gridLayout_7");
         gridLayout_7->setContentsMargins(0, 0, 0, 0);
-        btnTriangle = new QPushButton(widget);
+        btnTriangle = new QPushButton(layoutWidget);
         btnTriangle->setObjectName("btnTriangle");
 
         gridLayout_7->addWidget(btnTriangle, 4, 0, 1, 1);
 
-        btnCircle = new QPushButton(widget);
+        btnCircle = new QPushButton(layoutWidget);
         btnCircle->setObjectName("btnCircle");
 
         gridLayout_7->addWidget(btnCircle, 3, 0, 1, 1);
 
-        btnRectangle = new QPushButton(widget);
+        btnRectangle = new QPushButton(layoutWidget);
         btnRectangle->setObjectName("btnRectangle");
 
         gridLayout_7->addWidget(btnRectangle, 5, 0, 1, 1);
 
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName("label");
 
         gridLayout_7->addWidget(label, 2, 0, 1, 1);
 
-        splitter_5->addWidget(widget);
+        splitter_5->addWidget(layoutWidget);
         splitter_3 = new QSplitter(splitter_5);
         splitter_3->setObjectName("splitter_3");
         splitter_3->setOrientation(Qt::Orientation::Vertical);
@@ -393,7 +393,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 992, 25));
+        menubar->setGeometry(QRect(0, 0, 992, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
