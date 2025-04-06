@@ -10,6 +10,7 @@
 
 class Shape : public QGraphicsItem
 {
+
 public:
     // Конструктор с опциональным именем
     explicit Shape(const QString &type, const QString &customName = "");

@@ -1,4 +1,5 @@
 #include "Shape.h"
+#include <QGraphicsSceneMouseEvent>
 
 // Инициализация счётчика
 int Shape::shapeCounter = 0;
@@ -19,7 +20,7 @@ Shape::Shape(const QString &type, const QString &customName) : id(QUuid::createU
     }
 
     // Включаем флаги для выделения
-    setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
+    setFlags(QGraphicsItem::ItemIsSelectable);
 }
 
 // Геттер имени
@@ -42,3 +43,4 @@ void Shape::setName(const QString &newName)
         name = newName;
     }
 }
+

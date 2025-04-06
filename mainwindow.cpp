@@ -69,16 +69,16 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 // при прокрутке колеса мыши
 void MainWindow::wheelEvent(QWheelEvent *event)
 {
-    const double scaleFactor = 1.05; // Коэффициент увеличения
+    // const double scaleFactor = 1.05; // Коэффициент увеличения
 
-    if (event->angleDelta().y() > 0)
-    {
-        ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
-    }
-    else
-    {
-        ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
-    }
+    // if (event->angleDelta().y() > 0)
+    // {
+    //     ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
+    // }
+    // else
+    // {
+    //     ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
+    // }
 }
 
 // кнопка добавления прямоугольника
