@@ -85,6 +85,8 @@ void MainWindow::wheelEvent(QWheelEvent *event)
 void MainWindow::on_btnRectangle_clicked()
 {
     RectangleDialog dialog(this);
+    QString defaultName = generateUniqueShapeName("Rectangle");
+    dialog.setDefaultName(defaultName);  // отображаем сгенерированное имя фигуры
 
     if (dialog.exec() == QDialog::Accepted)
     {
@@ -125,7 +127,10 @@ void MainWindow::on_btnRectangle_clicked()
 // кнопка добавления круга
 void MainWindow::on_btnCircle_clicked()
 {
+    QString defaultName = generateUniqueShapeName("Circle");
+
     CircleDialog dialog(this);
+    dialog.setDefaultName(defaultName);  // отображаем сгенерированное имя фигуры
 
     if (dialog.exec() == QDialog::Accepted)
     {
@@ -150,6 +155,9 @@ void MainWindow::on_btnCircle_clicked()
 void MainWindow::on_btnTriangle_clicked()
 {
     TriangleDialog dialog(this);
+    QString defaultName = generateUniqueShapeName("Triangle");
+    dialog.setDefaultName(defaultName);  // отображаем сгенерированное имя фигуры
+
 
     if (dialog.exec() == QDialog::Accepted)
     {
@@ -326,3 +334,30 @@ void MainWindow::onSelectionChanged()
         deselectShape(); // Сбрасываем выделение
     }
 }
+
+// Генератор имен фигур с учетом порядкового номера
+QString MainWindow::generateUniqueShapeName(const QString &type)
+{
+    int index = 1;
+    QString proposedName;
+
+    while (true) {
+        proposedName = QString("%1_%2").arg(type).arg(index);
+        bool exists = std::any_of(list_of_Shapes.begin(), list_of_Shapes.end(), [&](QGraphicsItem *item) {
+            if (auto *shape = dynamic_cast<Shape *>(item)) {
+                return shape->getName() == proposedName;
+            }
+            return false;
+        });
+
+        if (!exists)
+            break;
+
+        ++index;
+    }
+
+    return proposedName;
+}
+
+
+

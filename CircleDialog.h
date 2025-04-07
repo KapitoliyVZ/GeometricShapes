@@ -22,6 +22,7 @@ public:
     QPointF getCenter() const;
     double getRadius() const;
     QString getCircleName() const;
+    void setDefaultName(const QString &name); // Отображение сгенерированного имени фигуры
 
 private slots:
     void on_applyButton_clicked();
@@ -33,6 +34,8 @@ private:
     QPointF center;     // заданные координаты центра
     double radius;      // заданный радиус
     QString nameByUser; // заданное имя
+
+
 };
 
 #endif // CIRCLEDIALOG_H

@@ -42,3 +42,9 @@ QString TriangleDialog::getTriangleName() const
 {
     return nameUser;
 }
+
+// Отображение сгенерированного имени фигуры
+void TriangleDialog::setDefaultName(const QString &name)
+{
+    ui->LineTriangleName->setText(name);
+}

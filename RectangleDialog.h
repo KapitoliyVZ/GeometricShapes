@@ -31,6 +31,8 @@ public:
     bool isCoordMode() const; // Возвращает true, если выбран режим "По координатам"
     bool isSizeMode() const;  // Возвращает true, если выбран режим "По начальной точке и размерам"
 
+    void setDefaultName(const QString &name); // Отображение сгенерированного имени фигуры
+
 private slots:
     bool isValidRectangle(const QList<QPointF> &coords); // проверка валидности значений координат
     void on_cancelButton_clicked();                      // Отменить ввод параметров

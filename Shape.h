@@ -32,7 +32,6 @@ protected:
     QUuid id;     // Уникальный ID
     QColor color; // Цвет фигуры
 
-    static int shapeCounter; // Счётчик для генерации имени
 };
 
 #endif // SHAPE_H

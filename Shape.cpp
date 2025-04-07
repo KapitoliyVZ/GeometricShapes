@@ -1,24 +1,12 @@
 #include "Shape.h"
 #include <QGraphicsSceneMouseEvent>
 
-// Инициализация счётчика
-int Shape::shapeCounter = 0;
 
 // Конструктор
 Shape::Shape(const QString &type, const QString &customName) : id(QUuid::createUuid())
 {
-    // Если имя передано пользователем, используем его
-    if (!customName.isEmpty())
-    {
-        name = customName;
-    }
-    else
-    {
-        // Генерация имени автоматически
-        ++shapeCounter;
-        name = QString("%1_%2").arg(type).arg(shapeCounter);
-    }
 
+    name = customName;
     // Включаем флаги для выделения
     setFlags(QGraphicsItem::ItemIsSelectable);
 }
@@ -43,4 +31,3 @@ void Shape::setName(const QString &newName)
         name = newName;
     }
 }
-

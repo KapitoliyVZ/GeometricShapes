@@ -68,6 +68,8 @@ private slots:
 
     void on_pushButton_rectangle_Cancel_clicked();
 
+
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;
@@ -93,6 +95,13 @@ private:
     void selectShape(Shape *shape); // Выделяет фигуру и синхронизирует UI
 
     void updateRectanglePoints(); // задание и обновление координат для прямоугольника
+
+
+    QString generateUniqueShapeName(const QString &type);
+
+    int getNextShapeIndex(const QString &typePrefix) const;
+
+
 };
 
 #endif // MAINWINDOW_H

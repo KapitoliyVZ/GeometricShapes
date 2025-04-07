@@ -68,7 +68,7 @@ void RectangleDialog::on_applyButton_clicked()
     coordinates.append(QPointF(x4, y4));
 
     // Считываем имя
-    nameUser = ui->LineCircleName->text();
+    nameUser = ui->LineRectangleName->text();
 
     if (!isValidRectangle(coordinates))
     {
@@ -160,4 +160,10 @@ double RectangleDialog::getWidth() const
 double RectangleDialog::getHeight() const
 {
     return ui->height->value();
+}
+
+// Отображение сгенерированного имени фигуры
+void RectangleDialog::setDefaultName(const QString &name)
+{
+    ui->LineRectangleName->setText(name);
 }

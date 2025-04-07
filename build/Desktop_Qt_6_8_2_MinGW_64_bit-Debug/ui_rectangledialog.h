@@ -37,13 +37,13 @@ public:
     QPushButton *applyButton;
     QPushButton *cancelButton;
     QRadioButton *radioSetSides;
-    QLineEdit *LineCircleName;
+    QLineEdit *LineRectangleName;
 
     void setupUi(QDialog *RectangleDialog)
     {
         if (RectangleDialog->objectName().isEmpty())
             RectangleDialog->setObjectName("RectangleDialog");
-        RectangleDialog->resize(397, 164);
+        RectangleDialog->resize(404, 172);
         gridLayout = new QGridLayout(RectangleDialog);
         gridLayout->setObjectName("gridLayout");
         gridLayout_2 = new QGridLayout();
@@ -126,10 +126,10 @@ public:
 
         gridLayout_2->addWidget(radioSetSides, 1, 2, 1, 2);
 
-        LineCircleName = new QLineEdit(RectangleDialog);
-        LineCircleName->setObjectName("LineCircleName");
+        LineRectangleName = new QLineEdit(RectangleDialog);
+        LineRectangleName->setObjectName("LineRectangleName");
 
-        gridLayout_2->addWidget(LineCircleName, 0, 0, 1, 4);
+        gridLayout_2->addWidget(LineRectangleName, 0, 0, 1, 4);
 
 
         gridLayout->addLayout(gridLayout_2, 0, 0, 1, 1);

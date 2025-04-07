@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>397</width>
-    <height>164</height>
+    <width>404</width>
+    <height>172</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -155,7 +155,7 @@
       </widget>
      </item>
      <item row="0" column="0" colspan="4">
-      <widget class="QLineEdit" name="LineCircleName"/>
+      <widget class="QLineEdit" name="LineRectangleName"/>
      </item>
     </layout>
    </item>

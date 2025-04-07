@@ -2,8 +2,8 @@
 #include "CircleDialog.h"
 #include "ui_CircleDialog.h"
 
-CircleDialog::CircleDialog(QWidget *parent) : QDialog(parent),
-                                              ui(new Ui::CircleDialog)
+CircleDialog::CircleDialog(QWidget *parent)
+    : QDialog(parent), ui(new Ui::CircleDialog)
 {
     ui->setupUi(this);
 }
@@ -44,4 +44,10 @@ double CircleDialog::getRadius() const
 QString CircleDialog::getCircleName() const
 {
     return nameByUser;
+}
+
+// Отображение сгенерированного имени фигуры
+void CircleDialog::setDefaultName(const QString &name)
+{
+    ui->LineCircleName->setText(name);
 }

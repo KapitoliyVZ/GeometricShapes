@@ -21,6 +21,9 @@ public:
     QList<QPointF> getCoordinates() const;
     QString getTriangleName() const;
 
+    void setDefaultName(const QString &name); // Отображение сгенерированного имени фигуры
+
+
 private slots:
     void on_cancelButton_clicked();
     void on_applyButton_clicked();
