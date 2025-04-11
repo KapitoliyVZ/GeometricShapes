@@ -69,17 +69,30 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 // при прокрутке колеса мыши
 void MainWindow::wheelEvent(QWheelEvent *event)
 {
-    // const double scaleFactor = 1.05; // Коэффициент увеличения
+    const double scaleFactor = 1.05; // коэффициент прокрутки
+    const double minScale = 1.0; // коэффициент отдаления
+    const double maxScale = 1.5;// коэффициент приближения
 
-    // if (event->angleDelta().y() > 0)
-    // {
-    //     ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
-    // }
-    // else
-    // {
-    //     ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
-    // }
+    QTransform currentTransform = ui->graphicsView->transform();
+    double currentScaleX = currentTransform.m11();  // текущий масштаб по X
+    double currentScaleY = currentTransform.m22();  // текущий масштаб по Y
+
+    if (event->angleDelta().y() > 0)  // Приближение
+    {
+        if (currentScaleX < maxScale && currentScaleY < maxScale)
+        {
+            ui->graphicsView->scale(scaleFactor, scaleFactor);
+        }
+    }
+    else  // Отдаление
+    {
+        if (currentScaleX > minScale && currentScaleY > minScale)
+        {
+            ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor);
+        }
+    }
 }
+
 
 // кнопка добавления прямоугольника
 void MainWindow::on_btnRectangle_clicked()

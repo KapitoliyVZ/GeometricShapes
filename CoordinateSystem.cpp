@@ -33,7 +33,7 @@ void CoordinateSystem::updateSceneSize(int width, int height)
 
     // Прорисовка главных осей
     axisX->setLine(-width / 2, 0, width / 2, 0);
-    axisY->setLine(0, -height / 2, 0, height / 2);
+    axisY->setLine(0, height / 2, 0, -height / 2);
 
     // Расчёт расстояния в пикселях между делениями
     int pixelStep = static_cast<int>(stepSize / unitPerPixel);
