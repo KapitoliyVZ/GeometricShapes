@@ -3,9 +3,8 @@
 
 
 // Конструктор
-Shape::Shape(const QString &type, const QString &customName) : id(QUuid::createUuid())
+Shape::Shape(const QString &type, const QString &customName)
 {
-
     name = customName;
     // Включаем флаги для выделения
     setFlags(QGraphicsItem::ItemIsSelectable);
@@ -15,12 +14,6 @@ Shape::Shape(const QString &type, const QString &customName) : id(QUuid::createU
 QString Shape::getName() const
 {
     return name;
-}
-
-// Геттер ID
-QUuid Shape::getId() const
-{
-    return id;
 }
 
 // Сеттер имени (для возможности изменения имени позже)

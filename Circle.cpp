@@ -23,7 +23,7 @@ void CircleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWi
     }
     else
     {
-        painter->setPen(Qt::black); // цвет контура - черный
+        painter->setPen(Qt::green); // цвет контура - черный
     }
 
     // painter->setBrush(Qt::red); // цвет заливки

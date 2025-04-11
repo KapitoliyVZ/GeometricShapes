@@ -19,7 +19,6 @@ public:
 
     // Геттеры
     QString getName() const;
-    QUuid getId() const;
 
     // Сеттер для имени
     void setName(const QString &newName);
@@ -29,7 +28,6 @@ public:
 
 protected:
     QString name; // Имя фигуры
-    QUuid id;     // Уникальный ID
     QColor color; // Цвет фигуры
 
 };

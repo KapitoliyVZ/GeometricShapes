@@ -127,9 +127,9 @@ void MainWindow::on_btnRectangle_clicked()
 // кнопка добавления круга
 void MainWindow::on_btnCircle_clicked()
 {
-    QString defaultName = generateUniqueShapeName("Circle");
-
     CircleDialog dialog(this);
+
+    QString defaultName = generateUniqueShapeName("Circle");
     dialog.setDefaultName(defaultName);  // отображаем сгенерированное имя фигуры
 
     if (dialog.exec() == QDialog::Accepted)

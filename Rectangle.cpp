@@ -35,7 +35,7 @@ void RectangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, 
     }
     else
     {
-        painter->setPen(Qt::black); // цвет контура - черный
+        painter->setPen(Qt::green); // цвет контура - черный
     }
 
     // painter->setBrush(Qt::blue); // цвет заливки
