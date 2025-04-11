@@ -27,7 +27,7 @@ void TriangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, Q
     }
     else
     {
-        painter->setPen(Qt::green); // цвет контура - черный
+        painter->setPen(Qt::gray); // цвет контура - черный
     }
 
     // painter->setBrush(Qt::blue); // цвет заливки

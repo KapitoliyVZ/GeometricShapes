@@ -14,6 +14,12 @@ CoordinateSystem::CoordinateSystem(QGraphicsScene *scene, int stepSize, double u
     // Создание осей координат (X и Y)
     axisX = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2));
     axisY = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2));
+
+    axisLabelX = scene->addText("X", QFont("Arial", 8, QFont::Bold));
+    axisLabelX->setTransform(QTransform().scale(1, -1));
+
+    axisLabelY = scene->addText("Y", QFont("Arial", 8, QFont::Bold));
+    axisLabelY->setTransform(QTransform().scale(1, -1));
 }
 
 // Установка масштаба (логических единиц на пиксель)
@@ -34,6 +40,10 @@ void CoordinateSystem::updateSceneSize(int width, int height)
     // Прорисовка главных осей
     axisX->setLine(-width / 2, 0, width / 2, 0);
     axisY->setLine(0, -height / 2, 0, height / 2);
+
+    // Прорисовка подписи осей
+    axisLabelX->setPos(width / 2 - 20, 20);
+    axisLabelY->setPos(5, height / 2 - 0);
 
     // Расчёт расстояния в пикселях между делениями
     int pixelStep = static_cast<int>(stepSize / unitPerPixel);
@@ -89,6 +99,7 @@ void CoordinateSystem::updateSceneSize(int width, int height)
         axisLabelsY[index]->setTransform(QTransform().scale(1, -1));  // Инвертируем подписи
 
         axisLabelsY[index]->show();
+
     }
 
 }

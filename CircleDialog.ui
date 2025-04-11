@@ -37,6 +37,9 @@
        <property name="maximum">
         <number>500</number>
        </property>
+       <property name="value">
+        <number>100</number>
+       </property>
       </widget>
      </item>
      <item row="1" column="0">
@@ -49,6 +52,9 @@
        </property>
        <property name="maximum">
         <number>500</number>
+       </property>
+       <property name="value">
+        <number>100</number>
        </property>
       </widget>
      </item>
@@ -69,6 +75,9 @@
        </property>
        <property name="maximum">
         <number>200</number>
+       </property>
+       <property name="value">
+        <number>50</number>
        </property>
       </widget>
      </item>

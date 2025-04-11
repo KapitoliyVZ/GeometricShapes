@@ -60,7 +60,7 @@ public:
         x1->setObjectName("x1");
         x1->setMinimum(-500);
         x1->setMaximum(500);
-        x1->setValue(10);
+        x1->setValue(50);
 
         gridLayout->addWidget(x1, 1, 0, 1, 1);
 
@@ -68,7 +68,7 @@ public:
         x2->setObjectName("x2");
         x2->setMinimum(-500);
         x2->setMaximum(500);
-        x2->setValue(40);
+        x2->setValue(80);
 
         gridLayout->addWidget(x2, 2, 0, 1, 1);
 
@@ -76,7 +76,7 @@ public:
         x3->setObjectName("x3");
         x3->setMinimum(-500);
         x3->setMaximum(500);
-        x3->setValue(20);
+        x3->setValue(65);
 
         gridLayout->addWidget(x3, 3, 0, 1, 1);
 

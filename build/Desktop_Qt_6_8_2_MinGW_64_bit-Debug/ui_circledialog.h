@@ -49,6 +49,7 @@ public:
         yCenter->setObjectName("yCenter");
         yCenter->setMinimum(-500);
         yCenter->setMaximum(500);
+        yCenter->setValue(100);
 
         gridLayout->addWidget(yCenter, 1, 1, 1, 1);
 
@@ -56,6 +57,7 @@ public:
         xCenter->setObjectName("xCenter");
         xCenter->setMinimum(-500);
         xCenter->setMaximum(500);
+        xCenter->setValue(100);
 
         gridLayout->addWidget(xCenter, 1, 0, 1, 1);
 
@@ -68,6 +70,7 @@ public:
         radius->setObjectName("radius");
         radius->setMinimum(1);
         radius->setMaximum(200);
+        radius->setValue(50);
 
         gridLayout->addWidget(radius, 2, 0, 1, 2);
 

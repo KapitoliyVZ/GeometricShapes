@@ -34,14 +34,18 @@ private:
     int stepSize;                // Логический шаг между делениями
     double unitPerPixel;         // Масштаб (логических единиц на пиксель)
 
-    QGraphicsLineItem *axisX = nullptr; ///< Главная ось X
-    QGraphicsLineItem *axisY = nullptr; ///< Главная ось Y
+    QGraphicsLineItem *axisX = nullptr; // Главная ось X
+    QGraphicsLineItem *axisY = nullptr; // Главная ось Y
 
-    QVector<QGraphicsLineItem *> axisTicksX; ///< Деления по оси X
-    QVector<QGraphicsLineItem *> axisTicksY; ///< Деления по оси Y
+    QVector<QGraphicsLineItem *> axisTicksX; // Деления по оси X
+    QVector<QGraphicsLineItem *> axisTicksY; // Деления по оси Y
 
-    QVector<QGraphicsTextItem *> axisLabelsX; ///< Подписи по оси X
-    QVector<QGraphicsTextItem *> axisLabelsY; ///< Подписи по оси Y
+    QVector<QGraphicsTextItem *> axisLabelsX; // Подписи по оси X
+    QVector<QGraphicsTextItem *> axisLabelsY; // Подписи по оси Y
+
+    QGraphicsTextItem* axisLabelX = nullptr; // Подпись X
+    QGraphicsTextItem* axisLabelY = nullptr; // Подпись Y
+
 
     /*
      * Гарантирует, что количество засечек и подписей соответствует требуемому количеству.
