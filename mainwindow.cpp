@@ -16,19 +16,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this);
 
-    // Создаём графическую сцену
-    coordinate_scene = new QGraphicsScene(this);
-
-    ui->graphicsView->setScene(coordinate_scene);
-    ui->graphicsView->setRenderHint(QPainter::Antialiasing);
-    ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
-
-    // Создаём объект GraphSettings и передаём сцену
-    coordinateSystem = new CoordinateSystem(coordinate_scene, 50, 1.0);
-    // Настраиваем начальный размер сцены
-    coordinateSystem->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
-    ui->graphicsView->setScene(coordinate_scene);
-
     setupScene();
 
     // Включаем режим выбора фигур на сцене (на координатной сетке)
@@ -53,9 +40,22 @@ MainWindow::~MainWindow()
 // прорисовка сцены (координатной оси)
 void MainWindow::setupScene()
 {
-    // Устанавливаем начальный размер
-    coordinateSystem->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
-    qDebug() << "width: " << ui->graphicsView->width() << "/n height: " << ui->graphicsView->height();
+    // Создание сцены и привязка к graphicsView
+    coordinate_scene = new QGraphicsScene(this);
+    ui->graphicsView->setScene(coordinate_scene);
+    ui->graphicsView->setRenderHint(QPainter::Antialiasing);
+    ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
+
+    // Инвертируем ось Y — положительное направление вверх
+    ui->graphicsView->setTransform(QTransform().scale(1, -1));
+
+    // Инициализация системы координат с параметрами шага и масштабом
+    coordinateSystem = new CoordinateSystem(coordinate_scene, 50, 1.0);
+
+    // Первичная настройка размера сцены на основе размеров виджета
+    const int viewWidth = ui->graphicsView->width();
+    const int viewHeight = ui->graphicsView->height();
+    coordinateSystem->updateSceneSize(viewWidth, viewHeight);
 }
 
 // прорисовка сцены (координатной оси) при изменении размеров окна пользователем
@@ -73,24 +73,28 @@ void MainWindow::wheelEvent(QWheelEvent *event)
     const double minScale = 1.0; // коэффициент отдаления
     const double maxScale = 1.5;// коэффициент приближения
 
-    QTransform currentTransform = ui->graphicsView->transform();
-    double currentScaleX = currentTransform.m11();  // текущий масштаб по X
-    double currentScaleY = currentTransform.m22();  // текущий масштаб по Y
+    // Получаем текущий масштаб (по X достаточно, т.к. X=Y)
+    double currentScale = ui->graphicsView->transform().m11();
 
-    if (event->angleDelta().y() > 0)  // Приближение
+    if (event->angleDelta().y() > 0 && currentScale < maxScale)
     {
-        if (currentScaleX < maxScale && currentScaleY < maxScale)
-        {
-            ui->graphicsView->scale(scaleFactor, scaleFactor);
-        }
+        ui->graphicsView->setTransform(ui->graphicsView->transform() * QTransform::fromScale(scaleFactor, scaleFactor));
     }
-    else  // Отдаление
+    else if (event->angleDelta().y() < 0 && currentScale > minScale)
     {
-        if (currentScaleX > minScale && currentScaleY > minScale)
-        {
-            ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor);
-        }
+        ui->graphicsView->setTransform(ui->graphicsView->transform() * QTransform::fromScale(1.0 / scaleFactor, 1.0 / scaleFactor));
     }
+
+    // const double scaleFactor = 1.05; // Коэффициент увеличения
+
+    // if (event->angleDelta().y() > 0)
+    // {
+    //     ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
+    // }
+    // else
+    // {
+    //     ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
+    // }
 }
 
 
