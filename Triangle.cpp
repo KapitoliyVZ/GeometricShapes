@@ -1,6 +1,6 @@
 #include "Triangle.h"
 
-TriangleShape::TriangleShape(const QList<QPointF> &coords, const QString &customName)
+TriangleShape::TriangleShape(const QList<QPointF> &coords, const QString &customName) // конструктор
     : Shape("Triangle", customName)
 {
     if (coords.size() == 3)
@@ -10,12 +10,12 @@ TriangleShape::TriangleShape(const QList<QPointF> &coords, const QString &custom
     }
 }
 
-QRectF TriangleShape::boundingRect() const
+QRectF TriangleShape::boundingRect() const // определение границ
 {
     return polygon.boundingRect(); // Корректно определяем границы
 }
 
-void TriangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
+void TriangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *) // отрисовка
 {
     if (polygon.isEmpty())
         return;

@@ -2,13 +2,13 @@
 #include "CircleDialog.h"
 #include "ui_CircleDialog.h"
 
-CircleDialog::CircleDialog(QWidget *parent)
+CircleDialog::CircleDialog(QWidget *parent) // конструктор
     : QDialog(parent), ui(new Ui::CircleDialog)
 {
-    ui->setupUi(this);
+    ui->setupUi(this); // инициализация интерфейса
 }
 
-CircleDialog::~CircleDialog()
+CircleDialog::~CircleDialog() // деструктор
 {
     delete ui;
 }

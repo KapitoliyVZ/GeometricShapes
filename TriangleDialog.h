@@ -17,16 +17,14 @@ public:
     explicit TriangleDialog(QWidget *parent = nullptr);
     ~TriangleDialog();
 
-    // Получаем координаты от пользователя
-    QList<QPointF> getCoordinates() const;
-    QString getTriangleName() const;
+    QList<QPointF> getCoordinates() const; // Возвращает 3 координаты
+    QString getTriangleName() const;       // Возвращает имя
 
     void setDefaultName(const QString &name); // Отображение сгенерированного имени фигуры
 
-
 private slots:
-    void on_cancelButton_clicked();
-    void on_applyButton_clicked();
+    void on_cancelButton_clicked(); // Отменить ввод параметров
+    void on_applyButton_clicked();  // Применить параметры
 
 private:
     Ui::TriangleDialog *ui;

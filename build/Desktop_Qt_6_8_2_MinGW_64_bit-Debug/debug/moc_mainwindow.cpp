@@ -53,12 +53,12 @@ static constexpr auto qt_meta_stringdata_ZN10MainWindowE = QtMocHelpers::stringD
     "on_pushButton_circle_Apply_clicked",
     "on_pushButton_triangle_Apply_clicked",
     "on_pushButton_rectangle_Apply_clicked",
-    "on_pushButton_circle_Delete_clicked",
-    "on_pushButton_triangle_Delete_clicked",
-    "on_pushButton_rectangle_Delete_clicked",
     "on_pushButton_circle_Cancel_clicked",
     "on_pushButton_triangle_Cancel_clicked",
-    "on_pushButton_rectangle_Cancel_clicked"
+    "on_pushButton_rectangle_Cancel_clicked",
+    "on_pushButton_circle_Delete_clicked",
+    "on_pushButton_triangle_Delete_clicked",
+    "on_pushButton_rectangle_Delete_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -154,17 +154,17 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_rectangle_Apply_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_circle_Delete_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_triangle_Delete_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_rectangle_Delete_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_circle_Cancel_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_triangle_Cancel_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_rectangle_Cancel_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_circle_Delete_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_triangle_Delete_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_rectangle_Delete_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -187,12 +187,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 9: _t->on_pushButton_circle_Apply_clicked(); break;
         case 10: _t->on_pushButton_triangle_Apply_clicked(); break;
         case 11: _t->on_pushButton_rectangle_Apply_clicked(); break;
-        case 12: _t->on_pushButton_circle_Delete_clicked(); break;
-        case 13: _t->on_pushButton_triangle_Delete_clicked(); break;
-        case 14: _t->on_pushButton_rectangle_Delete_clicked(); break;
-        case 15: _t->on_pushButton_circle_Cancel_clicked(); break;
-        case 16: _t->on_pushButton_triangle_Cancel_clicked(); break;
-        case 17: _t->on_pushButton_rectangle_Cancel_clicked(); break;
+        case 12: _t->on_pushButton_circle_Cancel_clicked(); break;
+        case 13: _t->on_pushButton_triangle_Cancel_clicked(); break;
+        case 14: _t->on_pushButton_rectangle_Cancel_clicked(); break;
+        case 15: _t->on_pushButton_circle_Delete_clicked(); break;
+        case 16: _t->on_pushButton_triangle_Delete_clicked(); break;
+        case 17: _t->on_pushButton_rectangle_Delete_clicked(); break;
         default: ;
         }
     }

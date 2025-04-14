@@ -14,16 +14,15 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+    ui->setupUi(this); // инициализация интерфейса
 
-    setupScene();
+    setupScene(); // прорисовка сцены (координатной оси)
 
     // Включаем режим выбора фигур на сцене (на координатной сетке)
     coordinate_scene->setItemIndexMethod(QGraphicsScene::NoIndex);
     coordinate_scene->setSelectionArea(QPainterPath());
 
     ui->tabWidgetProperties->setEnabled(false); // выключаем таблицу настроек до выбора нарисованной фигуры
-    // ui->tabWidgetProperties->setEnabled(selectedShape != nullptr);
 
     // Нажатие на фигуру на графике
     connect(ui->graphicsView->scene(), &QGraphicsScene::selectionChanged, this, &MainWindow::onSceneSelectShape);
@@ -31,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // реакция на нажатие на пустую область для снятия выделения фигуры
     connect(ui->graphicsView->scene(), &QGraphicsScene::selectionChanged, this, &MainWindow::onSelectionChanged);
 }
-
+// деструктор класса
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -42,9 +41,9 @@ void MainWindow::setupScene()
 {
     // Создание сцены и привязка к graphicsView
     coordinate_scene = new QGraphicsScene(this);
-    ui->graphicsView->setScene(coordinate_scene);
-    ui->graphicsView->setRenderHint(QPainter::Antialiasing);
-    ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
+    ui->graphicsView->setScene(coordinate_scene);                 // Устанавливаем сцену в graphicsView
+    ui->graphicsView->setRenderHint(QPainter::Antialiasing);      // Включаем сглаживание
+    ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag); // Включаем режим перетаскивания сцены
 
     // Инвертируем ось Y — положительное направление вверх
     ui->graphicsView->setTransform(QTransform().scale(1, -1));
@@ -62,53 +61,37 @@ void MainWindow::setupScene()
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
     QMainWindow::resizeEvent(event);
-    coordinateSystem->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height());
-    qDebug() << "width: " << ui->graphicsView->width() << "/n height: " << ui->graphicsView->height();
+    coordinateSystem->updateSceneSize(ui->graphicsView->width(), ui->graphicsView->height()); // обновляем размеры сцены
 }
 
 // при прокрутке колеса мыши
 void MainWindow::wheelEvent(QWheelEvent *event)
 {
     const double scaleFactor = 1.05; // коэффициент прокрутки
-    const double minScale = 1.0; // коэффициент отдаления
-    const double maxScale = 1.5;// коэффициент приближения
+    const double minScale = 1.0;     // коэффициент отдаления
+    const double maxScale = 1.5;     // коэффициент приближения
 
     // Получаем текущий масштаб (по X достаточно, т.к. X=Y)
     double currentScale = ui->graphicsView->transform().m11();
 
-    if (event->angleDelta().y() > 0 && currentScale < maxScale)
-    {
+    // Устанавливаем новый масштаб в зависимости от направления прокрутки
+    if (event->angleDelta().y() > 0 && currentScale < maxScale) // прокрутка вверх
         ui->graphicsView->setTransform(ui->graphicsView->transform() * QTransform::fromScale(scaleFactor, scaleFactor));
-    }
-    else if (event->angleDelta().y() < 0 && currentScale > minScale)
-    {
+    else if (event->angleDelta().y() < 0 && currentScale > minScale) // прокрутка вниз
         ui->graphicsView->setTransform(ui->graphicsView->transform() * QTransform::fromScale(1.0 / scaleFactor, 1.0 / scaleFactor));
-    }
-
-    // const double scaleFactor = 1.05; // Коэффициент увеличения
-
-    // if (event->angleDelta().y() > 0)
-    // {
-    //     ui->graphicsView->scale(scaleFactor, scaleFactor); // Увеличиваем
-    // }
-    // else
-    // {
-    //     ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor); // Уменьшаем
-    // }
 }
-
 
 // кнопка добавления прямоугольника
 void MainWindow::on_btnRectangle_clicked()
 {
-    RectangleDialog dialog(this);
-    QString defaultName = generateUniqueShapeName("Rectangle");
-    dialog.setDefaultName(defaultName);  // отображаем сгенерированное имя фигуры
+    RectangleDialog dialog(this);                               // диалоговое окно для ввода параметров прямоугольника
+    QString defaultName = generateUniqueShapeName("Rectangle"); // генерируем уникальное имя
+    dialog.setDefaultName(defaultName);                         // отображаем сгенерированное имя фигуры
 
     if (dialog.exec() == QDialog::Accepted)
     {
-        QList<QPointF> coords = dialog.getCoordinates();
-        QString name = dialog.getRectangleName();
+        QList<QPointF> coords = dialog.getCoordinates(); // получаем координаты
+        QString name = dialog.getRectangleName();        // получаем имя фигуры
 
         // Проверяем уникальность имени
         if (!isShapeNameUnique(name))
@@ -134,23 +117,23 @@ void MainWindow::on_btnRectangle_clicked()
             double width = dialog.getWidth();
             double height = dialog.getHeight();
 
-            RectangleShape *rectangle = new RectangleShape(startPoint, width, height, name);
-            coordinate_scene->addItem(rectangle);
-            list_of_Shapes.append(rectangle); // Сохраняем в список
-            updateShapeList();                // Обновляем виджет с именами
+            RectangleShape *rectangle = new RectangleShape(startPoint, width, height, name); // Создаем прямоугольник с заданными параметрами
+            coordinate_scene->addItem(rectangle);                                            // Добавляем прямоугольник на сцену
+            list_of_Shapes.append(rectangle);                                                // Сохраняем в список
+            updateShapeList();                                                               // Обновляем виджет с именами
         }
     }
 }
 // кнопка добавления круга
 void MainWindow::on_btnCircle_clicked()
 {
-    CircleDialog dialog(this);
-
-    QString defaultName = generateUniqueShapeName("Circle");
-    dialog.setDefaultName(defaultName);  // отображаем сгенерированное имя фигуры
+    CircleDialog dialog(this);                               // диалоговое окно для ввода параметров круга
+    QString defaultName = generateUniqueShapeName("Circle"); // генерируем уникальное имя
+    dialog.setDefaultName(defaultName);                      // отображаем сгенерированное имя фигуры
 
     if (dialog.exec() == QDialog::Accepted)
     {
+        // Получаем координаты центра и радиус
         QPointF center = dialog.getCenter();
         double radius = dialog.getRadius();
         QString name = dialog.getCircleName();
@@ -162,19 +145,18 @@ void MainWindow::on_btnCircle_clicked()
             return;
         }
 
-        CircleShape *circle = new CircleShape(center, radius, name);
-        coordinate_scene->addItem(circle);
-        list_of_Shapes.append(circle); // Сохраняем в список
-        updateShapeList();             // Обновляем виджет с именами
+        CircleShape *circle = new CircleShape(center, radius, name); // Создаем круг с заданными параметрами
+        coordinate_scene->addItem(circle);                           // Добавляем круг на сцену
+        list_of_Shapes.append(circle);                               // Сохраняем в список
+        updateShapeList();                                           // Обновляем виджет с именами
     }
 }
 // кнопка добавления треугольника
 void MainWindow::on_btnTriangle_clicked()
 {
-    TriangleDialog dialog(this);
-    QString defaultName = generateUniqueShapeName("Triangle");
-    dialog.setDefaultName(defaultName);  // отображаем сгенерированное имя фигуры
-
+    TriangleDialog dialog(this);                               // диалоговое окно для ввода параметров треугольника
+    QString defaultName = generateUniqueShapeName("Triangle"); // генерируем уникальное имя
+    dialog.setDefaultName(defaultName);                        // отображаем сгенерированное имя фигуры
 
     if (dialog.exec() == QDialog::Accepted)
     {
@@ -190,10 +172,10 @@ void MainWindow::on_btnTriangle_clicked()
 
         if (coords.size() == 3)
         {
-            TriangleShape *triangle = new TriangleShape(coords, name);
-            coordinate_scene->addItem(triangle);
-            list_of_Shapes.append(triangle); // Сохраняем в список
-            updateShapeList();               // Обновляем виджет с именами
+            TriangleShape *triangle = new TriangleShape(coords, name); // Создаем треугольник с заданными параметрами
+            coordinate_scene->addItem(triangle);                       // Добавляем треугольник на сцену
+            list_of_Shapes.append(triangle);                           // Сохраняем в список
+            updateShapeList();                                         // Обновляем виджет с именами
         }
     }
 }
@@ -201,13 +183,12 @@ void MainWindow::on_btnTriangle_clicked()
 // проверка наличия введенного имени
 bool MainWindow::isShapeNameUnique(const QString &name)
 {
+
     for (auto *item : list_of_Shapes)
     {
         auto *shape = dynamic_cast<Shape *>(item);
         if (shape && shape->getName() == name)
-        {
             return false; // Данное имя имеется
-        }
     }
     return true; // Имя уникальное
 }
@@ -215,8 +196,6 @@ bool MainWindow::isShapeNameUnique(const QString &name)
 // Кнопка очистки графика
 void MainWindow::on_btnClearScene_clicked()
 {
-    qDebug() << "Удаляем все фигуры...";
-
     // Удаляем все фигуры со сцены
     for (auto *item : list_of_Shapes)
     {
@@ -224,26 +203,17 @@ void MainWindow::on_btnClearScene_clicked()
         delete item;                        // Освобождаем память
     }
 
-    // Очищаем список фигур
-    list_of_Shapes.clear();
-
-    // Очищаем `QListWidget`
-    ui->listWidgetShapes->clear();
-
-    // Обновляем сцену
-    coordinate_scene->update();
-
+    list_of_Shapes.clear();                                        // Очищаем список фигур
+    ui->listWidgetShapes->clear();                                 // Очищаем `QListWidget`
+    coordinate_scene->update();                                    // Обновляем сцену
     selectedShape = nullptr;                                       // Сбрасываем выбор фигуры
     ui->tabWidgetProperties->setEnabled(selectedShape != nullptr); // Выключаем tabWidgetProperties
-
-    qDebug() << "Все фигуры удалены!";
 }
 
 // Обновление виджета списка (listWidgetShapes)
 void MainWindow::updateShapeList()
 {
-    // Очищаем виджет перед обновлением
-    ui->listWidgetShapes->clear();
+    ui->listWidgetShapes->clear(); // Очищаем виджет перед обновлением
 
     // Проходим по всем фигурам в списке
     for (auto *item : list_of_Shapes)
@@ -308,11 +278,10 @@ void MainWindow::onSceneSelectShape()
 
     // Получаем первую выбранную фигуру
     Shape *shape = dynamic_cast<Shape *>(selectedItems.first());
-
     if (!shape)
         return;
 
-    selectedShape = shape;
+    selectedShape = shape; // Назначаем выбранную фигуру
 
     // Выбираем её в `QListWidget`
     for (int i = 0; i < ui->listWidgetShapes->count(); ++i)
@@ -324,7 +293,6 @@ void MainWindow::onSceneSelectShape()
             break;
         }
     }
-
     ui->tabWidgetProperties->setEnabled(true); // Включаем tabWidgetProperties
     coordinate_scene->update();                // Обновляем сцену
     setWidgetPropertiesShape(selectedShape);   // настраиваем отображение виджета с парамметрами выбранной фигуры
@@ -342,8 +310,8 @@ void MainWindow::deselectShape()
     }
 }
 
-//
-void MainWindow::onSelectionChanged()
+// Обработка изменения выделения в списке фигур
+void MainWindow::onSelectionChanged() 
 {
     // Если нет выбранных объектов
     if (ui->graphicsView->scene()->selectedItems().isEmpty())
@@ -355,17 +323,18 @@ void MainWindow::onSelectionChanged()
 // Генератор имен фигур с учетом порядкового номера
 QString MainWindow::generateUniqueShapeName(const QString &type)
 {
-    int index = 1;
-    QString proposedName;
+    int index = 1; 
+    QString proposedName; 
 
-    while (true) {
+    while (true)
+    {
         proposedName = QString("%1_%2").arg(type).arg(index);
-        bool exists = std::any_of(list_of_Shapes.begin(), list_of_Shapes.end(), [&](QGraphicsItem *item) {
+        bool exists = std::any_of(list_of_Shapes.begin(), list_of_Shapes.end(), [&](QGraphicsItem *item)
+                                  {
             if (auto *shape = dynamic_cast<Shape *>(item)) {
                 return shape->getName() == proposedName;
             }
-            return false;
-        });
+            return false; });
 
         if (!exists)
             break;
@@ -375,6 +344,3 @@ QString MainWindow::generateUniqueShapeName(const QString &type)
 
     return proposedName;
 }
-
-
-

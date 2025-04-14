@@ -1,24 +1,24 @@
 #include "TriangleDialog.h"
 #include "ui_TriangleDialog.h"
 
-TriangleDialog::TriangleDialog(QWidget *parent)
+TriangleDialog::TriangleDialog(QWidget *parent) // Конструктор
     : QDialog(parent), ui(new Ui::TriangleDialog)
 {
     ui->setupUi(this);
 }
 
-TriangleDialog::~TriangleDialog()
+TriangleDialog::~TriangleDialog() // Деструктор
 {
     delete ui;
 }
 
-// Реакция на кнопку Cancel
+// Реакция на кнопку "Отменить"
 void TriangleDialog::on_cancelButton_clicked()
 {
     reject(); // Закрываем диалог с результатом "Отмена"
 }
 
-// Реакция на кнопку Apply
+// Реакция на кнопку "Создать фигуру"
 void TriangleDialog::on_applyButton_clicked()
 {
     // Получаем координаты из полей ввода

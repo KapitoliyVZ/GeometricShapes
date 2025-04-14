@@ -11,7 +11,7 @@ namespace Ui
     class RectangleDialog;
 }
 
-class RectangleDialog : public QDialog
+class RectangleDialog : public QDialog 
 {
     Q_OBJECT
 
@@ -21,12 +21,10 @@ public:
 
     // Получаем координаты от пользователя
     QList<QPointF> getCoordinates() const; // Возвращает 4 координаты
-
-    QString getRectangleName() const; // Возвращает имя
-
-    QPointF getStartPoint() const; // Возвращает начальную точку
-    double getWidth() const;       // Возвращает ширину
-    double getHeight() const;      // Возвращает высоту
+    QString getRectangleName() const;      // Возвращает имя
+    QPointF getStartPoint() const;         // Возвращает начальную точку
+    double getWidth() const;               // Возвращает ширину
+    double getHeight() const;              // Возвращает высоту
 
     bool isCoordMode() const; // Возвращает true, если выбран режим "По координатам"
     bool isSizeMode() const;  // Возвращает true, если выбран режим "По начальной точке и размерам"
@@ -42,9 +40,8 @@ private slots:
 private:
     Ui::RectangleDialog *ui;
 
-    QList<QPointF> coordinates; // заданные координаты
-    QString nameUser;           // заданное имя
-
+    QList<QPointF> coordinates;   // заданные координаты
+    QString nameUser;             // заданное имя
     QButtonGroup *shapeModeGroup; // Группа для радиокнопок
 };
 

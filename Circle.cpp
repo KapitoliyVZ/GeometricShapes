@@ -1,16 +1,19 @@
 #include "Circle.h"
 
+// Конструктор с указанием центра и радиуса
 CircleShape::CircleShape(QPointF center, double radius, const QString &customName)
     : Shape("Circle", customName), center(center), radius(radius)
 {
     setPos(center);
 }
 
-QRectF CircleShape::boundingRect() const
+// определяет границы объекта
+QRectF CircleShape::boundingRect() const 
 {
     return QRectF(-radius, -radius, radius * 2, radius * 2);
 }
 
+// Отрисовка круга
 void CircleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
 

@@ -8,6 +8,8 @@
 #include <QString>
 #include <QUuid>
 
+// Класс Shape - родительский класс для всех фигур
+// Наследуется от QGraphicsItem для интеграции с графической сценой
 class Shape : public QGraphicsItem
 {
 
@@ -17,19 +19,17 @@ public:
     // Виртуальный деструктор
     virtual ~Shape() = default;
 
-    // Геттеры
-    QString getName() const;
+    QString getName() const;              // Геттер для имени
+    void setName(const QString &newName); // Сеттер для имени
 
-    // Сеттер для имени
-    void setName(const QString &newName);
-
-    virtual QRectF boundingRect() const override = 0;                                                            // Границы объекта
-    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override = 0; // Отрисовка
+    // Виртуальная функция для определения границы объекта
+    virtual QRectF boundingRect() const override = 0;      
+    // Виртуальная функция для отрисовки объекта                           
+    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override = 0; 
 
 protected:
     QString name; // Имя фигуры
     QColor color; // Цвет фигуры
-
 };
 
 #endif // SHAPE_H

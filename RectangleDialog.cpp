@@ -6,7 +6,7 @@
 RectangleDialog::RectangleDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::RectangleDialog)
 {
-    ui->setupUi(this);
+    ui->setupUi(this); // Инициализация интерфейса
 
     // группа для `QRadioButton`
     shapeModeGroup = new QButtonGroup(this);
@@ -23,7 +23,7 @@ RectangleDialog::RectangleDialog(QWidget *parent)
     onRadioTypeSet();
 }
 
-RectangleDialog::~RectangleDialog()
+RectangleDialog::~RectangleDialog() // Деструктор
 {
     delete ui;
 }
@@ -39,13 +39,13 @@ bool RectangleDialog::isValidRectangle(const QList<QPointF> &coords)
             coords[0].y() == coords[1].y() && coords[2].y() == coords[3].y());
 }
 
-// Реакция на кнопку Cancel
+// Реакция на кнопку Отменить
 void RectangleDialog::on_cancelButton_clicked()
 {
     reject(); // Закрываем диалог с результатом "Отмена"
 }
 
-// Реакция на кнопку Apply
+// Реакция на кнопку "Создать фигуру"
 void RectangleDialog::on_applyButton_clicked()
 {
     // Получаем введённые координаты двух противоположных точек

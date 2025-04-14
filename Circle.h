@@ -6,24 +6,26 @@
 #include "Shape.h"
 #include <QPainter>
 
+// Класс фигуры - круг
 class CircleShape : public Shape
 {
 public:
     // Конструктор с указанием центра и радиуса
     explicit CircleShape(QPointF center, double radius, const QString &customName = "");
 
-    void setNewRadius(double newRadius);
-    void setNewCenter(QPointF newCenter);
-    double getRadius();
-    QPointF getCenter();
+    void setNewRadius(double newRadius);  // Установка нового радиуса
+    void setNewCenter(QPointF newCenter); // Установка нового центра
+    double getRadius();                   // Получение радиуса
+    QPointF getCenter();                  // Получение центра
 
     // Реализация метода QGraphicsItem
     QRectF boundingRect() const override;
+    // Отрисовка круга
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
 private:
-    QPointF center;
-    double radius;
+    QPointF center; // Центр круга
+    double radius;  // Радиус круга
 };
 
 #endif // CIRCLE_H

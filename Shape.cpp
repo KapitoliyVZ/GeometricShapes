@@ -5,7 +5,7 @@
 // Конструктор
 Shape::Shape(const QString &type, const QString &customName)
 {
-    name = customName;
+    name = customName; // Имя фигуры
     // Включаем флаги для выделения
     setFlags(QGraphicsItem::ItemIsSelectable);
 }

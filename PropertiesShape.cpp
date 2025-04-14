@@ -117,7 +117,7 @@ void MainWindow::setWidgetPropertiesShape(Shape *selectedShape)
 
 //////////////////////////////////////////////////////////////////
 
-// включить кнопку Apply для круга
+// включить кнопку Применить для круга
 void MainWindow::enableCircleApplyButton()
 {
     ui->pushButton_circle_Apply->setEnabled(true);
@@ -142,22 +142,13 @@ void MainWindow::on_pushButton_circle_Apply_clicked()
 
         // Если ничего не изменилось, выходим
         if (!isRadiusChanged && !isPositionChanged)
-        {
-            qDebug() << "Никакие параметры не изменились.";
             return;
-        }
         // Применяем новые параметры
         if (isRadiusChanged)
-        {
             circle->setNewRadius(newRadius);
-            qDebug() << "новый радиус принят: " << newRadius;
-        }
 
         if (isPositionChanged)
-        {
             circle->setNewCenter(QPointF(newX, newY));
-            qDebug() << "новый центр принят: (" << newX << "," << newY << ")";
-        }
 
         coordinate_scene->update(); // Обновляем сцену
     }
@@ -188,17 +179,14 @@ void MainWindow::on_pushButton_circle_Cancel_clicked()
 
         // Если ничего не изменилось, выходим
         if (!isRadiusChanged && !isPositionChanged)
-        {
-            qDebug() << "Никакие параметры не изменились.";
             return;
-        }
+
         // Если изменился радиус
         if (isRadiusChanged)
-        {
-            // записываем старое значение
-            ui->spinBox_circle_radius->setValue(prevRadius);
-        }
-        // Если изменились координаты
+
+            ui->spinBox_circle_radius->setValue(prevRadius); // записываем старое значение
+        
+            // Если изменились координаты
         if (isPositionChanged)
         {
             // записываем старое значение
@@ -366,6 +354,7 @@ void MainWindow::on_pushButton_triangle_Delete_clicked()
 // задание и обновление координат для прямоугольника на основе измененных координат
 void MainWindow::updateRectanglePoints()
 {
+    // Получаем текущие значения координат из `QSpinBox`
     double x1 = ui->spinBox_rectangle_x1->value();
     double y1 = ui->spinBox_rectangle_y1->value();
     double x3 = ui->spinBox_rectangle_x3->value();

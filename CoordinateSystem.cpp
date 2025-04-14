@@ -15,9 +15,11 @@ CoordinateSystem::CoordinateSystem(QGraphicsScene *scene, int stepSize, double u
     axisX = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2));
     axisY = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2));
 
+    //Подпись названия оси X
     axisLabelX = scene->addText("X", QFont("Arial", 8, QFont::Bold));
     axisLabelX->setTransform(QTransform().scale(1, -1));
 
+    // Подпись названия оси Y
     axisLabelY = scene->addText("Y", QFont("Arial", 8, QFont::Bold));
     axisLabelY->setTransform(QTransform().scale(1, -1));
 }
@@ -41,7 +43,7 @@ void CoordinateSystem::updateSceneSize(int width, int height)
     axisX->setLine(-width / 2, 0, width / 2, 0);
     axisY->setLine(0, -height / 2, 0, height / 2);
 
-    // Прорисовка подписи осей
+    // Прорисовка подписи названия осей
     axisLabelX->setPos(width / 2 - 20, 20);
     axisLabelY->setPos(5, height / 2 - 0);
 
@@ -115,7 +117,7 @@ void CoordinateSystem::ensureTickLabelCount(QVector<QGraphicsLineItem *> &ticks,
     while (ticks.size() < count)
         ticks.append(scene->addLine(0, 0, 0, 0, QPen(Qt::black)));
 
-    // Добавляем недостающие подписи
+    // Добавляем недостающие подписи засечек
     while (labels.size() < count)
         labels.append(scene->addText("", QFont("Arial", 6)));
 

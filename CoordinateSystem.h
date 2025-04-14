@@ -7,27 +7,13 @@
 #include <QGraphicsLineItem>
 #include <QVector>
 
-/*
- * Класс CoordinateSystem отвечает за отображение координатной сетки на заданной сцене.
- * Он включает в себя прорисовку осей, делений и текстовых меток.
- * Масштаб отображения настраивается через stepSize (логический шаг) и unitPerPixel (масштаб логических единиц на пиксель).
- */
-class CoordinateSystem
+class CoordinateSystem // Класс отвечает за отображение координатной сетки на заданной сцене.
 {
 public:
     explicit CoordinateSystem(QGraphicsScene *scene, int stepSize = 50, double unitPerPixel = 1.0);
 
-    /*
-     * Обновляет размеры сцены и перерисовывает координатную систему
-     * @param width   ширина вьюпорта
-     * @param height  высота вьюпорта
-     */
-    void updateSceneSize(int width, int height);
-
-    /*
-     * Устанавливает масштаб в логических единицах на пиксель
-     */
-    void setUnitPerPixel(double value);
+    void updateSceneSize(int width, int height); // Обновляет размеры сцены и перерисовывает координатную систему
+    void setUnitPerPixel(double value);          // Устанавливает масштаб в логических единицах на пиксель
 
 private:
     QGraphicsScene *const scene; // Указатель на сцену (не изменяется после инициализации)
@@ -43,9 +29,8 @@ private:
     QVector<QGraphicsTextItem *> axisLabelsX; // Подписи по оси X
     QVector<QGraphicsTextItem *> axisLabelsY; // Подписи по оси Y
 
-    QGraphicsTextItem* axisLabelX = nullptr; // Подпись X
-    QGraphicsTextItem* axisLabelY = nullptr; // Подпись Y
-
+    QGraphicsTextItem *axisLabelX = nullptr; // Подпись названия оси X
+    QGraphicsTextItem *axisLabelY = nullptr; // Подпись названия оси Y
 
     /*
      * Гарантирует, что количество засечек и подписей соответствует требуемому количеству.
