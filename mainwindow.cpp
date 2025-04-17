@@ -16,6 +16,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this); // инициализация интерфейса
 
+    setWindowTitle("Редактор фигур");               // Название окна
+    setWindowIcon(QIcon("D:/YandexDisk/Qt/GeometricShapes/Title-picture2.png"));   // Иконка окна (из ресурсов)
+    //setWindowIcon(QIcon(":/icons/app_icon.png"));   // Иконка окна (из ресурсов)
+
     setupScene(); // прорисовка сцены (координатной оси)
 
     // Включаем режим выбора фигур на сцене (на координатной сетке)
@@ -30,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // реакция на нажатие на пустую область для снятия выделения фигуры
     connect(ui->graphicsView->scene(), &QGraphicsScene::selectionChanged, this, &MainWindow::onSelectionChanged);
 }
-// деструктор класса
+// деструктор классам
 MainWindow::~MainWindow()
 {
     delete ui;

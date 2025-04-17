@@ -53,8 +53,10 @@ void TriangleShape::setNewPoints(const QVector<QPointF> &newPoints)
 // задать угол вращения
 void TriangleShape::setRotationAngle(int angle)
 {
-    setRotation(angle);
-    update(); // Перерисовка треугольника
+    QPointF center = polygon.boundingRect().center(); // Вычисляем центр треугольника
+    setTransformOriginPoint(center);                  // Устанавливаем центр вращения
+    setRotation(angle);                               // Задаём угол
+    update();                                         // Перерисовка треугольника
 }
 
 // получить текущий угол вращения

@@ -152,6 +152,7 @@ void MainWindow::on_pushButton_circle_Apply_clicked()
 
         coordinate_scene->update(); // Обновляем сцену
     }
+    ui->pushButton_circle_Apply->setEnabled(false); // отключаем кнопку после нажатия
 }
 
 // отмена изменений параметров круга
@@ -193,7 +194,7 @@ void MainWindow::on_pushButton_circle_Cancel_clicked()
             ui->spinBox_circle_XCenter->setValue(prevX);
             ui->spinBox_circle_YCenter->setValue(prevY);
         }
-        ui->pushButton_circle_Apply->setEnabled(false);
+        ui->pushButton_circle_Apply->setEnabled(false); // отключаем кнопку Применить после нажатия Отменить
     }
 }
 
@@ -228,7 +229,7 @@ void MainWindow::on_pushButton_circle_Delete_clicked()
     ui->listWidgetShapes->clearSelection();     // Очищаем выделение в `QListWidget`
     ui->tabWidgetProperties->setEnabled(false); // Выключаем `tabWidgetProperties`
 
-    ui->listWidgetShapes->update();
+    ui->listWidgetShapes->update(); // обновляем список
     coordinate_scene->update();
 }
 
@@ -263,6 +264,8 @@ void MainWindow::on_pushButton_triangle_Apply_clicked()
 
         coordinate_scene->update(); // Перерисовываем сцену
     }
+    ui->pushButton_triangle_Apply->setEnabled(false); // отключаем кнопку после нажатия
+
 }
 
 // отмена изменений параметров треугольника
@@ -310,7 +313,7 @@ void MainWindow::on_pushButton_triangle_Cancel_clicked()
             // Если угол изменился
             ui->spinBox_triangle_rotation->setValue(prevAngle);
         }
-        ui->pushButton_triangle_Apply->setEnabled(false);
+        ui->pushButton_triangle_Apply->setEnabled(false); // отколючаем Применить после нажатия Отменить
     }
 }
 
@@ -405,6 +408,7 @@ void MainWindow::on_pushButton_rectangle_Apply_clicked()
         coordinate_scene->update(); // Перерисовываем сцену
         ui->tabWidgetProperties->update();
     }
+    ui->pushButton_rectangle_Apply->setEnabled(true); // Отключаем кнопку после нажатия
 }
 
 // отмена изменений параметров прямоугольника

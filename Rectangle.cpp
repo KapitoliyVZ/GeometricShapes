@@ -61,8 +61,10 @@ void RectangleShape::setNewPoints(const QVector<QPointF> &newPoints)
 // задать угол вращения
 void RectangleShape::setRotationAngle(int angle)
 {
-    setRotation(angle);
-    update(); // Перерисовка треугольника
+    QPointF center = polygon.boundingRect().center(); // Вычисляем центр прямоугольника
+    setTransformOriginPoint(center);                  // Устанавливаем центр вращения
+    setRotation(angle);                               // Задаём угол
+    update();                                         // Перерисовка прямоугольника
 }
 
 // получить текущий угол вращения
