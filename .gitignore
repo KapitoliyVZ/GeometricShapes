@@ -6,4 +6,5 @@
 /build
 /debug
 /release
-/qtc_clangd
+/.qtc_clangd
+/AssembledProject
