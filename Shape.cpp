@@ -24,3 +24,17 @@ void Shape::setName(const QString &newName)
         name = newName;
     }
 }
+
+// Изменение курсова при наведении на фигуру
+void Shape::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
+{
+    setCursor(QCursor(Qt::PointingHandCursor)); // Курсор "рука"
+    QGraphicsItem::hoverEnterEvent(event);
+}
+
+// Вернуть курсор прежним
+void Shape::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
+{
+    unsetCursor(); // Сброс курсора
+    QGraphicsItem::hoverLeaveEvent(event);
+}

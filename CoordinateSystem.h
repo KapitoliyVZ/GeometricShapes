@@ -39,6 +39,7 @@ private:
     void ensureTickLabelCount(QVector<QGraphicsLineItem *> &ticks,
                               QVector<QGraphicsTextItem *> &labels,
                               int count);
+
 };
 
 #endif // COORDINATESYSTEM_H

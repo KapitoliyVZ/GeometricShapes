@@ -1,0 +1,105 @@
+/* ========== Общий фон окна и виджетов ========== */
+QWidget
+{
+    background-color: #f3f3f3; /* Светло-серый фон */
+    color: #222222;            /* Тёмно-серый текст */
+    font-family: "Segoe UI", "Arial", sans-serif;
+    font-size: 10pt;
+}
+
+/* ========== Кнопки ========== */
+QPushButton
+{
+    background-color: #e0e0e0;
+    color: #000000;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+    background-color: #d0d0d0; /* Темнее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #bbbbbb;
+}
+
+QPushButton:disabled
+{
+    background-color: #f0f0f0; /* Бледнее, когда отключена */
+    color: #999999;
+    border: 1px solid #dddddd;
+}
+
+/* ========== QTabWidget и QTabBar ========== */
+QTabWidget::pane {
+    border: 1px solid #bbbbbb;
+    background-color: #ffffff;
+}
+
+QTabBar::tab {
+    background: #e0e0e0;
+    border: 1px solid #cccccc;
+    padding: 6px 12px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background: #ffffff;
+    border-bottom: 2px solid #0078d7;
+}
+
+QTabBar::tab:disabled {
+    background: #f2f2f2;
+    color: #aaaaaa;
+}
+
+/* ========== SpinBox (ввод чисел) ========== */
+/* Курсор "рука" при наведении на активные кнопки SpinBox */
+
+QSpinBox
+{
+    background-color: #e0e0e0;
+    color: #000000;
+}
+
+QSpinBox:disabled
+{
+    background-color: #e0e0e0;
+    color: #999;
+}
+
+
+/* ========== Метки (Label) ========== */
+QLabel {
+    color: #222222;
+    font-weight: normal;
+}
+
+QLabel:disabled {
+    color: #999999;
+}
+
+/* ========== Список фигур (QListWidget) ========== */
+QListWidget {
+    background-color: #ffffff;
+    border: 3px solid #cccccc;
+}
+
+QListWidget::item:selected {
+    background-color: #0078d7;
+    color: #ffffff;
+}
+
+QListWidget:disabled {
+    background-color: #f5f5f5;
+    color: #aaaaaa;
+}
+
+
+
+
+

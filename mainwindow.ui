@@ -27,6 +27,9 @@
        <layout class="QGridLayout" name="gridLayout_7">
         <item row="4" column="0">
          <widget class="QPushButton" name="btnTriangle">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="text">
            <string>Треугольник</string>
           </property>
@@ -34,6 +37,9 @@
         </item>
         <item row="3" column="0">
          <widget class="QPushButton" name="btnCircle">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="whatsThis">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set parametrs and create circle&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
@@ -44,6 +50,9 @@
         </item>
         <item row="5" column="0">
          <widget class="QPushButton" name="btnRectangle">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="text">
            <string>Прямоугольник</string>
           </property>
@@ -71,7 +80,17 @@
           <string>Список созданных фигур:</string>
          </property>
         </widget>
-        <widget class="QListWidget" name="listWidgetShapes"/>
+        <widget class="QListWidget" name="listWidgetShapes">
+         <property name="cursor" stdset="0">
+          <cursorShape>ArrowCursor</cursorShape>
+         </property>
+         <property name="mouseTracking">
+          <bool>false</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>false</bool>
+         </property>
+        </widget>
        </widget>
        <widget class="QSplitter" name="splitter">
         <property name="orientation">
@@ -105,6 +124,9 @@
              <layout class="QGridLayout" name="gridLayout_3">
               <item row="1" column="0" colspan="2">
                <widget class="QSpinBox" name="spinBox_circle_radius">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>radius = </string>
                 </property>
@@ -118,6 +140,9 @@
               </item>
               <item row="0" column="0">
                <widget class="QSpinBox" name="spinBox_circle_XCenter">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>Center(x) = </string>
                 </property>
@@ -131,9 +156,27 @@
               </item>
               <item row="5" column="0" colspan="2">
                <widget class="QPushButton" name="pushButton_circle_Delete">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(170, 0, 0);</string>
+                 <string notr="true">QPushButton {
+    color: rgb(255, 255, 255);
+    background-color: rgb(170, 0, 0);
+}
+
+QPushButton:hover {
+    background-color: rgb(140, 0, 0);
+}
+
+QPushButton:pressed {
+    background-color: rgb(120, 0, 0);
+}
+
+QPushButton:disabled {
+    background-color: rgb(200, 150, 150);
+    color: rgb(100, 100, 100);
+}</string>
                 </property>
                 <property name="text">
                  <string>Удалить круг</string>
@@ -142,6 +185,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="4" column="0">
                <widget class="QPushButton" name="pushButton_circle_Cancel">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="text">
                  <string>Отменить</string>
                 </property>
@@ -149,6 +195,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="4" column="1">
                <widget class="QPushButton" name="pushButton_circle_Apply">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="text">
                  <string>Применить изменения</string>
                 </property>
@@ -156,6 +205,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="0" column="1">
                <widget class="QSpinBox" name="spinBox_circle_YCenter">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>Center(y) = </string>
                 </property>
@@ -180,6 +232,9 @@ background-color: rgb(170, 0, 0);</string>
              <layout class="QGridLayout" name="gridLayout">
               <item row="1" column="0">
                <widget class="QSpinBox" name="spinBox_triangle_x1">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>x1 = </string>
                 </property>
@@ -193,6 +248,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="4" column="0" colspan="2">
                <widget class="QSpinBox" name="spinBox_triangle_rotation">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>rotation = </string>
                 </property>
@@ -203,6 +261,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="3" column="0">
                <widget class="QSpinBox" name="spinBox_triangle_x3">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>x3 = </string>
                 </property>
@@ -216,6 +277,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="2" column="0">
                <widget class="QSpinBox" name="spinBox_triangle_x2">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>x2 = </string>
                 </property>
@@ -229,6 +293,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="2" column="1">
                <widget class="QSpinBox" name="spinBox_triangle_y2">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>y2 = </string>
                 </property>
@@ -242,6 +309,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="5" column="0">
                <widget class="QPushButton" name="pushButton_triangle_Cancel">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="text">
                  <string>Отменить</string>
                 </property>
@@ -249,6 +319,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="5" column="1">
                <widget class="QPushButton" name="pushButton_triangle_Apply">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="text">
                  <string>Применить изменения</string>
                 </property>
@@ -256,6 +329,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="3" column="1">
                <widget class="QSpinBox" name="spinBox_triangle_y3">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>y3 = </string>
                 </property>
@@ -269,6 +345,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="1" column="1">
                <widget class="QSpinBox" name="spinBox_triangle_y1">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>y1 = </string>
                 </property>
@@ -282,9 +361,27 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="6" column="0" colspan="2">
                <widget class="QPushButton" name="pushButton_triangle_Delete">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(170, 0, 0);</string>
+                 <string notr="true">QPushButton {
+    color: rgb(255, 255, 255);
+    background-color: rgb(170, 0, 0);
+}
+
+QPushButton:hover {
+    background-color: rgb(140, 0, 0);
+}
+
+QPushButton:pressed {
+    background-color: rgb(120, 0, 0);
+}
+
+QPushButton:disabled {
+    background-color: rgb(200, 150, 150);
+    color: rgb(100, 100, 100);
+}</string>
                 </property>
                 <property name="text">
                  <string>Удалить треугольник</string>
@@ -307,6 +404,9 @@ background-color: rgb(170, 0, 0);</string>
              <layout class="QGridLayout" name="gridLayout_2">
               <item row="0" column="0">
                <widget class="QSpinBox" name="spinBox_rectangle_x1">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>x1 = </string>
                 </property>
@@ -320,6 +420,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="0" column="1">
                <widget class="QSpinBox" name="spinBox_rectangle_y1">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>y1 = </string>
                 </property>
@@ -333,6 +436,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="1" column="0">
                <widget class="QSpinBox" name="spinBox_rectangle_x2">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>x2 = </string>
                 </property>
@@ -346,6 +452,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="1" column="1">
                <widget class="QSpinBox" name="spinBox_rectangle_y2">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>y2 = </string>
                 </property>
@@ -359,6 +468,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="2" column="0">
                <widget class="QSpinBox" name="spinBox_rectangle_x3">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>x3 = </string>
                 </property>
@@ -372,6 +484,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="2" column="1">
                <widget class="QSpinBox" name="spinBox_rectangle_y3">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>y3 = </string>
                 </property>
@@ -385,6 +500,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="3" column="0">
                <widget class="QSpinBox" name="spinBox_rectangle_x4">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>x4 = </string>
                 </property>
@@ -398,6 +516,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="3" column="1">
                <widget class="QSpinBox" name="spinBox_rectangle_y4">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>y4 = </string>
                 </property>
@@ -411,6 +532,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="4" column="0" colspan="2">
                <widget class="QSpinBox" name="spinBox_rectangle_rotation">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="prefix">
                  <string>rotation = </string>
                 </property>
@@ -421,6 +545,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="5" column="0">
                <widget class="QPushButton" name="pushButton_rectangle_Cancel">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="text">
                  <string>Отменить</string>
                 </property>
@@ -428,6 +555,9 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="5" column="1">
                <widget class="QPushButton" name="pushButton_rectangle_Apply">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="text">
                  <string>Применить изменения</string>
                 </property>
@@ -435,10 +565,27 @@ background-color: rgb(170, 0, 0);</string>
               </item>
               <item row="6" column="0" colspan="2">
                <widget class="QPushButton" name="pushButton_rectangle_Delete">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(170, 0, 0);
-</string>
+                 <string notr="true">QPushButton {
+    color: rgb(255, 255, 255);
+    background-color: rgb(170, 0, 0);
+}
+
+QPushButton:hover {
+    background-color: rgb(140, 0, 0);
+}
+
+QPushButton:pressed {
+    background-color: rgb(120, 0, 0);
+}
+
+QPushButton:disabled {
+    background-color: rgb(200, 150, 150);
+    color: rgb(100, 100, 100);
+}</string>
                 </property>
                 <property name="text">
                  <string>Удалить прямоугольник</string>
@@ -460,6 +607,9 @@ background-color: rgb(170, 0, 0);
     </item>
     <item row="0" column="1">
      <widget class="QGraphicsView" name="graphicsView">
+      <property name="cursor" stdset="0">
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
       </property>
@@ -476,9 +626,28 @@ background-color: rgb(170, 0, 0);
     </item>
     <item row="1" column="1">
      <widget class="QPushButton" name="btnClearScene">
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(170, 0, 0);</string>
+       <string notr="true">QPushButton {
+    color: rgb(255, 255, 255);
+    background-color: rgb(170, 0, 0);
+}
+
+QPushButton:hover {
+    background-color: rgb(140, 0, 0);
+}
+
+QPushButton:pressed {
+    background-color: rgb(120, 0, 0);
+}
+
+QPushButton:disabled {
+    background-color: rgb(200, 150, 150);
+    color: rgb(100, 100, 100);
+}
+</string>
       </property>
       <property name="text">
        <string>Очистить график</string>

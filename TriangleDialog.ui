@@ -18,6 +18,9 @@
     <layout class="QGridLayout" name="gridLayout">
      <item row="5" column="0">
       <widget class="QPushButton" name="cancelButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Отменить</string>
        </property>
@@ -25,6 +28,9 @@
      </item>
      <item row="1" column="1">
       <widget class="QSpinBox" name="y1">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>y1 = </string>
        </property>
@@ -41,6 +47,9 @@
      </item>
      <item row="1" column="0">
       <widget class="QSpinBox" name="x1">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>x1 = </string>
        </property>
@@ -57,6 +66,9 @@
      </item>
      <item row="2" column="0">
       <widget class="QSpinBox" name="x2">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>x2 = </string>
        </property>
@@ -73,6 +85,9 @@
      </item>
      <item row="3" column="0">
       <widget class="QSpinBox" name="x3">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>x3 = </string>
        </property>
@@ -89,6 +104,9 @@
      </item>
      <item row="2" column="1">
       <widget class="QSpinBox" name="y2">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>y2 = </string>
        </property>
@@ -105,6 +123,9 @@
      </item>
      <item row="3" column="1">
       <widget class="QSpinBox" name="y3">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>y3 = </string>
        </property>
@@ -121,6 +142,9 @@
      </item>
      <item row="5" column="1">
       <widget class="QPushButton" name="applyButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Создать треугольник</string>
        </property>

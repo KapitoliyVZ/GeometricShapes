@@ -5,6 +5,7 @@ CircleShape::CircleShape(QPointF center, double radius, const QString &customNam
     : Shape("Circle", customName), center(center), radius(radius)
 {
     setPos(center);
+    setAcceptHoverEvents(true); // для изменения курсора при наведении
 }
 
 // определяет границы объекта

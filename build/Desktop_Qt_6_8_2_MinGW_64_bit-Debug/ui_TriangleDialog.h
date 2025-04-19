@@ -45,11 +45,13 @@ public:
         gridLayout->setObjectName("gridLayout");
         cancelButton = new QPushButton(TriangleDialog);
         cancelButton->setObjectName("cancelButton");
+        cancelButton->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout->addWidget(cancelButton, 5, 0, 1, 1);
 
         y1 = new QSpinBox(TriangleDialog);
         y1->setObjectName("y1");
+        y1->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         y1->setMinimum(-500);
         y1->setMaximum(500);
         y1->setValue(10);
@@ -58,6 +60,7 @@ public:
 
         x1 = new QSpinBox(TriangleDialog);
         x1->setObjectName("x1");
+        x1->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         x1->setMinimum(-500);
         x1->setMaximum(500);
         x1->setValue(50);
@@ -66,6 +69,7 @@ public:
 
         x2 = new QSpinBox(TriangleDialog);
         x2->setObjectName("x2");
+        x2->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         x2->setMinimum(-500);
         x2->setMaximum(500);
         x2->setValue(80);
@@ -74,6 +78,7 @@ public:
 
         x3 = new QSpinBox(TriangleDialog);
         x3->setObjectName("x3");
+        x3->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         x3->setMinimum(-500);
         x3->setMaximum(500);
         x3->setValue(65);
@@ -82,6 +87,7 @@ public:
 
         y2 = new QSpinBox(TriangleDialog);
         y2->setObjectName("y2");
+        y2->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         y2->setMinimum(-500);
         y2->setMaximum(500);
         y2->setValue(10);
@@ -90,6 +96,7 @@ public:
 
         y3 = new QSpinBox(TriangleDialog);
         y3->setObjectName("y3");
+        y3->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         y3->setMinimum(-500);
         y3->setMaximum(500);
         y3->setValue(50);
@@ -98,6 +105,7 @@ public:
 
         applyButton = new QPushButton(TriangleDialog);
         applyButton->setObjectName("applyButton");
+        applyButton->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout->addWidget(applyButton, 5, 1, 1, 1);
 

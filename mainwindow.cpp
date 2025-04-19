@@ -137,7 +137,7 @@ void MainWindow::on_btnCircle_clicked()
 
     if (dialog.exec() == QDialog::Accepted)
     {
-        // Получаем координаты центра и радиус
+        // Получаем координаты центра, радиус, имя
         QPointF center = dialog.getCenter();
         double radius = dialog.getRadius();
         QString name = dialog.getCircleName();

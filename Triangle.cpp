@@ -8,6 +8,7 @@ TriangleShape::TriangleShape(const QList<QPointF> &coords, const QString &custom
         polygon = QPolygonF(coords);
         setPos(0, 0); // Устанавливаем начальную позицию
     }
+    setAcceptHoverEvents(true); // для изменения курсора при наведении
 }
 
 QRectF TriangleShape::boundingRect() const // определение границ

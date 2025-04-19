@@ -108,16 +108,19 @@ public:
         gridLayout_7->setContentsMargins(0, 0, 0, 0);
         btnTriangle = new QPushButton(layoutWidget);
         btnTriangle->setObjectName("btnTriangle");
+        btnTriangle->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout_7->addWidget(btnTriangle, 4, 0, 1, 1);
 
         btnCircle = new QPushButton(layoutWidget);
         btnCircle->setObjectName("btnCircle");
+        btnCircle->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout_7->addWidget(btnCircle, 3, 0, 1, 1);
 
         btnRectangle = new QPushButton(layoutWidget);
         btnRectangle->setObjectName("btnRectangle");
+        btnRectangle->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout_7->addWidget(btnRectangle, 5, 0, 1, 1);
 
@@ -138,6 +141,9 @@ public:
         splitter_2->addWidget(label_2);
         listWidgetShapes = new QListWidget(splitter_2);
         listWidgetShapes->setObjectName("listWidgetShapes");
+        listWidgetShapes->viewport()->setProperty("cursor", QVariant(QCursor(Qt::CursorShape::ArrowCursor)));
+        listWidgetShapes->setMouseTracking(false);
+        listWidgetShapes->setTabletTracking(false);
         splitter_2->addWidget(listWidgetShapes);
         splitter_3->addWidget(splitter_2);
         splitter = new QSplitter(splitter_3);
@@ -160,6 +166,7 @@ public:
         gridLayout_3->setObjectName("gridLayout_3");
         spinBox_circle_radius = new QSpinBox(tab_circle);
         spinBox_circle_radius->setObjectName("spinBox_circle_radius");
+        spinBox_circle_radius->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_circle_radius->setMinimum(1);
         spinBox_circle_radius->setMaximum(500);
 
@@ -167,6 +174,7 @@ public:
 
         spinBox_circle_XCenter = new QSpinBox(tab_circle);
         spinBox_circle_XCenter->setObjectName("spinBox_circle_XCenter");
+        spinBox_circle_XCenter->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_circle_XCenter->setMinimum(-500);
         spinBox_circle_XCenter->setMaximum(500);
 
@@ -174,23 +182,42 @@ public:
 
         pushButton_circle_Delete = new QPushButton(tab_circle);
         pushButton_circle_Delete->setObjectName("pushButton_circle_Delete");
-        pushButton_circle_Delete->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
-"background-color: rgb(170, 0, 0);"));
+        pushButton_circle_Delete->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
+        pushButton_circle_Delete->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: rgb(170, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(140, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(120, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: rgb(200, 150, 150);\n"
+"    color: rgb(100, 100, 100);\n"
+"}"));
 
         gridLayout_3->addWidget(pushButton_circle_Delete, 5, 0, 1, 2);
 
         pushButton_circle_Cancel = new QPushButton(tab_circle);
         pushButton_circle_Cancel->setObjectName("pushButton_circle_Cancel");
+        pushButton_circle_Cancel->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout_3->addWidget(pushButton_circle_Cancel, 4, 0, 1, 1);
 
         pushButton_circle_Apply = new QPushButton(tab_circle);
         pushButton_circle_Apply->setObjectName("pushButton_circle_Apply");
+        pushButton_circle_Apply->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout_3->addWidget(pushButton_circle_Apply, 4, 1, 1, 1);
 
         spinBox_circle_YCenter = new QSpinBox(tab_circle);
         spinBox_circle_YCenter->setObjectName("spinBox_circle_YCenter");
+        spinBox_circle_YCenter->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_circle_YCenter->setMinimum(-500);
         spinBox_circle_YCenter->setMaximum(500);
 
@@ -208,6 +235,7 @@ public:
         gridLayout->setObjectName("gridLayout");
         spinBox_triangle_x1 = new QSpinBox(tab_triagnle);
         spinBox_triangle_x1->setObjectName("spinBox_triangle_x1");
+        spinBox_triangle_x1->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_triangle_x1->setMinimum(-500);
         spinBox_triangle_x1->setMaximum(500);
 
@@ -215,12 +243,14 @@ public:
 
         spinBox_triangle_rotation = new QSpinBox(tab_triagnle);
         spinBox_triangle_rotation->setObjectName("spinBox_triangle_rotation");
+        spinBox_triangle_rotation->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_triangle_rotation->setMaximum(360);
 
         gridLayout->addWidget(spinBox_triangle_rotation, 4, 0, 1, 2);
 
         spinBox_triangle_x3 = new QSpinBox(tab_triagnle);
         spinBox_triangle_x3->setObjectName("spinBox_triangle_x3");
+        spinBox_triangle_x3->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_triangle_x3->setMinimum(-500);
         spinBox_triangle_x3->setMaximum(500);
 
@@ -228,6 +258,7 @@ public:
 
         spinBox_triangle_x2 = new QSpinBox(tab_triagnle);
         spinBox_triangle_x2->setObjectName("spinBox_triangle_x2");
+        spinBox_triangle_x2->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_triangle_x2->setMinimum(-500);
         spinBox_triangle_x2->setMaximum(500);
 
@@ -235,6 +266,7 @@ public:
 
         spinBox_triangle_y2 = new QSpinBox(tab_triagnle);
         spinBox_triangle_y2->setObjectName("spinBox_triangle_y2");
+        spinBox_triangle_y2->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_triangle_y2->setMinimum(-500);
         spinBox_triangle_y2->setMaximum(500);
 
@@ -242,16 +274,19 @@ public:
 
         pushButton_triangle_Cancel = new QPushButton(tab_triagnle);
         pushButton_triangle_Cancel->setObjectName("pushButton_triangle_Cancel");
+        pushButton_triangle_Cancel->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout->addWidget(pushButton_triangle_Cancel, 5, 0, 1, 1);
 
         pushButton_triangle_Apply = new QPushButton(tab_triagnle);
         pushButton_triangle_Apply->setObjectName("pushButton_triangle_Apply");
+        pushButton_triangle_Apply->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout->addWidget(pushButton_triangle_Apply, 5, 1, 1, 1);
 
         spinBox_triangle_y3 = new QSpinBox(tab_triagnle);
         spinBox_triangle_y3->setObjectName("spinBox_triangle_y3");
+        spinBox_triangle_y3->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_triangle_y3->setMinimum(-500);
         spinBox_triangle_y3->setMaximum(500);
 
@@ -259,6 +294,7 @@ public:
 
         spinBox_triangle_y1 = new QSpinBox(tab_triagnle);
         spinBox_triangle_y1->setObjectName("spinBox_triangle_y1");
+        spinBox_triangle_y1->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_triangle_y1->setMinimum(-500);
         spinBox_triangle_y1->setMaximum(500);
 
@@ -266,8 +302,24 @@ public:
 
         pushButton_triangle_Delete = new QPushButton(tab_triagnle);
         pushButton_triangle_Delete->setObjectName("pushButton_triangle_Delete");
-        pushButton_triangle_Delete->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
-"background-color: rgb(170, 0, 0);"));
+        pushButton_triangle_Delete->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
+        pushButton_triangle_Delete->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: rgb(170, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(140, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(120, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: rgb(200, 150, 150);\n"
+"    color: rgb(100, 100, 100);\n"
+"}"));
         pushButton_triangle_Delete->setAutoRepeat(false);
 
         gridLayout->addWidget(pushButton_triangle_Delete, 6, 0, 1, 2);
@@ -284,6 +336,7 @@ public:
         gridLayout_2->setObjectName("gridLayout_2");
         spinBox_rectangle_x1 = new QSpinBox(tab_rectangle);
         spinBox_rectangle_x1->setObjectName("spinBox_rectangle_x1");
+        spinBox_rectangle_x1->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_rectangle_x1->setMinimum(-500);
         spinBox_rectangle_x1->setMaximum(500);
 
@@ -291,6 +344,7 @@ public:
 
         spinBox_rectangle_y1 = new QSpinBox(tab_rectangle);
         spinBox_rectangle_y1->setObjectName("spinBox_rectangle_y1");
+        spinBox_rectangle_y1->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_rectangle_y1->setMinimum(-500);
         spinBox_rectangle_y1->setMaximum(500);
 
@@ -298,6 +352,7 @@ public:
 
         spinBox_rectangle_x2 = new QSpinBox(tab_rectangle);
         spinBox_rectangle_x2->setObjectName("spinBox_rectangle_x2");
+        spinBox_rectangle_x2->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_rectangle_x2->setMinimum(-500);
         spinBox_rectangle_x2->setMaximum(500);
 
@@ -305,6 +360,7 @@ public:
 
         spinBox_rectangle_y2 = new QSpinBox(tab_rectangle);
         spinBox_rectangle_y2->setObjectName("spinBox_rectangle_y2");
+        spinBox_rectangle_y2->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_rectangle_y2->setMinimum(-500);
         spinBox_rectangle_y2->setMaximum(500);
 
@@ -312,6 +368,7 @@ public:
 
         spinBox_rectangle_x3 = new QSpinBox(tab_rectangle);
         spinBox_rectangle_x3->setObjectName("spinBox_rectangle_x3");
+        spinBox_rectangle_x3->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_rectangle_x3->setMinimum(-500);
         spinBox_rectangle_x3->setMaximum(500);
 
@@ -319,6 +376,7 @@ public:
 
         spinBox_rectangle_y3 = new QSpinBox(tab_rectangle);
         spinBox_rectangle_y3->setObjectName("spinBox_rectangle_y3");
+        spinBox_rectangle_y3->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_rectangle_y3->setMinimum(-500);
         spinBox_rectangle_y3->setMaximum(500);
 
@@ -326,6 +384,7 @@ public:
 
         spinBox_rectangle_x4 = new QSpinBox(tab_rectangle);
         spinBox_rectangle_x4->setObjectName("spinBox_rectangle_x4");
+        spinBox_rectangle_x4->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_rectangle_x4->setMinimum(-500);
         spinBox_rectangle_x4->setMaximum(500);
 
@@ -333,6 +392,7 @@ public:
 
         spinBox_rectangle_y4 = new QSpinBox(tab_rectangle);
         spinBox_rectangle_y4->setObjectName("spinBox_rectangle_y4");
+        spinBox_rectangle_y4->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_rectangle_y4->setMinimum(-500);
         spinBox_rectangle_y4->setMaximum(500);
 
@@ -340,25 +400,43 @@ public:
 
         spinBox_rectangle_rotation = new QSpinBox(tab_rectangle);
         spinBox_rectangle_rotation->setObjectName("spinBox_rectangle_rotation");
+        spinBox_rectangle_rotation->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         spinBox_rectangle_rotation->setMaximum(360);
 
         gridLayout_2->addWidget(spinBox_rectangle_rotation, 4, 0, 1, 2);
 
         pushButton_rectangle_Cancel = new QPushButton(tab_rectangle);
         pushButton_rectangle_Cancel->setObjectName("pushButton_rectangle_Cancel");
+        pushButton_rectangle_Cancel->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout_2->addWidget(pushButton_rectangle_Cancel, 5, 0, 1, 1);
 
         pushButton_rectangle_Apply = new QPushButton(tab_rectangle);
         pushButton_rectangle_Apply->setObjectName("pushButton_rectangle_Apply");
+        pushButton_rectangle_Apply->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout_2->addWidget(pushButton_rectangle_Apply, 5, 1, 1, 1);
 
         pushButton_rectangle_Delete = new QPushButton(tab_rectangle);
         pushButton_rectangle_Delete->setObjectName("pushButton_rectangle_Delete");
-        pushButton_rectangle_Delete->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
-"background-color: rgb(170, 0, 0);\n"
-""));
+        pushButton_rectangle_Delete->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
+        pushButton_rectangle_Delete->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: rgb(170, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(140, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(120, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: rgb(200, 150, 150);\n"
+"    color: rgb(100, 100, 100);\n"
+"}"));
         pushButton_rectangle_Delete->setAutoRepeat(false);
 
         gridLayout_2->addWidget(pushButton_rectangle_Delete, 6, 0, 1, 2);
@@ -376,6 +454,7 @@ public:
 
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName("graphicsView");
+        graphicsView->viewport()->setProperty("cursor", QVariant(QCursor(Qt::CursorShape::CrossCursor)));
         graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
         graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
         graphicsView->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
@@ -385,8 +464,25 @@ public:
 
         btnClearScene = new QPushButton(centralwidget);
         btnClearScene->setObjectName("btnClearScene");
-        btnClearScene->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
-"background-color: rgb(170, 0, 0);"));
+        btnClearScene->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
+        btnClearScene->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: rgb(170, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(140, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(120, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: rgb(200, 150, 150);\n"
+"    color: rgb(100, 100, 100);\n"
+"}\n"
+""));
 
         gridLayout_4->addWidget(btnClearScene, 1, 1, 1, 1);
 

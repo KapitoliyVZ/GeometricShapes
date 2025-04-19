@@ -7,6 +7,7 @@
 #include <QPainter>      // библиотека для инструментов отрисовки объектов
 #include <QString>
 #include <QUuid>
+#include <QCursor>
 
 // Класс Shape - родительский класс для всех фигур
 // Наследуется от QGraphicsItem для интеграции с графической сценой
@@ -26,6 +27,10 @@ public:
     virtual QRectF boundingRect() const override = 0;      
     // Виртуальная функция для отрисовки объекта                           
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override = 0; 
+
+    // Обработка наведения курсора
+    void hoverEnterEvent(QGraphicsSceneHoverEvent *event) override;
+    void hoverLeaveEvent(QGraphicsSceneHoverEvent *event) override;
 
 protected:
     QString name; // Имя фигуры

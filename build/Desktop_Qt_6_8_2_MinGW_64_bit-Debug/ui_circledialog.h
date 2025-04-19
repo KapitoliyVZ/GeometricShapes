@@ -42,11 +42,13 @@ public:
         gridLayout->setObjectName("gridLayout");
         applyButton = new QPushButton(CircleDialog);
         applyButton->setObjectName("applyButton");
+        applyButton->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout->addWidget(applyButton, 3, 1, 1, 1);
 
         yCenter = new QSpinBox(CircleDialog);
         yCenter->setObjectName("yCenter");
+        yCenter->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         yCenter->setMinimum(-500);
         yCenter->setMaximum(500);
         yCenter->setValue(100);
@@ -55,6 +57,7 @@ public:
 
         xCenter = new QSpinBox(CircleDialog);
         xCenter->setObjectName("xCenter");
+        xCenter->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         xCenter->setMinimum(-500);
         xCenter->setMaximum(500);
         xCenter->setValue(100);
@@ -63,11 +66,13 @@ public:
 
         cancelButton = new QPushButton(CircleDialog);
         cancelButton->setObjectName("cancelButton");
+        cancelButton->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout->addWidget(cancelButton, 3, 0, 1, 1);
 
         radius = new QSpinBox(CircleDialog);
         radius->setObjectName("radius");
+        radius->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         radius->setMinimum(1);
         radius->setMaximum(200);
         radius->setValue(50);

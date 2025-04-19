@@ -9,6 +9,7 @@ RectangleShape::RectangleShape(const QList<QPointF> &coords, const QString &cust
         polygon = QPolygonF(coords);
         setPos(0, 0); // Устанавливаем начальную позицию
     }
+    setAcceptHoverEvents(true); // для изменения курсора при наведении
 }
 
 // Конструктор-2 с начальной точкой и размерами

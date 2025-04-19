@@ -18,6 +18,9 @@
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="3" column="1">
       <widget class="QSpinBox" name="y1">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>y1 =</string>
        </property>
@@ -34,6 +37,9 @@
      </item>
      <item row="3" column="0">
       <widget class="QSpinBox" name="x1">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>x1 = </string>
        </property>
@@ -50,6 +56,9 @@
      </item>
      <item row="6" column="0">
       <widget class="QSpinBox" name="x3">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>x3 = </string>
        </property>
@@ -66,6 +75,9 @@
      </item>
      <item row="1" column="0" colspan="2">
       <widget class="QRadioButton" name="radioSetCoord">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Задать координаты</string>
        </property>
@@ -73,6 +85,9 @@
      </item>
      <item row="6" column="1">
       <widget class="QSpinBox" name="y3">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>y3 = </string>
        </property>
@@ -89,6 +104,9 @@
      </item>
      <item row="3" column="2">
       <widget class="QSpinBox" name="startPointX">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>x0 = </string>
        </property>
@@ -102,6 +120,9 @@
      </item>
      <item row="6" column="2">
       <widget class="QSpinBox" name="width">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>Ширина = </string>
        </property>
@@ -112,6 +133,9 @@
      </item>
      <item row="3" column="3">
       <widget class="QSpinBox" name="startPointY">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>y0 = </string>
        </property>
@@ -125,6 +149,9 @@
      </item>
      <item row="6" column="3">
       <widget class="QSpinBox" name="height">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="prefix">
         <string>Высота = </string>
        </property>
@@ -135,6 +162,9 @@
      </item>
      <item row="9" column="2" colspan="2">
       <widget class="QPushButton" name="applyButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Создать прямоугольник</string>
        </property>
@@ -142,6 +172,9 @@
      </item>
      <item row="9" column="0" colspan="2">
       <widget class="QPushButton" name="cancelButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Отменить</string>
        </property>
@@ -149,6 +182,9 @@
      </item>
      <item row="1" column="2" colspan="2">
       <widget class="QRadioButton" name="radioSetSides">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Задать размеры стороны</string>
        </property>

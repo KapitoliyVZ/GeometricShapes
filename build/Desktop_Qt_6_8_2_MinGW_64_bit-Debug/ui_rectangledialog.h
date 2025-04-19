@@ -50,6 +50,7 @@ public:
         gridLayout_2->setObjectName("gridLayout_2");
         y1 = new QSpinBox(RectangleDialog);
         y1->setObjectName("y1");
+        y1->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         y1->setMinimum(-500);
         y1->setMaximum(500);
         y1->setValue(10);
@@ -58,6 +59,7 @@ public:
 
         x1 = new QSpinBox(RectangleDialog);
         x1->setObjectName("x1");
+        x1->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         x1->setMinimum(-500);
         x1->setMaximum(500);
         x1->setValue(10);
@@ -66,6 +68,7 @@ public:
 
         x3 = new QSpinBox(RectangleDialog);
         x3->setObjectName("x3");
+        x3->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         x3->setMinimum(-500);
         x3->setMaximum(500);
         x3->setValue(40);
@@ -74,11 +77,13 @@ public:
 
         radioSetCoord = new QRadioButton(RectangleDialog);
         radioSetCoord->setObjectName("radioSetCoord");
+        radioSetCoord->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout_2->addWidget(radioSetCoord, 1, 0, 1, 2);
 
         y3 = new QSpinBox(RectangleDialog);
         y3->setObjectName("y3");
+        y3->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         y3->setMinimum(-500);
         y3->setMaximum(500);
         y3->setValue(30);
@@ -87,6 +92,7 @@ public:
 
         startPointX = new QSpinBox(RectangleDialog);
         startPointX->setObjectName("startPointX");
+        startPointX->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         startPointX->setMinimum(-500);
         startPointX->setMaximum(500);
 
@@ -94,12 +100,14 @@ public:
 
         width = new QSpinBox(RectangleDialog);
         width->setObjectName("width");
+        width->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         width->setMaximum(500);
 
         gridLayout_2->addWidget(width, 6, 2, 1, 1);
 
         startPointY = new QSpinBox(RectangleDialog);
         startPointY->setObjectName("startPointY");
+        startPointY->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         startPointY->setMaximum(500);
         startPointY->setValue(0);
 
@@ -107,22 +115,26 @@ public:
 
         height = new QSpinBox(RectangleDialog);
         height->setObjectName("height");
+        height->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         height->setMaximum(500);
 
         gridLayout_2->addWidget(height, 6, 3, 1, 1);
 
         applyButton = new QPushButton(RectangleDialog);
         applyButton->setObjectName("applyButton");
+        applyButton->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout_2->addWidget(applyButton, 9, 2, 1, 2);
 
         cancelButton = new QPushButton(RectangleDialog);
         cancelButton->setObjectName("cancelButton");
+        cancelButton->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout_2->addWidget(cancelButton, 9, 0, 1, 2);
 
         radioSetSides = new QRadioButton(RectangleDialog);
         radioSetSides->setObjectName("radioSetSides");
+        radioSetSides->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
 
         gridLayout_2->addWidget(radioSetSides, 1, 2, 1, 2);
 

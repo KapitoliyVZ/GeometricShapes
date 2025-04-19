@@ -1,6 +1,9 @@
 #include "CoordinateSystem.h"
 #include <QPen>
 #include <QFont>
+#include <QApplication>
+#include <QStyle>
+#include <QStyleOption>
 
 // Конструктор
 CoordinateSystem::CoordinateSystem(QGraphicsScene *scene, int stepSize, double unitPerPixel)
@@ -12,15 +15,17 @@ CoordinateSystem::CoordinateSystem(QGraphicsScene *scene, int stepSize, double u
         return;
 
     // Создание осей координат (X и Y)
-    axisX = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2));
-    axisY = scene->addLine(0, 0, 0, 0, QPen(Qt::white, 2));
+    axisX = scene->addLine(0, 0, 0, 0, QPen(Qt::darkGray, 2));
+    axisY = scene->addLine(0, 0, 0, 0, QPen(Qt::darkGray, 2));
 
     //Подпись названия оси X
     axisLabelX = scene->addText("X", QFont("Arial", 8, QFont::Bold));
+    axisLabelX->setDefaultTextColor(QColor("gray"));
     axisLabelX->setTransform(QTransform().scale(1, -1));
 
     // Подпись названия оси Y
     axisLabelY = scene->addText("Y", QFont("Arial", 8, QFont::Bold));
+    axisLabelY->setDefaultTextColor(QColor("gray"));
     axisLabelY->setTransform(QTransform().scale(1, -1));
 }
 
@@ -71,6 +76,7 @@ void CoordinateSystem::updateSceneSize(int width, int height)
         axisLabelsX[index]->setPlainText(QString::number(logicalValue));
         axisLabelsX[index]->setPos(x - 10, -5);
         axisLabelsX[index]->setTransform(QTransform().scale(1, -1));  // Инвертируем подписи
+        axisLabelsX[index]->setDefaultTextColor(QColor("#444444")); // тёмно-серый цвет
 
         axisLabelsX[index]->show();
     }
@@ -99,6 +105,7 @@ void CoordinateSystem::updateSceneSize(int width, int height)
         axisLabelsY[index]->setPlainText(QString::number(logicalValue));
         axisLabelsY[index]->setPos(-25, y + 9);
         axisLabelsY[index]->setTransform(QTransform().scale(1, -1));  // Инвертируем подписи
+        axisLabelsY[index]->setDefaultTextColor(QColor("#444444")); // тёмно-серый цвет
 
         axisLabelsY[index]->show();
 
