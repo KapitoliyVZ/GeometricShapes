@@ -30,6 +30,9 @@
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Задать параметры для отрисовки треугольника&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="text">
            <string>Треугольник</string>
           </property>
@@ -39,6 +42,9 @@
          <widget class="QPushButton" name="btnCircle">
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Задать параметры для отрисовки круга&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="whatsThis">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set parametrs and create circle&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -52,6 +58,9 @@
          <widget class="QPushButton" name="btnRectangle">
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Задать параметры для отрисовки прямоугольника&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="text">
            <string>Прямоугольник</string>
@@ -662,7 +671,7 @@ QPushButton:disabled {
      <x>0</x>
      <y>0</y>
      <width>992</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

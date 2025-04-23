@@ -8,6 +8,7 @@
 #include "Shape.h"
 #include "Circle.h"
 
+// Класс для отображения параметров фигуры
 class ShapeProperties : public QWidget
 {
     Q_OBJECT
@@ -26,9 +27,6 @@ private slots:
 private:
     Shape *currentShape = nullptr;        // Выбранная фигура
     CircleShape *currentCircle = nullptr; // Если выбрана окружность
-    // QSpinBox* spinBox_radius;
-    // QPushButton* deleteButton;
-    // QPushButton* colorButton;
 };
 
 #endif // SHAPEPROPERTIES_H

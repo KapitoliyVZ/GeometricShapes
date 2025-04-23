@@ -18,7 +18,7 @@ CoordinateSystem::CoordinateSystem(QGraphicsScene *scene, int stepSize, double u
     axisX = scene->addLine(0, 0, 0, 0, QPen(Qt::darkGray, 2));
     axisY = scene->addLine(0, 0, 0, 0, QPen(Qt::darkGray, 2));
 
-    //Подпись названия оси X
+    // Подпись названия оси X
     axisLabelX = scene->addText("X", QFont("Arial", 8, QFont::Bold));
     axisLabelX->setDefaultTextColor(QColor("gray"));
     axisLabelX->setTransform(QTransform().scale(1, -1));
@@ -57,16 +57,16 @@ void CoordinateSystem::updateSceneSize(int width, int height)
     if (pixelStep <= 0)
         return;
 
-    int countX = (width / 2) / pixelStep;
-    int countY = (height / 2) / pixelStep;
+    int countX = (width / 2) / pixelStep;  // Количество делений X
+    int countY = (height / 2) / pixelStep; // Количество делений Y
 
     // Деления и подписи по оси X
     ensureTickLabelCount(axisTicksX, axisLabelsX, 2 * countX + 1);
     int index = 0;
     for (int i = -countX; i <= countX; ++i, ++index)
     {
-        int x = i * pixelStep;
-        int logicalValue = i * stepSize;
+        int x = i * pixelStep;           // Положение деления по оси X
+        int logicalValue = i * stepSize; // Логическое значение деления
 
         // Засечка (tick)
         axisTicksX[index]->setLine(x, -4, x, 4);
@@ -75,8 +75,8 @@ void CoordinateSystem::updateSceneSize(int width, int height)
         // Подписи чисел засечек
         axisLabelsX[index]->setPlainText(QString::number(logicalValue));
         axisLabelsX[index]->setPos(x - 10, -5);
-        axisLabelsX[index]->setTransform(QTransform().scale(1, -1));  // Инвертируем подписи
-        axisLabelsX[index]->setDefaultTextColor(QColor("#444444")); // тёмно-серый цвет
+        axisLabelsX[index]->setTransform(QTransform().scale(1, -1)); // Инвертируем подписи
+        axisLabelsX[index]->setDefaultTextColor(QColor("#444444"));  // тёмно-серый цвет
 
         axisLabelsX[index]->show();
     }
@@ -86,8 +86,8 @@ void CoordinateSystem::updateSceneSize(int width, int height)
     index = 0;
     for (int i = -countY; i <= countY; ++i, ++index)
     {
-        int y = i * pixelStep;
-        int logicalValue = i * stepSize;
+        int y = i * pixelStep;           // Положение деления по оси Y
+        int logicalValue = i * stepSize; // Логическое значение деления
 
         // Засечка (tick)
         axisTicksY[index]->setLine(-4, y, 4, y);
@@ -104,13 +104,11 @@ void CoordinateSystem::updateSceneSize(int width, int height)
         // Подписи чисел засечек
         axisLabelsY[index]->setPlainText(QString::number(logicalValue));
         axisLabelsY[index]->setPos(-25, y + 9);
-        axisLabelsY[index]->setTransform(QTransform().scale(1, -1));  // Инвертируем подписи
-        axisLabelsY[index]->setDefaultTextColor(QColor("#444444")); // тёмно-серый цвет
+        axisLabelsY[index]->setTransform(QTransform().scale(1, -1)); // Инвертируем подписи
+        axisLabelsY[index]->setDefaultTextColor(QColor("#444444"));  // тёмно-серый цвет
 
         axisLabelsY[index]->show();
-
     }
-
 }
 
 /*

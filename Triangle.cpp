@@ -1,6 +1,7 @@
 #include "Triangle.h"
 
-TriangleShape::TriangleShape(const QList<QPointF> &coords, const QString &customName) // конструктор
+// Конструктор
+TriangleShape::TriangleShape(const QList<QPointF> &coords, const QString &customName)
     : Shape("Triangle", customName)
 {
     if (coords.size() == 3)
@@ -11,25 +12,23 @@ TriangleShape::TriangleShape(const QList<QPointF> &coords, const QString &custom
     setAcceptHoverEvents(true); // для изменения курсора при наведении
 }
 
-QRectF TriangleShape::boundingRect() const // определение границ
+// Функция определяет границы объекта
+QRectF TriangleShape::boundingRect() const
 {
-    return polygon.boundingRect(); // Корректно определяем границы
+    return polygon.boundingRect();
 }
 
-void TriangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *) // отрисовка
+// Функция отрисовки треугольника
+void TriangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     if (polygon.isEmpty())
         return;
 
     // Если фигура выделена
     if (isSelected())
-    {
         painter->setPen(Qt::red); // цвет контура - красный
-    }
     else
-    {
         painter->setPen(Qt::gray); // цвет контура - черный
-    }
 
     // painter->setBrush(Qt::blue); // цвет заливки
     painter->drawPolygon(polygon); // прорисовка фигуры

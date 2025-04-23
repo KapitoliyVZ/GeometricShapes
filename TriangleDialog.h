@@ -9,6 +9,7 @@ namespace Ui
     class TriangleDialog;
 }
 
+// Класс диалогового окна для задания параметров треугольника
 class TriangleDialog : public QDialog
 {
     Q_OBJECT

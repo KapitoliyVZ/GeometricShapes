@@ -22,6 +22,7 @@ public:
     QRectF boundingRect() const override;
     // Отрисовка круга
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
+
 private:
     QPointF center; // Центр круга
     double radius;  // Радиус круга

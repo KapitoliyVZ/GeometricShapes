@@ -11,13 +11,14 @@ namespace Ui
     class CircleDialog;
 }
 
+// Класс диалогового окна для задания параметров круга
 class CircleDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit CircleDialog(QWidget *parent = nullptr);
-    ~CircleDialog();
+    explicit CircleDialog(QWidget *parent = nullptr); // конструктор
+    ~CircleDialog();                                  // деструктор
 
     QPointF getCenter() const;                // получить заданные координаты центра
     double getRadius() const;                 // получить заданный радиус

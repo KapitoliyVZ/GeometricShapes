@@ -8,19 +8,19 @@
 #include <QTextStream>
 #include <QDir>
 
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    //QFile file("TCobra.qss"); // путь — если файл в папке проекта
     QFile file("light_theme.qss"); // путь — если файл в папке проекта
-    if (file.open(QFile::ReadOnly | QFile::Text)) {
-    QString styleSheet = file.readAll();
-    a.setStyleSheet(styleSheet);
+    if (file.open(QFile::ReadOnly | QFile::Text))
+    {
+        QString styleSheet = file.readAll();
+        a.setStyleSheet(styleSheet);
     }
-    else {
-         qDebug() << "Не удалось открыть light_theme.qss";
+    else
+    {
+        qDebug() << "Не удалось открыть light_theme.qss";
     }
 
     QTranslator translator;

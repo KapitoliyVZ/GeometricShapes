@@ -11,7 +11,8 @@ namespace Ui
     class RectangleDialog;
 }
 
-class RectangleDialog : public QDialog 
+// Класс диалогового окна для задания параметров прямоугольника
+class RectangleDialog : public QDialog
 {
     Q_OBJECT
 

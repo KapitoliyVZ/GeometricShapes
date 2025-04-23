@@ -19,11 +19,13 @@ RectangleShape::RectangleShape(const QPointF &startPoint, double width, double h
     polygon = QRectF(startPoint.x(), startPoint.y(), width, height); // Прямоугольник по начальной точке и размерам
 }
 
+// Функция определяет границы объекта
 QRectF RectangleShape::boundingRect() const
 {
-    return polygon.boundingRect(); // Корректно определяем границы
+    return polygon.boundingRect();
 }
 
+// Функция отрисовки прямоугольника
 void RectangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     if (polygon.isEmpty())
@@ -31,15 +33,10 @@ void RectangleShape::paint(QPainter *painter, const QStyleOptionGraphicsItem *, 
 
     // Если фигура выделена
     if (isSelected())
-    {
         painter->setPen(Qt::red); // цвет контура - красный
-    }
     else
-    {
         painter->setPen(Qt::gray); // цвет контура - черный
-    }
 
-    // painter->setBrush(Qt::blue); // цвет заливки
     painter->drawPolygon(polygon); // прорисовка фигуры
 }
 

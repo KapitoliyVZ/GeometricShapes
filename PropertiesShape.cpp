@@ -235,13 +235,13 @@ void MainWindow::on_pushButton_circle_Delete_clicked()
 
 //////////////////////////////////////////////////////////////////
 
-// включить кнопку Apply для треугольника
+// Включить кнопку Apply для треугольника
 void MainWindow::enableTriangleApplyButton()
 {
     ui->pushButton_triangle_Apply->setEnabled(true);
 }
 
-// применение изменений параметров треугольника
+// Применение изменений параметров треугольника
 void MainWindow::on_pushButton_triangle_Apply_clicked()
 {
     if (!selectedShape)
@@ -268,7 +268,7 @@ void MainWindow::on_pushButton_triangle_Apply_clicked()
 
 }
 
-// отмена изменений параметров треугольника
+// Отмена изменений параметров треугольника
 void MainWindow::on_pushButton_triangle_Cancel_clicked()
 {
     if (!selectedShape)
